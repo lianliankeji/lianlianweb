@@ -1,0 +1,48 @@
+@import '../../../../common/css/mixins.scss';
+
+.platform-header{
+  padding-bottom: 90px;
+  background-image: url("../../../../images/openbg.png");
+
+  .header-content{
+    //background-color: #202227;
+  }
+
+  .slogen{
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 70px;
+  }
+  .top{
+    padding-top: 20px;
+    @include flex;
+
+    .header-nav{
+      height: 100%;
+      margin-bottom: 0;
+      color: #fff;
+      @include flex;
+
+      .header-nav-item{
+        margin-left: 25px;
+
+        .link:hover{
+          color: #c93113;
+        }
+      }
+    }
+  }
+
+  .logo{
+    text-align: center;
+    margin-top: 180px;
+  }
+
+  .platform{
+    font-size: 24px;
+    color: #fff;
+    margin-top: 40px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,40 @@
+@import '../../../common/css/mixins.scss';
+.header-mobile{
+	background: url('../../../images/mobile/bg-mobile.png') center center no-repeat;
+	background-size: cover;
+	position: relative;
+
+	.content{
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		left: 50%;
+		top: 44%;
+		transform: translate3d(-50%, -50%, 0);
+
+		.headerlogo{
+			display: inline-block;
+			width: 179px;
+			height: 165px;
+		}
+
+		.slogan{
+			color: #fff;
+			font-size: 18px;
+			margin-top: 35px;
+		}
+
+		.button{
+			width: 140px;
+			height: 35px;
+			font-size: 15px;
+			border-radius: 80px;
+			margin: 0 auto;
+			line-height: 35px;
+			color: #fff;
+			border: 1px #fff solid;
+			margin-top: 30px;
+		}
+	}
+	
+}

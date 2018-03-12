@@ -1,0 +1,101 @@
+@import '../../../common/css/mixins.scss';
+.home-footer-mobile{
+    background-color: #070508;
+
+    .item{
+        padding: 40px 0;
+       
+        &.Cooperative,&.Contact{
+
+            .title{
+                font-size: 20px;
+                color: #FFFFFF;
+                text-align: center;
+                margin-bottom: 0;
+            }
+        }
+        .logo{
+            text-align: center;
+            margin-top: 30px;
+
+            @media screen and (min-width:300px) and (max-width:330px) {
+                .img{
+                    width: 28%;
+                    height: 26px;
+                    display: inline-block;
+    
+                    &.wensli{
+                        margin: 0 4%;
+                    }
+                }
+            }
+
+            @media screen and (min-width:350px) and (max-width:380px) {
+                .img{
+                    width: 28%;
+                    height: 30px;
+                    display: inline-block;
+    
+                    &.wensli{
+                        margin: 0 4%;
+                    }
+                }
+            }
+
+            @media screen and (min-width:400px) {
+                .img{
+                    width: 28%;
+                    height: 32px;
+                    display: inline-block;
+    
+                    &.wensli{
+                        margin: 0 4%;
+                    }
+                }
+            }
+            
+        }
+
+        .contactMsg{
+            font-size: 15px;
+            color: rgba(255,255,255,0.60);
+            text-align: center;
+
+            .tel{
+                margin-top: 20px;
+            }
+
+            .bei{
+                text-align: center;
+                font-size: 14px;
+                opacity: 0.5;
+                color: #fff;
+                margin-top: 10px;
+
+                .company{
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .code{
+            text-align: center;
+
+            .QRcode{
+                display: inline-block;
+                width: 103px;
+                height: 103px;
+            }
+        }
+        
+        
+    }
+
+    .line{
+        height: 1px;
+        background-color: #262832;
+        margin: 0 20px;
+    }
+
+    
+}

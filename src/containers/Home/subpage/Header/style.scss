@@ -1,0 +1,68 @@
+@import '../../../../common/css/mixins.scss';
+
+.header{
+	height: 660px;
+	background: url('../../../../images/banner.png') center no-repeat;
+
+	.ant-anchor-wrapper {
+		background: none;
+		overflow: auto;
+		padding-left: 0;
+		margin-left: 0;
+	}
+
+	.ant-anchor-ink:before {
+		content: ' ';
+		position: relative;
+		width: 0;
+		height: 100%;
+		display: block;
+		background-color: #e8e8e8;
+		margin: 0 auto;
+	}
+
+	.ant-anchor-link {
+		padding: 0;
+	}
+
+	.ant-anchor-link-title:hover{
+		color: #00FFBA;
+	}
+	.ant-anchor-link-title{
+		color: #fff;
+	}
+
+	.top{
+		padding-top: 20px;
+		@include flex;
+
+		.header-nav{
+			height: 100%;
+			margin-bottom: 0;
+			color: #fff;
+			@include flex;
+
+			.header-nav-item{
+				margin-left: 25px;
+			}
+
+			.link:hover{
+				color: #00FFBA;
+			}
+		}
+	}
+
+	.logo{
+		text-align: center;
+		margin-top: 180px;
+	}
+
+	.platform{
+		font-size: 24px;
+		color: #fff;
+		margin-top: 40px;
+		text-align: center;
+	}
+}
+
+

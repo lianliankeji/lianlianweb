@@ -1,0 +1,33 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-size: 14px;
+	line-height: 1;
+	/* background-color: #13141A; */
+}
+
+a{
+	color: inherit;
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+img{
+	vertical-align: top;
+}
+
+.clear{
+	zoom: 1;
+}
+
+.clear:after{
+	content: "";
+	display: block;
+	clear: both;
+}
