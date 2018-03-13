@@ -20,7 +20,7 @@ export default class App extends React.Component {
 		return (
 			<div>
 				{
-					window.screen.width < 768 ? <HomeMobile {...this.props} /> : <Home {...this.props}/>
+					window.screen.width < 768 ? <Home {...this.props} /> : <Home {...this.props}/>
 				}
 			</div>
 		)

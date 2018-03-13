@@ -21,8 +21,14 @@
 	.about{
 		@include flex(row, flex-start, flex-start);
 
+		.img{
+			width: 34%;
+			height: 50%;
+			display: inline-block;
+		}
+
 		.info{
-			margin-left: 120px;
+			margin-left: 11.4%;
 			font-size: 18px;
 		}
 
@@ -47,6 +53,7 @@
 
 		.img{
 			margin-top: 70px;
+			width: 100%;
 		}
 	}
 	
@@ -133,7 +140,7 @@
 			.desc{
 				line-height: 1.8;
 				font-size: 18px;
-				color: #333;
+				//color: #333;
 			}
 		}
 	}

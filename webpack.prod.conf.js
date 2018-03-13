@@ -19,6 +19,9 @@ module.exports = merge(baseWebpackConfig, {
     devtool: '#source-map',
 
     plugins: [
+        new webpack.ProvidePlugin({
+           $: "jquery"
+        }),
         new webpack.DefinePlugin({ //设置环境变量
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
@@ -35,7 +38,7 @@ module.exports = merge(baseWebpackConfig, {
             sourceMap: true
         }),
         new htmlWebpackPlugin({
-            title: "楼兰loulanchains",
+            title: "链链",
             filename: config.build.index,
             template: 'index.html',
             inject: true,

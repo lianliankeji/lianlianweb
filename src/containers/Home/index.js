@@ -122,17 +122,14 @@ class Home extends React.Component {
     }
 
     componentWillMount() {
-        this.props.getHomesData();
-        // var oRoot = document.getElementById('root');
-        // var socket = io.connect("https://store.lianlianchains.com");
-        // socket.on("chainDataUpdt", function(data) {
-        //     console.log(data);
-        //     // oRoot.innerText = data.hello;
-        //     // socket.emit("client", {my: "data"})
-        // });
+
     }
 
     componentDidMount() {
+
+    }
+
+    handleScroll (e) {
 
     }
 
@@ -151,13 +148,14 @@ class Home extends React.Component {
                     <Row type="flex" justify="center">
                         <Col span={16}>
                             <div className="about">
-                                <img src={Pic} />
+                                <img className="img" src={Pic}/>
                                 <div className="info">
                                     <h3 className="title">关于链链</h3>
                                     <div>
                                         <p className="elem">北京链链信息技术有限公司（简称“链链”）成立于2016年9月。</p>
                                         <p className="elem">最早成为Linux Foundation会员资格 ，加入Hyperledger超级账本计划。</p>
-                                        <p className="elem">创始股东和团队为资深区块链技术研究专家，旨在通过区块链开放平台赋能新零售、影视文化、监管科技、跨境支付等领域，并通过跨链技术实现各种联盟链的互联互通，构建开放式的价值交换网络。</p>
+                                        <p className="elem">
+                                            创始股东和团队为资深区块链技术研究专家，旨在通过区块链开放平台赋能新零售、影视文化、监管科技、跨境支付等领域，并通过跨链技术实现各种联盟链的互联互通，构建开放式的价值交换网络。</p>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +165,7 @@ class Home extends React.Component {
                         <Col span={16}>
                             <div className="ecology">
                                 <h3 className="title">生态架构</h3>
-                                <img className="img" src={ImgTable} />
+                                <img className="img" src={ImgTable}/>
                             </div>
                         </Col>
                     </Row>
@@ -180,7 +178,7 @@ class Home extends React.Component {
                                 {this.state.productList.map((item, index) => {
                                     return (
                                         <li key={index}>
-                                            <img src={item.img} />
+                                            <img src={item.img}/>
                                             <div className="name">{item.charac}</div>
                                         </li>
                                     )
@@ -198,7 +196,7 @@ class Home extends React.Component {
                                     {this.state.advantage.map((item, index) => {
                                         return (
                                             <div key={index} className="item">
-                                                <img className="img" src={item.img} />
+                                                <img className="img" src={item.img}/>
                                                 <div>
                                                     <h3 className="name">{item.title}</h3>
                                                     <p className="desc">{item.desc}</p>
@@ -211,30 +209,30 @@ class Home extends React.Component {
                         </Col>
                     </Row>
                 </section>
-                        <Footer />
-                        <BackTop>
-                            <div className="ant-back-top-inner">UP</div>
-                        </BackTop>
-                        {/* <Loading /> */}
+                <Footer />
+                <BackTop>
+                    <div className="ant-back-top-inner">UP</div>
+                </BackTop>
+                {/* <Loading /> */}
             </div>
 
-                    )
-                }
-            }
-            
+        )
+    }
+}
+
 function mapStateToProps(state) {
     return {
-                        homesData: state.homesData
-                }
-            }
-            
+        homesData: state.homesData
+    }
+}
+
 function mapDispatchToProps(dispatch) {
     return {
-                        getHomesData: bindActionCreators(getHomesData, dispatch)
-                }
-            }
-            
-            export default connect(
-                mapStateToProps,
-                mapDispatchToProps
+        getHomesData: bindActionCreators(getHomesData, dispatch)
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
 )(Home)

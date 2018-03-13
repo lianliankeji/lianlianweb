@@ -4,6 +4,10 @@
 	height: 660px;
 	background: url('../../../../images/banner.png') center no-repeat;
 
+	.headerTop{
+		padding-bottom: 20px;
+	}
+
 	.ant-anchor-wrapper {
 		background: none;
 		overflow: auto;
@@ -31,6 +35,14 @@
 	.ant-anchor-link-title{
 		color: #fff;
 	}
+	
+	.active{
+		color: #333;
+	}
+	
+	.active:hover{
+		color: #4A6BFF !important;
+	}
 
 	.top{
 		padding-top: 20px;
@@ -54,7 +66,7 @@
 
 	.logo{
 		text-align: center;
-		margin-top: 180px;
+		padding-top: 180px;
 	}
 
 	.platform{

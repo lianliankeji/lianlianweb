@@ -33,6 +33,9 @@ module.exports = merge(baseWebpackConfig, {
     },
 
     plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery"
+        }),
         new OpenBrowserPlugin({ //自动打开默认浏览器
             url: BrowerlicPath
         }),
@@ -53,7 +56,7 @@ module.exports = merge(baseWebpackConfig, {
             }
         }),
         new htmlWebpackPlugin({
-            title: "楼兰loulanchains",
+            title: "链链科技",
             filename: 'index.html',
             hash: true,
             favicon: 'src/images/favicon.ico',
