@@ -20,7 +20,7 @@ import {
 import './style.scss';
 
 
-import Headerlogo from 'images/headerlogo2.png';
+import Headerlogo from 'images/headerlogo.png';
 import Logo from 'images/logo.png';
 
 
@@ -68,7 +68,10 @@ class Header extends Component {
                         }
                     </Col>
                 </Row>
-                <p className="slogen">楼兰开放平台 一站式联盟链解决方案</p>
+                <div className="bg">
+                    <p className="slogen">一站式联盟链解决方案</p>
+                </div>
+
             </header>
 
         )

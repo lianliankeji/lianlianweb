@@ -11,7 +11,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 //优雅控制台
 var DashboardPlugin = require('webpack-dashboard/plugin');
 
-const BrowerlicPath = 'http://dev.fengfeng.com:8080';
+const BrowerlicPath = 'http://dev.fengfeng.com:8081';
 
 
 module.exports = merge(baseWebpackConfig, {
@@ -19,14 +19,14 @@ module.exports = merge(baseWebpackConfig, {
     devServer: {
         // contentBase: "./dist",
         // open: true,  //自动打开默认浏览器
-        port: 8080, //端口号
+        port: 8081, //端口号
         inline: true,
         progress: true,
         proxy: {
             '*': {
                 target: 'https://loulan.lianlianchains.com/',
                 changeOrigin: true,
-                secure: true
+                secure: false
             }
         },
         disableHostCheck: true //新版的webpack-dev-server出于安全考虑，默认检查hostname，如果hostname不是配置内的，将中断访问
@@ -56,7 +56,7 @@ module.exports = merge(baseWebpackConfig, {
             }
         }),
         new htmlWebpackPlugin({
-            title: "链链科技",
+            title: "链链",
             filename: 'index.html',
             hash: true,
             favicon: 'src/images/favicon.ico',

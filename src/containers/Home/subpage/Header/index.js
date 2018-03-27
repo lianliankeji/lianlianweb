@@ -12,6 +12,7 @@ import {
     Redirect,
     Switch
 } from 'react-router-dom'
+import {cookieUtil} from "utils/cookie.js"
 
 import './style.scss';
 
@@ -52,7 +53,8 @@ class Header extends Component {
                     width: "100%",
                     top: "0",
                     zIndex: "100",
-                    color: "#333 !important"
+                    color: "#333 !important",
+                    boxShadow: "0 1px 0 #ececec"
                 }
                 : {backgroundColor: "transparent", position: "static", color: "#fff"};
 
@@ -80,6 +82,16 @@ class Header extends Component {
         }.bind(this), false)
     }
 
+    checkCookie = () => {
+        cookieUtil.removeItem("phoneno")
+        let IsHasPhoneCookie = cookieUtil.hasItem("phoneno")
+        if(IsHasPhoneCookie) {
+            location.replace("/#/platform")
+        }else{
+            location.replace("/#/platform/login")
+        }
+    }
+
     render() {
         return (
             <header className="header" ref={(header) => {
@@ -93,8 +105,8 @@ class Header extends Component {
 
                                 <ul className="header-nav">
                                     <li className="header-nav-item">
-                                        {/*<LinkUrl className="link" to="/platform">公司产品</LinkUrl>*/}
-                                        <LinkUrl className="link" to="/">公司产品</LinkUrl>
+                                        <LinkUrl className="link" to="/platform">联盟链</LinkUrl>
+                                        {/*<LinkUrl className="link" to="/">公司产品</LinkUrl>*/}
                                     </li>
                                     <li className="header-nav-item" title="Digital Assets">
                                         <Anchor affix={false}><Link className="link" href="#assets" title="核心优势"/></Anchor>
@@ -106,8 +118,9 @@ class Header extends Component {
                                 :
                                 <ul className="header-nav">
                                     <li className="header-nav-item">
-                                        {/*<LinkUrl className="link" to="/platform">公司产品</LinkUrl>*/}
-                                        <LinkUrl className="link" to="/">公司产品</LinkUrl>
+                                        <div className="link" onClick={this.checkCookie}>联盟链</div>
+                                        {/*<LinkUrl className="link" to="/platform/login">联盟链</LinkUrl>*/}
+                                        {/*<LinkUrl className="link" to="/">公司产品</LinkUrl>*/}
                                     </li>
                                     <li className="header-nav-item" title="Digital Assets">
                                         <Anchor affix={false}><Link className="link" href="#assets" title="核心优势"/></Anchor>

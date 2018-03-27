@@ -1,10 +1,10 @@
 .join-platform-content{
   background-color: #fff;
-  padding-top: 40px;
+  padding-top: 30px;
   padding-bottom: 140px;
 
   .BreadcrumbItem:hover{
-    color: #c93113;
+    color: #4A6BFF;
   }
 
   .title{
@@ -20,7 +20,7 @@
       display: block;
       width: 30px;
       height: 2px;
-      background-color: #333333;
+      background-color: #4A6BFF;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -31,7 +31,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border:1px #f4d3cd solid;
+    border:1px #c9d2fb solid;
     border-radius: 6px;
     padding:20px;
     margin-top: 40px;
@@ -60,15 +60,15 @@
       .view{
         margin-top: 20px;
         font-size: 14px;
-        color: #c93113;
+        color: #4A6BFF;
         user-select: none;
       }
     }
 
     .button{
-      color: #c93113;
+      color: #4A6BFF;
       background-color: #fff;
-      border-color: #c93113;
+      border-color: #4A6BFF;
 
       &:hover,&:visited{
         opacity: 0.6;
@@ -76,8 +76,8 @@
 
       &:active{
         color: #fff;
-        background-color: #c93113;
-        border-color: #c93113;
+        background-color: #4A6BFF;
+        border-color: #4A6BFF;
       }
     }
   }

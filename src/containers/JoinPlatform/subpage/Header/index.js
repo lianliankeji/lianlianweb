@@ -20,7 +20,7 @@ import {
 import './style.scss';
 
 
-import Headerlogo from 'images/headerlogo2.png';
+import Headerlogo from 'images/headerlogo.png';
 import Logo from 'images/logo.png';
 
 

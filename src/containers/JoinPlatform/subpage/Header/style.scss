@@ -1,9 +1,9 @@
 @import '../../../../common/css/mixins.scss';
 
 .join-platform-header{
-
+  border-bottom: 1px #ececec solid;
   .header-content{
-    background-color: #202227;
+    background-color: #fff;
   }
   .top{
     padding-top: 15px;
@@ -19,8 +19,11 @@
       .header-nav-item{
         margin-left: 25px;
 
+        .link{
+          color: #333;
+        }
         .link:hover{
-          color: #c93113;
+          color: #4A6BFF;
         }
       }
     }

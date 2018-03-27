@@ -70,7 +70,7 @@ class Content extends Component {
                             <img className="img" src={Heyue} title="合约商店" />
                             <p>平台为应用提供了丰富的智能合约</p>
                             <p>可在合约商店中下载后发布到链上</p>
-                            <Button className="button">合约商店</Button>
+                            <Button className="button"><Link to="/platform/contract">合约商店</Link></Button>
                         </Col>
                         <Col className="item" span={7}>
                             <img className="img" src={Hezuo} title="合约开发" />

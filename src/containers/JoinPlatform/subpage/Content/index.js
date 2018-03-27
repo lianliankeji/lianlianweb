@@ -133,8 +133,8 @@ class Content extends Component {
                                                     <div className="view" onClick={this.tableView.bind(this, this.getChainsList(), index)}>查看详情</div>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <div><Button className="button">测试链</Button></div>
+                                            <div>8
+                                                <div><Button className="button"><Link to={`/platform/join/test/${item.chainid}`}>测试链</Link></Button></div>
                                                 <div><Button className="button" style={{marginTop: "20px"}}><Link to={`/platform/join/release/${item.chainid}`}>正式链</Link></Button></div>
                                             </div>
                                         </div>

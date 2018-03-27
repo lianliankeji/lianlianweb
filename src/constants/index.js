@@ -2,3 +2,8 @@ export const GET_HOME_DATA = "GET_HOME_DATA";
 
 export const GET_CHAINS_LIST = "GET_CHAINS_LIST";
 export const SHOW_CHAINS_TABLE = "SHOW_CHAINS_TABLE";
+export const GET_TEST_CHAINS_LIST = "GET_TEST_CHAINS_LIST"; //获取测试链列表
+export const TEST_LIST_SHOW_AND_HIDE = "TEST_LIST_SHOW_AND_HIDE"; //测试链展开或收起
+
+export const GET_CONTRACT_SHOP_LIST = "GET_CONTRACT_SHOP_LIST" //合约商店列表
+export const CONTRACT_LIST_SHOW_AND_HIDE = "CONTRACT_LIST_SHOW_AND_HIDE"; //合约商店列表展开或收起

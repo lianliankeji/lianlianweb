@@ -122,14 +122,7 @@ class Platform extends React.Component {
     }
 
     componentWillMount() {
-        this.props.getHomesData();
-        // var oRoot = document.getElementById('root');
-        // var socket = io.connect("https://store.lianlianchains.com");
-        // socket.on("chainDataUpdt", function(data) {
-        //     console.log(data);
-        //     // oRoot.innerText = data.hello;
-        //     // socket.emit("client", {my: "data"})
-        // });
+
     }
 
     componentDidMount() {

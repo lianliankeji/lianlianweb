@@ -59,12 +59,20 @@ class Home extends React.Component {
                 {
                     img: Exchange,
                     title: "区块链跨链",
-                    desc: "链间通讯技术可将多个区块链系统通过分布式去中心化网络链接起来，以达到区块链的灵活组合与扩展，从而在链与链之间通过共识方式交换信息数据，在各个区块链孤岛间建立标准化的通讯协议，使区块链之间信息及价值交换更加便利。"
+                    desc: [
+                        "链间、跨链协议的目标在链与链、链与非链之间通过共识方式交换数据，从而实现数据及价值交换更加便利。",
+                        "链链信息的跨链、同构链间技术已落地和商业应用，并在持续完善和申请专利保护。异构链间技术研究持续进行中，预计2020年达到商业应用。"
+                    ]
                 },
                 {
                     img: Network,
                     title: "区块链赋能",
-                    desc: "未来的联盟链的应用场景，需要区块链与非区块链系统进行很好的整合才能发挥优势。链链为企业提供一站式区块链解决方案，可以很好的让各行各业、应用场景“上链”，然后再通过“上链”后形成的积累价值，促进行业的数字化转型以及价值分配体系的优化。"
+                    desc: [
+                        "融合AI、区块链以及大数据技术，在三个方面赋能用户：",
+                        '“上链”—如何把业务场景在区块链上实现。',
+                        '“用链”—如何从使用区块链中，获得价值。',
+                        '“链墒”—如何通过基于区块链的Token，分享和共享价值。'
+                    ]
                 }
             ]
         };
@@ -173,7 +181,7 @@ class Home extends React.Component {
                 <section id="assets" className="section2">
                     <Row type="flex" justify="center" className="ecology-content">
                         <Col span={16}>
-                            <h3 className="title">公司产品</h3>
+                            <h3 className="title">联盟链</h3>
                             <ul className="products">
                                 {this.state.productList.map((item, index) => {
                                     return (
@@ -199,7 +207,10 @@ class Home extends React.Component {
                                                 <img className="img" src={item.img}/>
                                                 <div>
                                                     <h3 className="name">{item.title}</h3>
-                                                    <p className="desc">{item.desc}</p>
+                                                    <ul className="desc">
+                                                        {item.desc.map((elem, i) => {
+                                                            return <li key={i}>{elem}</li>
+                                                        })}</ul>
                                                 </div>
                                             </div>
                                         )
