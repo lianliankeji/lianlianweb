@@ -6,6 +6,7 @@ import homesData from './Home/getHomeData.js'
 import chainsList from './Platform/chainsList.js'
 import testChainsList from './Platform/testChainsList.js'
 import contractShopList from './Platform/contractShopList.js'
+import contractItem from './Platform/contractItem.js'
 
 
 export default combineReducers({
@@ -13,5 +14,6 @@ export default combineReducers({
     chainsList,
     testChainsList,
     contractShopList,
-	userinfo
+	userinfo,
+    contractItem
 })

@@ -53,6 +53,12 @@ const Buy = Loadable({
     loading: Loading
 })
 
+//购买成功
+const BuySuccess = Loadable({
+    loader: () => import('containers/BuySuccess/'),
+    loading: Loading
+})
+
 //登录
 const Login = Loadable({
     loader: () => import('containers/Login/'),
@@ -62,6 +68,24 @@ const Login = Loadable({
 //找回密码
 const Forgot = Loadable({
     loader: () => import('containers/Forgot/'),
+    loading: Loading
+})
+
+//合约开发
+const ContractDev = Loadable({
+    loader: () => import('containers/ContractDev/'),
+    loading: Loading
+})
+
+//合约上传
+const ContractUpload = Loadable({
+    loader: () => import('containers/ContractUpload/'),
+    loading: Loading
+})
+
+//合约审核
+const ContractVerify = Loadable({
+    loader: () => import('containers/ContractVerify/'),
     loading: Loading
 })
 
@@ -83,6 +107,11 @@ const RouterMap = () => (
 
                 <Route exact path="/platform/contract" component={ContractShop}/>
                 <Route exact path="/platform/contract/buy" component={Buy}/>
+                <Route exact path="/platform/contract/buysuccess" component={BuySuccess}/>
+
+                <Route exact path="/platform/contract/develop" component={ContractDev}/>
+                <Route exact path="/platform/contract/upload" component={ContractUpload}/>
+                <Route exact path="/platform/contract/verify" component={ContractVerify}/>
         </Switch>
     </Router>
 )

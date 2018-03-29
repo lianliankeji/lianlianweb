@@ -1,9 +1,70 @@
 .test-chains-content{
   background-color: #fff;
   padding-bottom: 340px;
+  padding-top: 40px;
 
+  .order{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height:260px;
 
+    .left{
+      width: 100%;
+      margin-right: 10px;
+      box-sizing: border-box;
+      padding-left: 30px;
+      padding-top: 40px;
 
+      .order-title{
+        font-size: 24px;
+        color: #333;
+        padding-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .label{
+        width: 80px;
+        display: inline-block;
+        margin-right: 20px;
+        font-size: 16px;
+        color: #333333;
+        font-weight: bold;
+        line-height: 2.6;
+      }
+
+      .value{
+        font-size: 16px;
+        color: #333333;
+      }
+    }
+
+    .right{
+      width: 320px;
+      text-align: center;
+      box-sizing: border-box;
+      padding-top: 40px;
+      font-size: 14px;
+
+      .rule{
+        color: #4A6BFF;
+        margin-bottom: 0;
+
+        &:first-of-type{
+          margin-bottom: 10px;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .left,.right{
+    border: 1px #C9D2FB solid;
+  }
+
+  .left{
+    //margin-right: 10px;
+  }
   .bg-content{
     margin-bottom: 30px;
     .bg{

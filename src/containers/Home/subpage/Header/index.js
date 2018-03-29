@@ -83,8 +83,7 @@ class Header extends Component {
     }
 
     checkCookie = () => {
-        cookieUtil.removeItem("phoneno")
-        let IsHasPhoneCookie = cookieUtil.hasItem("phoneno")
+        let IsHasPhoneCookie = cookieUtil.hasItem("user")
         if(IsHasPhoneCookie) {
             location.replace("/#/platform")
         }else{

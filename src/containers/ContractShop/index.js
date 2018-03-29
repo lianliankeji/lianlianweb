@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {getContractShopList, showAndHide} from 'actions/Platform/getContractShopList.js'
+import {saveSelectContractIteminfo} from "actions/Platform/selectContractItem.js"
 
 import {
     Button,
@@ -155,13 +156,21 @@ class ContractShop extends React.Component {
         })
     }
 
+    saveSelectContractIteminfo = (data) => {
+        this.props.saveSelectContractIteminfo(data);
+    }
+
     render() {
 
 
         return (
             <div>
                 <Header />
-                <Content contractShopList={this.getContractShopList()} showAndHide={this.showAndHide} />
+                <Content
+                    contractShopList={this.getContractShopList()}
+                    showAndHide={this.showAndHide}
+                    saveSelectContractIteminfo = {this.saveSelectContractIteminfo}
+                />
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
@@ -183,7 +192,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         getContractShopList: bindActionCreators(getContractShopList, dispatch),
-        showAndHide: bindActionCreators(showAndHide, dispatch)
+        showAndHide: bindActionCreators(showAndHide, dispatch),
+        saveSelectContractIteminfo: bindActionCreators(saveSelectContractIteminfo, dispatch)
     }
 }
 

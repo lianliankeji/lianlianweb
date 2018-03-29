@@ -52,12 +52,6 @@ class Content extends Component {
         return (
             <Row type="flex" justify="center" className="platform-content">
                 <Col className="top" span={16}>
-                    {/*<Breadcrumb separator=">">*/}
-                        {/*<Breadcrumb.Item>开放平台</Breadcrumb.Item>*/}
-                        {/*<Breadcrumb.Item href="">加入平台</Breadcrumb.Item>*/}
-                        {/*<Breadcrumb.Item href="">Application List</Breadcrumb.Item>*/}
-                        {/*<Breadcrumb.Item>An Application</Breadcrumb.Item>*/}
-                    {/*</Breadcrumb>*/}
 
                     <Row type="flex" justify="space-between" className="platform-intent">
                         <Col className="item" span={7}>
@@ -76,7 +70,7 @@ class Content extends Component {
                             <img className="img" src={Hezuo} title="合约开发" />
                             <p>有技术能力的用户可签约开发者</p>
                             <p>在商店中出售智能合约</p>
-                            <Button className="button">合约开发</Button>
+                            <Button className="button"><Link to="/platform/contract/develop">合约开发</Link></Button>
                         </Col>
                     </Row>
                 </Col>

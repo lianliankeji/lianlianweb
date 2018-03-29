@@ -9,9 +9,7 @@ import {
 import {
     timeFormat
 } from 'utils/date.js'
-import {
-    getHomesData
-} from 'actions/Home/getHomeData.js'
+import { login, sendMsg } from 'actions/userinfo.js'
 
 import {
     BackTop,
@@ -56,69 +54,33 @@ class Login extends React.Component {
         };
     }
 
-    login = () => {
-        let loginState = this.props.userinfo.login;
+    // login = () => {
+    //     let loginState = this.props.userinfo.login;
+    //
+    //
+    //     if (loginState) {
+    //         this.props.userinfoActions.logout({
+    //             login: false
+    //         })
+    //     } else {
+    //         this.props.userinfoActions.login({
+    //             login: true
+    //         })
+    //     }
+    // }
 
 
-        if (loginState) {
-            this.props.userinfoActions.logout({
-                login: false
-            })
-        } else {
-            this.props.userinfoActions.login({
-                login: true
-            })
-        }
+
+    login = (data) => {
+        this.props.login(data)
     }
 
-    getTableColumns = () => {
-        const columns = [{
-            title: '节点',
-            dataIndex: 'node',
-            key: 'node'
-        }, {
-            title: '交易',
-            dataIndex: 'txid',
-            key: 'txid',
-        }, {
-            title: '信息',
-            dataIndex: 'txInfo',
-            key: 'txInfo',
-            render: (text, row, index) => {
-
-                return (
-                    <Popover placement="top" title={"交易信息"} content={text} trigger="hover">
-                        <span>{text.substr(0,50)}</span>
-                    </Popover>
-                );
-            },
-        }, {
-            title: '区块',
-            dataIndex: 'block',
-            key: 'block',
-        }, {
-            title: '时间',
-            dataIndex: 'seconds',
-            key: 'seconds',
-            render: (text, row, index) => {
-                return timeFormat(text);
-            }
-        }];
-
-        return columns;
-
-    }
-
-    getTableData = () => {
-        const data = this.props.homesData.txRecords;
-
-        data.map((item, index) => {
-            return item.key = JSON.stringify(index);
+    sendMsg = (data) => {
+        this.props.sendMsg(data).then((res) => {
+            console.log(res.data.code)
+        }).catch((err) => {
+            console.log(err)
         })
-
-
-        return data;
-
     }
 
     componentWillMount() {
@@ -140,7 +102,10 @@ class Login extends React.Component {
         return (
             <div>
                 <Header />
-                <Content />
+                <Content
+                    login={this.login}
+                    sendMsg = {this.sendMsg}
+                />
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
@@ -160,7 +125,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        getHomesData: bindActionCreators(getHomesData, dispatch)
+        login: bindActionCreators(login, dispatch),
+        sendMsg: bindActionCreators(sendMsg, dispatch)
     }
 }
 

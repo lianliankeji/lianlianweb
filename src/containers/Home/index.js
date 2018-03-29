@@ -9,9 +9,7 @@ import {
 import {
     timeFormat
 } from 'utils/date.js'
-import {
-    getHomesData
-} from 'actions/Home/getHomeData.js'
+import {getHomesData} from 'actions/Home/getHomeData.js'
 
 import {
     BackTop,
@@ -151,7 +149,7 @@ class Home extends React.Component {
 
         return (
             <div>
-                <Header />
+                <Header userinfo={this.props.userinfo}/>
                 <section className="section1">
                     <Row type="flex" justify="center">
                         <Col span={16}>
@@ -233,7 +231,8 @@ class Home extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        homesData: state.homesData
+        homesData: state.homesData,
+        userinfo: state.userinfo
     }
 }
 

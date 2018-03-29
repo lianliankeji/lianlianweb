@@ -70,7 +70,7 @@ function randomString(len) {
 const httpServer = (opts, data) => {
 
     let Public = { //公共参数
-        'cwd': randomString()
+        // 'cwd': randomString()
     }
 
 

@@ -12,7 +12,7 @@ import {
 import {
     getChainsData,
     showChainsTable
-} from 'actions/Platform/joinPlatform.js'
+} from 'actions/Platform/joinPlatforms.js'
 
 import {
     Button,

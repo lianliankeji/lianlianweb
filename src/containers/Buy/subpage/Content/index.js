@@ -67,9 +67,9 @@ class Content extends Component {
     render() {
         return (
             <Row type="flex" justify="center" className="test-chains-content">
-                <Col className="bg-content" span={24}>
-                    <div className="bg"></div>
-                </Col>
+                {/*<Col className="bg-content" span={24}>*/}
+                    {/*<div className="bg"></div>*/}
+                {/*</Col>*/}
                 <Col className="top" span={16}>
                     <Breadcrumb separator=">">
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
@@ -80,31 +80,34 @@ class Content extends Component {
                     <h2 className="title">支付订单</h2>
 
                     <Row type="flex" justify="space-between" className="chains-intent">
-                        <Col span={19}>
-                            <h3>订单信息</h3>
+                        <Col className="order">
+                            <div className="left">
+                                <h3 className="order-title">订单信息</h3>
 
-                            <div>
                                 <div>
-                                    <span>合约ID：</span>
-                                    <span></span>
-                                </div>
-                                <div>
-                                    <span>发布人：</span>
-                                    <span></span>
-                                </div>
-                                <div>
-                                    <span>合约价格：</span>
-                                    <span></span>
+                                    <div>
+                                        <span className="label">合约ID：</span>
+                                        <span className="value">{this.props.contractItem.id}</span>
+                                    </div>
+                                    <div>
+                                        <span className="label">发布人：</span>
+                                        <span className="value">{this.props.contractItem.publisher}</span>
+                                    </div>
+                                    <div>
+                                        <span className="label">合约价格：</span>
+                                        <span className="value">￥{this.props.contractItem.price}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </Col>
-                        <Col span={5}>
-                            <div>
-                                <img src={Qrcode}/>
-                            </div>
-                            <div>
-                                <p>1.微信搜索小程序“快点plus”</p>
-                                <p>2.进入菜单 我的-我的钱包-付款 </p>
+                            <div className="right">
+                                <div>
+                                    <img width={110} src={Qrcode}/>
+                                </div>
+                                <div>URT收款码</div>
+                                <div>
+                                    <p className="rule">1.微信搜索小程序“快点plus”</p>
+                                    <p className="rule">2.进入菜单 我的-我的钱包-付款 </p>
+                                </div>
                             </div>
                         </Col>
                     </Row>

@@ -35,6 +35,31 @@ export const getChainsData = (payload) => {
 
 //获取该链表格数据
 export const getChainsTable = () => {
+
+    return (dispatch) => {
+    		axios({
+    				method: 'get',
+    				url: BASE_URL + 'loulan/chain/queryall',
+    			}, {
+    				/*firstName: 'Fred',
+    				lastName: 'Flintstone'*/
+    			}).then((response) => {
+    			    let data = response.data.data;
+                    if(response.data.ec == "000000") {
+                        let array = data.map((item, index) => {
+                            return Object.assign({}, item, { display : "none", data: []})
+                        })
+                        dispatch({
+                            type: actionTypes.GET_CHAINS_LIST,
+                            result: array
+                        })
+                    }
+    			})
+    			.catch((error) => {
+    				console.log(error);
+    			});
+
+    	}
     let data = [{
                node:1,
                txid: 2,

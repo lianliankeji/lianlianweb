@@ -3,7 +3,8 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 import {Anchor,Row,Col,Breadcrumb,Button, Input} from 'antd';
 const Search = Input.Search;
-import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
+import {HashRouter as Router,Route,Link,Redirect,Switch, withRouter} from 'react-router-dom'
+import { createHashHistory } from 'history'
 
 
 import './style.scss';
@@ -49,8 +50,11 @@ class Content extends Component {
         this.props.showChainsTable(data, id);
     }
 
-    goBuy() {
-        location.replace("/" + location.hash + "/buy")
+    goBuy(item) {
+        this.props.saveSelectContractIteminfo({
+            data: item
+        });
+        // createHashHistory().push('/platform/contract/buy')
     }
 
     hideShowButton = (index, types) => {
@@ -65,7 +69,7 @@ class Content extends Component {
 
     render() {
         return (
-            <Row type="flex" justify="center" className="test-chains-content">
+            <Row type="flex" justify="center" className="contrat-shop">
                 <Col className="bg-content" span={24}>
                     <div className="bg"></div>
                 </Col>
@@ -84,7 +88,7 @@ class Content extends Component {
                                     <Col key={index} span={10} className="chains-intent-item" style={{height: !item.showAll ? "190px": ""}}>
                                         <img className="img" src={Tongzhi} />
                                         <div className="right">
-                                            <h3 className="name">{item.title}</h3>
+                                            <h3 className="name">{item.name} <span className="version">{`(${item.version})`}</span></h3>
                                             <p className="intro">
                                                 <span className={item.showAll ? "overflowZhankai" : "overflow"} ref={(overflow) => this.overflow = overflow}>{item.description}</span>
                                                 <span
@@ -97,10 +101,11 @@ class Content extends Component {
                                                 onClick={this.hideShowButton.bind(this, index, false)}><span className="close">收起</span></p>
                                             <div className="bottom">
                                                 <div>
-                                                    <span className="price">￥1000</span>
-                                                    <span className="download">(已下载500次)</span>
+                                                    <span className="price">￥{item.price}</span>
+                                                    <span className="download">(已下载{item.download}次)</span>
                                                 </div>
-                                                <Button className="button" size={"default"} onClick={this.goBuy}>购买</Button>
+                                                {/*<Button className="button" size={"default"}><Link to={"/platform/contract/buy" }>购买</Link></Button>*/}
+                                                <Button className="button" size={"default"} onClick={this.goBuy.bind(this, item)}>购买</Button>
                                             </div>
                                         </div>
                                     </Col>
@@ -118,4 +123,4 @@ class Content extends Component {
     }
 }
 
-export default Content;
+export default withRouter(Content);

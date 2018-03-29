@@ -6,66 +6,42 @@ let BASE_URL = process.env.NODE_ENV == "production" ? "https://loulan.lianlianch
 
 //获取链列表
 export const getContractShopList = (payload) => {
-    let array = [
-        {
-            title: "分润",
-            description: "智能合约的管理，如合约查看、上传、修改、升级智能合约的管理，如合约查看、上传、修改、升级智能合约的管理，如合约查看、上传、修改、升级",
-            showAll: false
-        },
-        {
-            title: "分润",
-            description: "智能合约的管理，如合约查看、上传、修改、升级智能合约的管理，如合约查看、上传、修改、升级智能合约的管理，如合约查看、上传、修改、升级",
-            showAll: false
-        },
-        {
-            title: "分润",
-            description: "智能合约的管理，如合约查看、上传、修改、升级智能合约的管理，如合约查看、上传、修改、升级智能合约的管理，如合约查看、上传、修改、升级",
-            showAll: false
-        },
-        {
-            description: "智能合约的管理，如合约查看、上传、修改、升级智能合约的管理，如合约查看、上传、修改、升级智能合约的管理，如合约查看、上传、修改、升级",
-            showAll: false
-        },
-        {
-            title: "分润",
-            description: "智能合约的管理，如合约查看、上传、修改、升级智能合约的管理，如合约查看、上传、修改、升级智能合约的管理，如合约查看、上传、修改、升级",
-            showAll: false
-        }
-    ];
-
     return (dispatch) => {
-        dispatch({
-            type: actionTypes.GET_CONTRACT_SHOP_LIST,
-            result: array
-        });
+        axios({
+            method: 'get',
+            url: BASE_URL + '/loulan/chain/querycontract',
+        }, {
+
+        }).then((response) => {
+            console.log(response);
+            let array = response.data.data;
+            let result = array.map((item, index) => {
+                return Object.assign({}, item, {showAll: false})
+            });
+
+            dispatch({
+                type: actionTypes.GET_CONTRACT_SHOP_LIST,
+                result: result
+            });
+            // let data = response.data.result;
+            // if(response.data.code == "0") {
+            //     item.data = data;
+            //     item.data.map((v,i) => {
+            //         v.seconds = timeFormat(v.seconds);
+            //         v.key = i;
+            //     })
+            //     dispatch({
+            //         type: actionTypes.SHOW_CHAINS_TABLE,
+            //         result: chainsListData
+            //     })
+            //
+            // }
+        })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
-
-
-    // return (dispatch) => {
-    //     axios({
-    //         method: 'get',
-    //         url: BASE_URL + 'loulan/chain/queryall',
-    //     }, {
-    //         /*firstName: 'Fred',
-    //          lastName: 'Flintstone'*/
-    //     }).then((response) => {
-    //         let data = response.data.data;
-    //         if(response.data.ec == "000000") {
-    //             let array = data.map((item, index) => {
-    //                 return Object.assign({}, item, { display : "none", data: []})
-    //             })
-    //             dispatch({
-    //                 type: actionTypes.GET_TEST_CHAINS_LIST,
-    //                 result: array
-    //             })
-    //         }
-    //     })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    //
-    // }
 }
 
 export const showAndHide = (payload) => {

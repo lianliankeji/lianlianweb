@@ -161,7 +161,7 @@ class Buy extends React.Component {
         return (
             <div>
                 <Header />
-                <Content contractShopList={this.getContractShopList()} showAndHide={this.showAndHide} />
+                <Content contractItem = {this.props.contractItem} />
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
@@ -176,7 +176,7 @@ class Buy extends React.Component {
 function mapStateToProps(state) {
 
     return {
-        contractShopData: state.contractShopList
+        contractItem: state.contractItem
     }
 }
 

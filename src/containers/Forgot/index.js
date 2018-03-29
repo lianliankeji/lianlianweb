@@ -9,9 +9,7 @@ import {
 import {
     timeFormat
 } from 'utils/date.js'
-import {
-    getHomesData
-} from 'actions/Home/getHomeData.js'
+import {update, sendMsg} from 'actions/userinfo.js'
 
 import {
     BackTop,
@@ -109,16 +107,16 @@ class Forgot extends React.Component {
 
     }
 
-    getTableData = () => {
-        const data = this.props.homesData.txRecords;
-
-        data.map((item, index) => {
-            return item.key = JSON.stringify(index);
+    sendMsg = (data) => {
+        this.props.sendMsg(data).then((res) => {
+            console.log(res.data.code)
+        }).catch((err) => {
+            console.log(err)
         })
+    }
 
-
-        return data;
-
+    update = (data) => {
+        this.props.update(data)
     }
 
     componentWillMount() {
@@ -140,7 +138,10 @@ class Forgot extends React.Component {
         return (
             <div>
                 <Header />
-                <Content />
+                <Content
+                    update={this.update}
+                    sendMsg = {this.sendMsg}
+                />
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
@@ -160,7 +161,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        getHomesData: bindActionCreators(getHomesData, dispatch)
+        update: bindActionCreators(update, dispatch),
+        sendMsg: bindActionCreators(sendMsg, dispatch)
     }
 }
 

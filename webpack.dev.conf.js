@@ -23,8 +23,13 @@ module.exports = merge(baseWebpackConfig, {
         inline: true,
         progress: true,
         proxy: {
-            '*': {
+            '/loulan': {
                 target: 'https://loulan.lianlianchains.com/',
+                changeOrigin: true,
+                secure: false
+            },
+            "/llchain": {
+                target: 'https://192.168.10.108/',
                 changeOrigin: true,
                 secure: false
             }

@@ -1,3 +1,6 @@
+export const LOGIN = "LOGIN";
+export const UPDATE = "UPDATE";
+export const LOGOUT = "LOGOUT                                                                                                                                                 ";
 export const GET_HOME_DATA = "GET_HOME_DATA";
 
 export const GET_CHAINS_LIST = "GET_CHAINS_LIST";
@@ -7,3 +10,4 @@ export const TEST_LIST_SHOW_AND_HIDE = "TEST_LIST_SHOW_AND_HIDE"; //测试链展
 
 export const GET_CONTRACT_SHOP_LIST = "GET_CONTRACT_SHOP_LIST" //合约商店列表
 export const CONTRACT_LIST_SHOW_AND_HIDE = "CONTRACT_LIST_SHOW_AND_HIDE"; //合约商店列表展开或收起
+export const GET_CONTRACT_ITEMINFO = "GET_CONTRACT_ITEMINFO"; //获取当前选择的合约信息
