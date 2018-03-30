@@ -32,11 +32,19 @@ const Chains = Loadable({
     loading: Loading,
 });
 
+//智能合约
+const IntelligentContract = Loadable({
+    loader: () => import('containers/IntelligentContract/'),
+    loading: Loading,
+});
+
+//测试链
 const TestChains = Loadable({
     loader: () => import('containers/TestChains/'),
     loading: Loading,
 });
 
+//合约执行
 const Zhixing = Loadable({
     loader: () => import('containers/Zhixing/'),
     loading: Loading,
@@ -48,6 +56,7 @@ const ContractShop = Loadable({
     loading: Loading
 })
 
+//购买
 const Buy = Loadable({
     loader: () => import('containers/Buy/'),
     loading: Loading
@@ -102,6 +111,7 @@ const RouterMap = () => (
                 <Route exact path="/platform/forgot" component={Forgot} />
                 <Route exact path='/platform/join' component={JoinPlatform} />
                 <Route exact path='/platform/join/release/:id' component={Chains} />
+                <Route exact path='/platform/join/release/:id/contract' component={IntelligentContract} />
                 <Route exact path='/platform/join/test/:id' component={TestChains} />
                 <Route exact path='/platform/join/test/:id/perform' component={Zhixing} />
 

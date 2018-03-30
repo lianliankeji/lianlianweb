@@ -63,6 +63,18 @@ class Content extends Component {
         return data;
     }
 
+    onSearch = (value) => {
+        this.props.seachReleaseChains(value)
+    }
+
+    update = () => {
+        alert("敬请期待")
+    }
+
+    stop = () => {
+        alert("敬请期待")
+    }
+
     render() {
         return (
             <Row type="flex" justify="center" className="test-chains-content">
@@ -70,10 +82,10 @@ class Content extends Component {
                     <Breadcrumb separator=">">
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/join">加入平台</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href={`/#/platform/join/test/${this.props.chainid}`}>测试链</Breadcrumb.Item>
+                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/join/test">测试链</Breadcrumb.Item>
                     </Breadcrumb>
 
-                    <h2 className="title">测试链</h2>
+                    <h2 className="title">智能合约</h2>
 
 
 
@@ -81,8 +93,8 @@ class Content extends Component {
                         <Col span={12 }>
                             <Search
                                 className="search"
-                                placeholder="input search text"
-                                onSearch={value => console.log(value)}
+                                placeholder="搜索合约"
+                                onSearch={this.onSearch}
                                 enterButton
                             />
                         </Col>
@@ -106,7 +118,8 @@ class Content extends Component {
                                             <p
                                                 style={{display: !item.showAll ? "none" : "block"}}
                                                 onClick={this.hideShowButton.bind(this, index, false)}><span className="close">收起</span></p>
-                                            <Button className="button" size={"default"} onClick={this.goZhixng}>执行</Button>
+                                            <Button className="button" size={"default"} onClick={this.update}>升级</Button>
+                                            <Button className="button" size={"default"} onClick={this.stop}>停用</Button>
                                         </div>
                                     </Col>
                                 )

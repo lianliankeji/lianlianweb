@@ -115,7 +115,9 @@ class Chains extends React.Component {
     }
 
     componentWillMount() {
-        this.props.getTestChainsList();
+        this.props.getTestChainsList({
+            chainid: this.props.match.params.id
+        });
         // var oRoot = document.getElementById('root');
         // var socket = io.connect("https://store.lianlianchains.com");
         // socket.on("chainDataUpdt", function(data) {
@@ -126,7 +128,7 @@ class Chains extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.match.params.id)
+        console.log()
     }
 
     getTestChainsList = () => {
@@ -161,7 +163,10 @@ class Chains extends React.Component {
         return (
             <div>
                 <Header />
-                <Content testChainsList={this.getTestChainsList()} showAndHide={this.showAndHide} />
+                <Content
+                    testChainsList={this.getTestChainsList()}
+                    showAndHide={this.showAndHide}
+                    chainid={this.props.match.params.id}/>
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>

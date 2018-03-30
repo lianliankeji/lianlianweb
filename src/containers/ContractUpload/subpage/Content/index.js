@@ -16,10 +16,21 @@ import Tongzhi from 'images/tongzhi.png';
 import Qrcode from 'images/qrcode.png'
 
 
+
 const formItemLayout = {
-    labelCol: { span: 4 },
-    wrapperCol: { span: 8 },
+    labelCol: {
+        xs: { span: 24 },
+        sm: { span: 5 },
+    },
+    wrapperCol: {
+        xs: { span: 24 },
+        sm: { span: 12 },
+    },
 };
+// const formItemLayout = {
+//     labelCol: { span: 4 },
+//     wrapperCol: { span: 8 },
+// };
 const formTailLayout = {
     labelCol: { span: 4 },
     wrapperCol: { span: 8, offset: 4 },
@@ -84,7 +95,7 @@ class Content extends Component {
     }
 
     render() {
-        const { getFieldDecorator } = this.props.form;
+        const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
         return (
             <Row type="flex" justify="center" className="upload-content">
                 <Col className="top" span={16}>
@@ -99,28 +110,28 @@ class Content extends Component {
                     <Row type="flex" justify="center" className="chains-intent">
                         <Col span={18} className="content">
                             <div className="form-control">
-                                <FormItem {...formItemLayout} label="合约名称">
-                                    {getFieldDecorator('username', {
+                                <FormItem {...formItemLayout} label="合约名称" >
+                                    {getFieldDecorator('name', {
                                         rules: [{
                                             required: true,
-                                            message: 'Please input your name',
+                                            message: '合约名称不能为空',
                                         }],
                                     })(
                                         <Input className="item" placeholder="请输入合约名称" />
                                     )}
                                 </FormItem>
                                 <FormItem {...formItemLayout} label="合约版本">
-                                    {getFieldDecorator('nickname', {
+                                    {getFieldDecorator('version', {
                                         rules: [{
-                                            required: this.state.checkNick,
-                                            message: 'Please input your nickname',
+                                            required: true,
+                                            message: '合约版本不能为空',
                                         }],
                                     })(
                                         <Input className="item" placeholder="请输入合约版本 例：V1.0.0" />
                                     )}
                                 </FormItem>
                                 <FormItem {...formItemLayout} label="合约概述">
-                                    {getFieldDecorator('nickname', {
+                                    {getFieldDecorator('description', {
                                         rules: [{
                                             required: this.state.checkNick,
                                             message: 'Please input your nickname',
@@ -130,7 +141,7 @@ class Content extends Component {
                                     )}
                                 </FormItem>
                                 <FormItem {...formItemLayout} label="合约价格">
-                                    {getFieldDecorator('nickname', {
+                                    {getFieldDecorator('price', {
                                         rules: [{
                                             required: this.state.checkNick,
                                             message: 'Please input your nickname',
@@ -140,7 +151,7 @@ class Content extends Component {
                                     )}
                                 </FormItem>
                                 <FormItem {...formItemLayout} label="合约上传">
-                                    {getFieldDecorator('nickname', {
+                                    {getFieldDecorator('upload', {
                                         rules: [{
                                             required: this.state.checkNick,
                                             message: 'Please input your nickname',
@@ -154,7 +165,8 @@ class Content extends Component {
                                 </FormItem>
                                 <FormItem {...formTailLayout}>
                                     <Button type="primary" onClick={this.check} className="button">
-                                        <Link to="/platform/contract/verify">上传</Link>
+                                        {/*<Link to="/platform/contract/verify">上传</Link>*/}
+                                        上传
                                     </Button>
                                 </FormItem>
                             </div>

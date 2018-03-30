@@ -17,6 +17,10 @@ export default  {
             Verify: {
                 name: "检验短信验证码",
                 path: "loulan/sms/verify"
+            },
+            TestChains: {
+                name: "测试链合约列表",
+                path: "/loulan/chain/querycontract"
             }
         }
     },
@@ -38,6 +42,10 @@ export default  {
             Verify: {
                 name: "检验短信验证码",
                 path: "loulan/sms/verify"
+            },
+            TestChains: {
+                name: "测试链合约列表",
+                path: "/loulan/chain/querycontract"
             }
         }
     }

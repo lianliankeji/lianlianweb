@@ -9,7 +9,7 @@ export const getContractShopList = (payload) => {
     return (dispatch) => {
         axios({
             method: 'get',
-            url: BASE_URL + '/loulan/chain/querycontract',
+            url: BASE_URL + '/loulan/chain/queryallcontract',
         }, {
 
         }).then((response) => {

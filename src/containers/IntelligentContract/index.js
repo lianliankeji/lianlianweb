@@ -1,18 +1,9 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import {
-    connect
-} from 'react-redux'
-import {
-    bindActionCreators
-} from 'redux'
-import {
-    timeFormat
-} from 'utils/date.js'
-import {
-    getChainsData,
-    showChainsTable
-} from 'actions/Platform/joinPlatform.js'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {timeFormat} from 'utils/date.js'
+import {getReleaseChainsList, showAndHide, seachReleaseChains} from 'actions/Platform/getReleaseChainsList.js'
 
 import {
     Button,
@@ -37,7 +28,7 @@ import Assetslogo from 'images/assetslogo.png';
 import Block from 'images/block.png';
 import Nodes from 'images/nodes.png';
 
-class Chains extends React.Component {
+class IntelligentContract extends React.Component {
     constructor(props) {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -124,7 +115,9 @@ class Chains extends React.Component {
     }
 
     componentWillMount() {
-        this.props.getChainsData();
+        this.props.getReleaseChainsList({
+            chainid: this.props.match.params.id
+        });
         // var oRoot = document.getElementById('root');
         // var socket = io.connect("https://store.lianlianchains.com");
         // socket.on("chainDataUpdt", function(data) {
@@ -135,11 +128,11 @@ class Chains extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.match.params.id)
+        console.log()
     }
 
-    getChainsData = () => {
-        return this.props.ChainsData
+    getReleaseChainsList = () => {
+        return this.props.releaseChainsData
     }
 
     showChainsTable = (data, id) => {
@@ -157,6 +150,20 @@ class Chains extends React.Component {
         this.props.showChainsTable(payload)
     }
 
+    seachReleaseChains = (value) => {
+        this.props.seachReleaseChains({
+            name: value,
+            chainid: this.props.match.params.id
+        })
+    }
+
+    showAndHide = (index, types) => {
+        this.props.showAndHide({
+            index,
+            types
+        })
+    }
+
     render() {
 
 
@@ -164,9 +171,10 @@ class Chains extends React.Component {
             <div>
                 <Header />
                 <Content
-                    chainsList={this.getChainsData()}
-                    showChainsTable={this.showChainsTable}
-                    chainid={this.props.match.params.id}/>
+                    testChainsList={this.getReleaseChainsList()}
+                    showAndHide={this.showAndHide}
+                    seachReleaseChains = {this.seachReleaseChains}
+                />
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
@@ -181,18 +189,19 @@ class Chains extends React.Component {
 function mapStateToProps(state) {
 
     return {
-        ChainsData: state.chainsList
+        releaseChainsData: state.releaseChainsList
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getChainsData: bindActionCreators(getChainsData, dispatch),
-        showChainsTable: bindActionCreators(showChainsTable, dispatch)
+        getReleaseChainsList: bindActionCreators(getReleaseChainsList, dispatch),
+        seachReleaseChains: bindActionCreators(seachReleaseChains, dispatch),
+        showAndHide: bindActionCreators(showAndHide, dispatch)
     }
 }
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Chains)
+)(IntelligentContract)

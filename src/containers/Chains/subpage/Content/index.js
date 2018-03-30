@@ -3,6 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 import {Anchor,Row,Col,Breadcrumb,Button} from 'antd';
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
+import{createHashHistory} from "history"
 
 import './style.scss';
 
@@ -46,6 +47,10 @@ class Content extends Component {
         this.props.showChainsTable(data, id);
     }
 
+    skipToContract = () => {
+        createHashHistory().push(`/platform/join/release/${this.props.chainid}/contract`)
+    }
+
     render() {
         return (
             <Row type="flex" justify="center" className="chains-content">
@@ -59,7 +64,7 @@ class Content extends Component {
                     <h2 className="title">正式链</h2>
 
                     <Row type="flex" justify="space-between" className="chains-intent">
-                        <Col span={10} className="chains-intent-item">
+                        <Col span={10} className="chains-intent-item" onClick={this.skipToContract}>
                             <img className="img" src={Tongzhi} />
                             <div>
                                 <h3 className="name">智能合约</h3>

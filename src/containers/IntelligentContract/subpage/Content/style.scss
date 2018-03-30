@@ -1,70 +1,7 @@
-.upload-content{
+.test-chains-content{
   background-color: #fff;
+  padding-top: 30px;
   padding-bottom: 340px;
-  padding-top: 40px;
-
-  .content{
-    width: 700px;
-    //height: 600px;
-    border:1px #C9D2FB solid;
-    background-color: #ECEFFF;
-    padding: 70px;
-    font-size: 16px;
-    color: #333333;
-
-    .item{
-      width: 450px;
-      margin-top: 0;
-      position: relative;
-
-
-      &.upload{
-        border:none;
-        padding:0;
-        display: inline-block;
-
-        .upload-item{
-          font-size: 16px;
-          color: #4A6BFF;
-          text-decoration: underline;
-          cursor: pointer;
-        }
-
-        .upload-item:last-of-type{
-          margin-left: 50px;
-        }
-      }
-    }
-
-    .textarea{
-      max-width: 450px;
-      min-height: 160px;
-    }
-
-    .button{
-      width: 450px;
-      height: 40px;
-      line-height: 40px;
-    }
-
-    .bottom{
-      padding-top: 20px;
-      line-height: 2;
-
-      .button{
-        color: #4A6BFF;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-    }
-
-  }
-
-  .rule{
-    width: 300px;
-    margin: 30px auto;
-  }
-
 
   .BreadcrumbItem:hover{
     color: #4A6BFF;
@@ -90,16 +27,21 @@
     }
   }
 
-  //.search-content{
-  //  width: 100%;
-  //}
-  //
-  //.search{
-  //  margin: 40px auto;
-  //  width: 100%;
-  //  display: inline-block;
-  //  margin-bottom: 0;
-  //}
+  .search-content{
+    width: 100%;
+
+    .ant-input{
+      text-align: center;
+    }
+  }
+
+  .search{
+    margin: 40px auto;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 0;
+
+  }
 
   .item{
     display: flex;
@@ -206,6 +148,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         width: 80%;
+        min-width: 87%;
         display: inline-block;
       }
 
@@ -225,26 +168,14 @@
       text-decoration: underline;
       cursor: pointer;
     }
-    .bottom{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .price{
-        font-size: 24px;
-        color: #FFAC4A;
-      }
-
-      .download{
-        font-size: 14px;
-        color: #666666;
-        margin-left: 14px;
-      }
-    }
     .ant-btn{
-      width: 90px;
+      width: 100px;
       background-color: #4A6BFF;
       color: #fff;
+
+      &:first-of-type{
+        margin-right: 30px;
+      }
     }
   }
 }
