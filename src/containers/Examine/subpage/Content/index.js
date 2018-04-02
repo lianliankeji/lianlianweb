@@ -4,7 +4,6 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {Anchor,Row,Col,Breadcrumb,Button, Input} from 'antd';
 const Search = Input.Search;
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
-import {createHashHistory} from "history"
 
 
 import './style.scss';
@@ -65,40 +64,35 @@ class Content extends Component {
         return data;
     }
 
-    goBack = () => {
-        location.replace("/" + location.hash + "/perform")
-    }
-
     render() {
         return (
             <Row type="flex" justify="center" className="verify-content">
                 <Col className="top" span={16}>
                     <Breadcrumb separator=">">
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/develop">合约开发</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/upload">合约上传</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/verify">审核中</Breadcrumb.Item>
+                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/develop">合约商店</Breadcrumb.Item>
+                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/upload">合约购买</Breadcrumb.Item>
                     </Breadcrumb>
 
-                    <h2 className="title">合约已发布  正在审核中...</h2>
+                    <h2 className="title">购买成功.</h2>
 
                     <Row type="flex" justify="center" className="chains-intent">
                         <Col span={18} className="content">
                             <div className="section">
                                 <div>
                                     <span className="label">合约ID:</span>
-                                    <span>{this.props.uploadContractInfo.id}</span>
+                                    <span>5456456456465465456465456</span>
                                 </div>
                                 <div className="pulisher">
                                     <span className="label">发布人:</span>
-                                    <span>{this.props.uploadContractInfo.publisher}</span>
+                                    <span>18610270284</span>
                                 </div>
                             </div>
 
                         </Col>
                     </Row>
                     <div className="button-content">
-                        <Button className="Back" onClick={this.goBack}>返回</Button>
+                        <Button className="Back"><Link to="/platform">返回</Link></Button>
                     </div>
 
 

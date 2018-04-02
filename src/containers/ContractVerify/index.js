@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
-import {getContractShopList, showAndHide} from 'actions/Platform/getContractShopList.js'
+
 
 import {
     Button,
@@ -115,22 +115,11 @@ class ContractVerify extends React.Component {
     }
 
     componentWillMount() {
-        this.props.getContractShopList();
-        // var oRoot = document.getElementById('root');
-        // var socket = io.connect("https://store.lianlianchains.com");
-        // socket.on("chainDataUpdt", function(data) {
-        //     console.log(data);
-        //     // oRoot.innerText = data.hello;
-        //     // socket.emit("client", {my: "data"})
-        // });
+
     }
 
     componentDidMount() {
         console.log(this.props.match.params.id)
-    }
-
-    getContractShopList = () => {
-        return this.props.contractShopData
     }
 
     showChainsTable = (data, id) => {
@@ -161,7 +150,7 @@ class ContractVerify extends React.Component {
         return (
             <div>
                 <Header />
-                <Content contractItem = {this.props.contractItem} />
+                <Content uploadContractInfo = {this.props.uploadContractInfo} />
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
@@ -176,14 +165,13 @@ class ContractVerify extends React.Component {
 function mapStateToProps(state) {
 
     return {
-        contractItem: state.contractItem
+        uploadContractInfo: state.uploadContractInfo
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getContractShopList: bindActionCreators(getContractShopList, dispatch),
-        showAndHide: bindActionCreators(showAndHide, dispatch)
+
     }
 }
 

@@ -82,7 +82,7 @@ class Content extends Component {
                     <Breadcrumb separator=">">
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/join">加入平台</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/join/test">测试链</Breadcrumb.Item>
+                        <Breadcrumb.Item className="BreadcrumbItem" href={`/#/platform/join/release/${this.props.chainid}/contract`}>正式链</Breadcrumb.Item>
                     </Breadcrumb>
 
                     <h2 className="title">智能合约</h2>

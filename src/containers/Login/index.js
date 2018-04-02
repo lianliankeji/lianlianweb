@@ -1,15 +1,10 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import {
-    connect
-} from 'react-redux'
-import {
-    bindActionCreators
-} from 'redux'
-import {
-    timeFormat
-} from 'utils/date.js'
-import { login, sendMsg } from 'actions/userinfo.js'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {timeFormat} from 'utils/date.js'
+import { getQRCode } from 'actions/login.js'
+import {IWebSocket} from "utils/socket.js"
 
 import {
     BackTop,
@@ -19,6 +14,7 @@ import {
     Progress
 } from 'antd';
 import './style.scss'
+
 
 import Header from './subpage/Header/index.js'
 import Content from './subpage/Content/';
@@ -38,49 +34,33 @@ class Login extends React.Component {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-            allianceList: [{
-                img: OpenLogo,
-                charac: "开放",
-                descList: ["智能合约定制化", "联盟链共识节点可灵活扩展接入", "成熟的BAAS平台快速区块链赋能"]
-            }, {
-                img: SafeLogo,
-                charac: "安全",
-                descList: ["手机二次验证", "ECDSA数字证书", "决策委员会多重签名"]
-            }, {
-                img: EcologyLogo,
-                charac: "生态",
-                descList: ["零售行业互链互通", "零售供应链金融数字贸易"]
-            }]
+            qrcode: ""
         };
     }
 
-    // login = () => {
-    //     let loginState = this.props.userinfo.login;
+    // login = (data) => {
+    //     this.props.login(data)
+    // }
     //
-    //
-    //     if (loginState) {
-    //         this.props.userinfoActions.logout({
-    //             login: false
-    //         })
-    //     } else {
-    //         this.props.userinfoActions.login({
-    //             login: true
-    //         })
-    //     }
+    // sendMsg = (data) => {
+    //     this.props.sendMsg(data).then((res) => {
+    //         console.log(res.data.code)
+    //     }).catch((err) => {
+    //         console.log(err)
+    //     })
     // }
 
+    _getQRCode() {
+        this.props.getQRCode().then((response) => {
+            console.log(response);
+            this.setState({
+                qrcode: response.data
+            })
 
-
-    login = (data) => {
-        this.props.login(data)
-    }
-
-    sendMsg = (data) => {
-        this.props.sendMsg(data).then((res) => {
-            console.log(res.data.code)
-        }).catch((err) => {
-            console.log(err)
         })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     componentWillMount() {
@@ -88,7 +68,21 @@ class Login extends React.Component {
     }
 
     componentDidMount() {
-
+        this._getQRCode();
+        var system = IWebSocket({
+            uri:"store.lianlianchains.com/websocket"
+            // 可以自定义四大事件
+            ,onOpen: function(event) {
+                console.log("阅读时长统计WebSocket开启！");
+                // websockets.countReadTimes.timeout=setTimeout("plusReadTimes()", 60000);
+            }
+            ,onClose: function(event){
+                console.log("阅读时长统计WebSocket关闭！");
+                // if ("undefined"!=typeof websockets.countReadTimes.timeout) clearTimeout(websockets.countReadTimes.timeout);
+            },onMessage: function(event) {
+                console.log(event.toString())
+            }
+        });
     }
 
     render() {
@@ -103,8 +97,7 @@ class Login extends React.Component {
             <div>
                 <Header />
                 <Content
-                    login={this.login}
-                    sendMsg = {this.sendMsg}
+                    qrcode={this.state.qrcode}
                 />
                 <Footer />
                 <BackTop>
@@ -125,8 +118,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        login: bindActionCreators(login, dispatch),
-        sendMsg: bindActionCreators(sendMsg, dispatch)
+        // login: bindActionCreators(login, dispatch),
+        // sendMsg: bindActionCreators(sendMsg, dispatch),
+        getQRCode: bindActionCreators(getQRCode, dispatch)
     }
 }
 

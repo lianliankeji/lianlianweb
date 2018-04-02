@@ -129,6 +129,7 @@ class Content extends Component {
                 <Col className="top" span={8}>
                     <div className="content">
                         <h3 className="title">登录</h3>
+                        <img src={this.props.qrcode} />
                         <div className="form-control">
                             <label className="label">手机号</label>
                             <InputNumber className="InputNumber" onChange={this.getPhoneno}/>

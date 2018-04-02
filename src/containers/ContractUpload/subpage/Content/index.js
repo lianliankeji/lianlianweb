@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-import {Form, Input, Anchor,Row,Col,Breadcrumb,Button,Checkbox} from 'antd';
+import {Upload,Select, message, Form, Input, Anchor,Row,Col,Breadcrumb,Button,Checkbox} from 'antd';
 const FormItem = Form.Item;
 const Search = Input.Search;
+const Option = Select.Option;
 const { TextArea } = Input;
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
+import {cookieUtil} from "utils/cookie.js"
 
 
 import './style.scss';
@@ -41,7 +43,10 @@ class Content extends Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
             checkNick: false,
-
+            uploaded1: false,
+            uploaded2: false,
+            document: "",
+            code: ""
         }
     }
 
@@ -94,8 +99,103 @@ class Content extends Component {
         });
     }
 
+    onSubmit = (e) => {
+        e.preventDefault();
+        let user = "";
+        if(cookieUtil.hasItem("user")) {
+            user = cookieUtil.getItem("user");
+        }else{
+            location.replace("/#/platform/login")
+            return;
+        }
+
+        this.props.form.validateFields((err, values) => {
+            if (!err) {
+                console.log('Received values of form: ', values);
+            }else{
+                message.error("请完善信息");
+
+                reuturn;
+            }
+        });
+        if(this.state.uploaded1 && this.state.uploaded2) {
+            this.props.contractSave(
+                Object.assign({},this.props.form.getFieldsValue(),
+                    {
+                        document: this.state.document,
+                        code: this.state.code,
+                        testflag: 0,
+                        publisher: user
+                    })
+            )
+        }else{
+            if(!this.state.uploaded1) {
+                message.error("请上传文档");
+            }else{
+                message.error("请上传代码");
+            }
+
+        }
+    }
+
+    getChainidOptions = () => {
+        let data = this.props.getChainsData;
+
+        data.map((item, index) => {
+            return <Option key={index} value={item.chainid}>{item.chainid}</Option>
+        })
+    }
+
     render() {
         const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
+        const props = {
+            name: 'test',
+            action: '/loulan/upload',
+            method: 'post',
+            data: {
+                openid: "18610270284"
+            },
+            onChange:(info) => {
+                if (info.file.status !== 'uploading') {
+                    console.log(info.file.response,);
+                    this.setState({
+                        document: info.file.response
+                    })
+                }
+                if (info.file.status === 'done') {
+                    message.success(`${info.file.name} file uploaded successfully`);
+                    this.setState({
+                        uploaded1: true
+                    })
+                } else if (info.file.status === 'error') {
+                    message.error(`${info.file.name} file upload failed.`);
+                }
+            },
+        };
+        const props2 = {
+            name: 'test',
+            action: '/loulan/upload',
+            method: 'post',
+            data: {
+                openid: "18610270284"
+            },
+            onChange:(info) => {
+                if (info.file.status !== 'uploading') {
+                    console.log(info.file, info.fileList);
+                    this.setState({
+                        code: info.file.response
+                    })
+                }
+                if (info.file.status === 'done') {
+                    message.success(`${info.file.name} file uploaded successfully`);
+                    this.setState({
+                        uploaded2: true
+                    })
+                } else if (info.file.status === 'error') {
+                    message.error(`${info.file.name} file upload failed.`);
+                }
+            },
+        };
         return (
             <Row type="flex" justify="center" className="upload-content">
                 <Col className="top" span={16}>
@@ -110,6 +210,7 @@ class Content extends Component {
                     <Row type="flex" justify="center" className="chains-intent">
                         <Col span={18} className="content">
                             <div className="form-control">
+                                <form onSubmit={this.onSubmit}>
                                 <FormItem {...formItemLayout} label="合约名称" >
                                     {getFieldDecorator('name', {
                                         rules: [{
@@ -130,45 +231,54 @@ class Content extends Component {
                                         <Input className="item" placeholder="请输入合约版本 例：V1.0.0" />
                                     )}
                                 </FormItem>
-                                <FormItem {...formItemLayout} label="合约概述">
+                                <FormItem {...formItemLayout} label="合约概述"  >
                                     {getFieldDecorator('description', {
                                         rules: [{
-                                            required: this.state.checkNick,
-                                            message: 'Please input your nickname',
+                                            required: true,
+                                            message: '合约概述不能为空',
                                         }],
                                     })(
-                                        <TextArea  rows={4} className="item textarea" placeholder="400字以内" />
+                                        <TextArea maxLength={400}  rows={4} className="item textarea" placeholder="400字以内" />
                                     )}
                                 </FormItem>
                                 <FormItem {...formItemLayout} label="合约价格">
                                     {getFieldDecorator('price', {
                                         rules: [{
-                                            required: this.state.checkNick,
-                                            message: 'Please input your nickname',
+                                            required: true,
+                                            message: '合约价格不能为空',
                                         }],
                                     })(
                                         <Input className="item" placeholder="请输入合约价格" />
                                     )}
                                 </FormItem>
-                                <FormItem {...formItemLayout} label="合约上传">
-                                    {getFieldDecorator('upload', {
-                                        rules: [{
-                                            required: this.state.checkNick,
-                                            message: 'Please input your nickname',
-                                        }],
+                                <FormItem {...formItemLayout} label="链ID">
+                                    {getFieldDecorator('chainid', {
+                                        rules: [
+                                            { required: true, message: '链ID不能为空' },
+                                        ],
                                     })(
-                                        <div className="item upload">
-                                            <span className="upload-item">上传文档</span>
-                                            <span className="upload-item">上传代码</span>
-                                        </div>
+                                        <Select placeholder="请选择链">
+                                            {
+                                                this.props.getChainsData.map((item, index) => {
+                                                    return <Option key={index} value={item.chainid}>{item.name}</Option>
+                                                })
+                                            }
+                                        </Select>
                                     )}
                                 </FormItem>
+                                <FormItem {...formItemLayout} label="合约上传" required="true">
+                                    <div className="item upload">
+                                        <Upload {...props}><span className="upload-item">上传文档</span></Upload>
+                                        <Upload {...props2}><span className="upload-item">上传代码</span></Upload>
+                                    </div>
+                                </FormItem>
                                 <FormItem {...formTailLayout}>
-                                    <Button type="primary" onClick={this.check} className="button">
+                                    <Button type="primary" htmlType="submit"  className="button">
                                         {/*<Link to="/platform/contract/verify">上传</Link>*/}
                                         上传
                                     </Button>
                                 </FormItem>
+                                </form>
                             </div>
                         </Col>
                     </Row>

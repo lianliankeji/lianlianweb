@@ -63,6 +63,10 @@ class Content extends Component {
         return data;
     }
 
+    onSearch = (value) => {
+        this.props.seachTestChains(value)
+    }
+
     render() {
         return (
             <Row type="flex" justify="center" className="test-chains-content">
@@ -81,8 +85,8 @@ class Content extends Component {
                         <Col span={12 }>
                             <Search
                                 className="search"
-                                placeholder="input search text"
-                                onSearch={value => console.log(value)}
+                                placeholder="搜索合约"
+                                onSearch={this.onSearch}
                                 enterButton
                             />
                         </Col>

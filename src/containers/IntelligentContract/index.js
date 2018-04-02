@@ -174,6 +174,7 @@ class IntelligentContract extends React.Component {
                     testChainsList={this.getReleaseChainsList()}
                     showAndHide={this.showAndHide}
                     seachReleaseChains = {this.seachReleaseChains}
+                    chainid={this.props.match.params.id}
                 />
                 <Footer />
                 <BackTop>

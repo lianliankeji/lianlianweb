@@ -8,6 +8,7 @@ import testChainsList from './Platform/testChainsList.js'
 import releaseChainsList from './Platform/releaseChainsList.js'
 import contractShopList from './Platform/contractShopList.js'
 import contractItem from './Platform/contractItem.js'
+import uploadContractInfo from './Platform/uploadContract.js'
 
 
 export default combineReducers({
@@ -17,5 +18,6 @@ export default combineReducers({
     contractShopList,
     releaseChainsList,
 	userinfo,
-    contractItem
+    contractItem,
+    uploadContractInfo
 })

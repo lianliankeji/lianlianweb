@@ -3,8 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
-import {contractSave} from 'actions/Platform/contractSave.js'
-import {getChainsData} from 'actions/Platform/joinPlatforms.js'
+import {getContractShopList, showAndHide} from 'actions/Platform/getContractShopList.js'
 
 import {
     Button,
@@ -29,7 +28,7 @@ import Assetslogo from 'images/assetslogo.png';
 import Block from 'images/block.png';
 import Nodes from 'images/nodes.png';
 
-class ContractUpload extends React.Component {
+class Examine extends React.Component {
     constructor(props) {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -103,22 +102,58 @@ class ContractUpload extends React.Component {
 
     }
 
-    getChainsData = () => {
-        const data = this.props.ChainsData;
-
-        return data;
+    getTableData = () => {
+        // const data = this.props.homesData.txRecords;
+        //
+        // data.map((item, index) => {
+        //     return item.key = JSON.stringify(index);
+        // })
+        //
+        //
+        // return data;
 
     }
 
     componentWillMount() {
-        this.props.getChainsData();
+        this.props.getContractShopList();
+        // var oRoot = document.getElementById('root');
+        // var socket = io.connect("https://store.lianlianchains.com");
+        // socket.on("chainDataUpdt", function(data) {
+        //     console.log(data);
+        //     // oRoot.innerText = data.hello;
+        //     // socket.emit("client", {my: "data"})
+        // });
     }
 
     componentDidMount() {
         console.log(this.props.match.params.id)
     }
 
+    getContractShopList = () => {
+        return this.props.contractShopData
+    }
 
+    showChainsTable = (data, id) => {
+        let payload = data.map((item, index) => {
+            if(index == id) {
+                if(item.display == "none") {
+                    item  = Object.assign({}, item, {display: "block"})
+                }else{
+                    item  = Object.assign({}, item, {display: "none"})
+                }
+            }
+
+            return item
+        })
+        this.props.showChainsTable(payload)
+    }
+
+    showAndHide = (index, types) => {
+        this.props.showAndHide({
+            index,
+            types
+        })
+    }
 
     render() {
 
@@ -126,10 +161,7 @@ class ContractUpload extends React.Component {
         return (
             <div>
                 <Header />
-                <Content
-                    contractSave = {this.props.contractSave}
-                    getChainsData = {this.props.ChainsData}
-                />
+                <Content contractItem = {this.props.contractItem} />
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
@@ -144,18 +176,18 @@ class ContractUpload extends React.Component {
 function mapStateToProps(state) {
 
     return {
-        ChainsData: state.chainsList
+        contractItem: state.contractItem
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        contractSave: bindActionCreators(contractSave, dispatch),
-        getChainsData: bindActionCreators(getChainsData, dispatch)
+        getContractShopList: bindActionCreators(getContractShopList, dispatch),
+        showAndHide: bindActionCreators(showAndHide, dispatch)
     }
 }
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ContractUpload)
+)(Examine)

@@ -35,10 +35,11 @@ export const seachReleaseChains = (payload) => {
     return (dispatch) => {
         axios({
             method: 'get',
-            url: BASE_URL + '/loulan/chain/querycontractbyname',
+            url: BASE_URL + '/loulan/chain/querycontractbynameflag',
         }, {
             name: payload.name,
-            chainid: payload.chainid
+            chainid: payload.chainid,
+            testflag: 1,
         }).then((response) => {
             let data = response.data.data;
             if(response.data.ec == "000000") {

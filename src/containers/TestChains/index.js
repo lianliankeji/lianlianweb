@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
-import {getTestChainsList, showAndHide} from 'actions/Platform/getTestChainsList.js'
+import {getTestChainsList, showAndHide, seachTestChains} from 'actions/Platform/getTestChainsList.js'
 
 import {
     Button,
@@ -135,6 +135,13 @@ class Chains extends React.Component {
         return this.props.testChainsData
     }
 
+    seachTestChains = (value) => {
+        this.props.seachTestChains({
+            name: value,
+            chainid: this.props.match.params.id
+        })
+    }
+
     showChainsTable = (data, id) => {
         let payload = data.map((item, index) => {
             if(index == id) {
@@ -166,6 +173,7 @@ class Chains extends React.Component {
                 <Content
                     testChainsList={this.getTestChainsList()}
                     showAndHide={this.showAndHide}
+                    seachTestChains={this.seachTestChains}
                     chainid={this.props.match.params.id}/>
                 <Footer />
                 <BackTop>
@@ -188,7 +196,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         getTestChainsList: bindActionCreators(getTestChainsList, dispatch),
-        showAndHide: bindActionCreators(showAndHide, dispatch)
+        showAndHide: bindActionCreators(showAndHide, dispatch),
+        seachTestChains: bindActionCreators(seachTestChains, dispatch)
     }
 }
 
