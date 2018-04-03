@@ -32,6 +32,11 @@ module.exports = merge(baseWebpackConfig, {
                 target: 'https://192.168.10.108/',
                 changeOrigin: true,
                 secure: false
+            },
+            "/retail": {
+                target: "https://192.168.10.107/",
+                changeOrigin: true,
+                secure: false
             }
         },
         disableHostCheck: true //新版的webpack-dev-server出于安全考虑，默认检查hostname，如果hostname不是配置内的，将中断访问

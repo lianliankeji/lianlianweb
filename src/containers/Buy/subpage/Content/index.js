@@ -20,51 +20,17 @@ class Content extends Component {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
-            showAll: "block",
-            headerNav: [{
-                name: "首页"
-            }, {
-                name: "申请入驻"
-            }, {
-                name: "联系我们"
-            }],
+
 
         }
     }
 
-    toggleLogin = () => {
-        this.props.logFn();
-    }
 
-    getChainsList = () => {
-        const data = this.props.chainsList;
 
-        if(data && data.length) {
-            return data
-        }
 
-    }
-
-    tableView(data, id){
-        console.log(id)
-        this.props.showChainsTable(data, id);
-    }
-
-    goZhixng() {
-        location.replace("/" + location.hash + "/perform")
-    }
-
-    hideShowButton = (index, types) => {
-        this.props.showAndHide(index, types);
-    }
-
-    getContractShopList = () => {
-        let data = this.props.contractShopList;
-
-        return data;
-    }
 
     render() {
+        console.log(this.props.contractItem)
         return (
             <Row type="flex" justify="center" className="test-chains-content">
                 {/*<Col className="bg-content" span={24}>*/}
@@ -87,21 +53,21 @@ class Content extends Component {
                                 <div>
                                     <div>
                                         <span className="label">合约ID：</span>
-                                        <span className="value">{this.props.contractItem.id}</span>
+                                        <span className="value">{this.props.orderInfo.id}</span>
                                     </div>
                                     <div>
                                         <span className="label">发布人：</span>
-                                        <span className="value">{this.props.contractItem.publisher}</span>
+                                        <span className="value">{this.props.orderInfo.publisher}</span>
                                     </div>
                                     <div>
                                         <span className="label">合约价格：</span>
-                                        <span className="value">￥{this.props.contractItem.price}</span>
+                                        <span className="value">￥{this.props.orderInfo.price}</span>
                                     </div>
                                 </div>
                             </div>
                             <div className="right">
                                 <div>
-                                    <img width={110} src={Qrcode}/>
+                                    <img width={110} src={this.props.qrcode}/>
                                 </div>
                                 <div>URT收款码</div>
                                 <div>

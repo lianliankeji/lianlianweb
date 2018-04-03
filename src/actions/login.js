@@ -37,22 +37,7 @@ export const getQRCode = (data) => {
         }, {
             /*firstName: 'Fred',
              lastName: 'Flintstone'*/
-        }).then((response) => {
-           console.log(response);
-           if(response.data.ec == "000000") {
-               return axios({
-                   method: 'get',
-                   url: BASE_URL + '/loulan/getTwoBarCodes',
-               }, {
-                   uuid: response.data.data,
-                   width: 400
-               })
-           }
-
         })
-            .catch((error) => {
-                console.log(error);
-            });
 
     }
 }

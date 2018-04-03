@@ -4,7 +4,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {Anchor,Row,Col,Breadcrumb,Button, Input} from 'antd';
 const Search = Input.Search;
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
-
+import {createHashHistory} from "history"
 
 import './style.scss';
 
@@ -49,8 +49,10 @@ class Content extends Component {
         this.props.showChainsTable(data, id);
     }
 
-    goZhixng() {
-        location.replace("/" + location.hash + "/perform")
+    goZhixng(name) {
+        localStorage.setItem("name",name);
+
+        createHashHistory().push(`/platform/join/test/${this.state.id}/perform`)
     }
 
     hideShowButton = (index, types) => {
@@ -65,6 +67,12 @@ class Content extends Component {
 
     onSearch = (value) => {
         this.props.seachTestChains(value)
+    }
+
+    componentDidMount() {
+        this.setState({
+            id: this.props.chainid
+        })
     }
 
     render() {
@@ -110,7 +118,8 @@ class Content extends Component {
                                             <p
                                                 style={{display: !item.showAll ? "none" : "block"}}
                                                 onClick={this.hideShowButton.bind(this, index, false)}><span className="close">收起</span></p>
-                                            <Button className="button" size={"default"} onClick={this.goZhixng}>执行</Button>
+                                            {/*<Button className="button" size={"default"} ><Link to={`/platform/join/test/${this.props.chainid}/perform`}>执行</Link></Button>*/}
+                                            <Button className="button" size={"default"} onClick={this.goZhixng.bind(this, item.name)}>执行</Button>
                                         </div>
                                     </Col>
                                 )

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-import {Anchor,Row,Col,Input,Button,InputNumber } from 'antd';
+import {Anchor, Row, Col, Input, Button, InputNumber, Spin} from 'antd';
 import axios from 'api/axios.js'
 import apiRoot from "api/apiJson.js"
 let BASE_URL = process.env.NODE_ENV == "production" ? apiRoot["release"].baseUrl : ""
@@ -30,7 +30,7 @@ class Content extends Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
             IsCanSend: true,
-            phoneno:"",
+            phoneno: "",
             sendButton: "获取",
             Nosending: true
         }
@@ -44,14 +44,14 @@ class Content extends Component {
 
     getCode = (e) => {
         this.setState({
-            code:  e.target.value
+            code: e.target.value
         })
     }
 
     getPassword = (e) => {
 
         this.setState({
-            password:  e.target.value
+            password: e.target.value
         })
 
         console.log(!this.state.password)
@@ -79,21 +79,21 @@ class Content extends Component {
         })
 
         let timer = setInterval(() => {
-            if(num == 0) {
+            if (num == 0) {
                 this.setState({
                     sendButton: "获取",
                     Nosending: true
                 });
 
                 clearInterval(timer)
-            }else{
+            } else {
                 num--
                 this.setState({
                     sendButton: num + "秒"
                 });
             }
 
-        },1000)
+        }, 1000)
     }
 
     checkMsg = () => {
@@ -108,12 +108,12 @@ class Content extends Component {
 
     login = () => {
         this.checkMsg().then((res) => {
-            if(res.data.code == 200) {
+            if (res.data.code == 200) {
                 this.props.login({
                     phoneno: this.state.phoneno,
                     password: this.state.password
                 })
-            }else{
+            } else {
                 alert("222")
             }
 
@@ -124,37 +124,41 @@ class Content extends Component {
     }
 
     render() {
+
         return (
             <Row type="flex" justify="center" className="login-content">
                 <Col className="top" span={8}>
-                    <div className="content">
-                        <h3 className="title">登录</h3>
-                        <img src={this.props.qrcode} />
-                        <div className="form-control">
-                            <label className="label">手机号</label>
-                            <InputNumber className="InputNumber" onChange={this.getPhoneno}/>
-                        </div>
-                        <div className="form-control">
-                            <label className="label">验证码</label>
-                            <div>
-                                <Input className="pwd" onChange={this.getCode} />
-                                <Button disabled={this.IsCanSend()} className="get" onClick={this.sendmsg}>{this.state.sendButton}</Button>
-                            </div>
-                        </div>
-                        <div className="form-control">
-                            <label className="label">密码</label>
-                            <Input onChange={this.getPassword} />
-                        </div>
-                        <p className="rule">首次使用请直接填写密码，作为后续登录使用</p>
-                        <div className="form-control button-control">
-                            <Button disabled={this.IsCanLogin()} className="button" onClick={this.login}>登 录</Button>
-                        </div>
-                        <div className="forgot-control">
-                            <span className="forgot"><Link to="/platform/forgot">忘记密码</Link></span>
-                        </div>
+                    <Spin spinning={this.props.loading} tip="正在登陆...">
+                        <div className="content">
+                            <h3 className="title">登录</h3>
 
-                    </div>
+                            <img src={this.props.qrcode}/>
 
+                            {/*<div className="form-control">*/}
+                            {/*<label className="label">手机号</label>*/}
+                            {/*<InputNumber className="InputNumber" onChange={this.getPhoneno}/>*/}
+                            {/*</div>*/}
+                            {/*<div className="form-control">*/}
+                            {/*<label className="label">验证码</label>*/}
+                            {/*<div>*/}
+                            {/*<Input className="pwd" onChange={this.getCode} />*/}
+                            {/*<Button disabled={this.IsCanSend()} className="get" onClick={this.sendmsg}>{this.state.sendButton}</Button>*/}
+                            {/*</div>*/}
+                            {/*</div>*/}
+                            {/*<div className="form-control">*/}
+                            {/*<label className="label">密码</label>*/}
+                            {/*<Input onChange={this.getPassword} />*/}
+                            {/*</div>*/}
+                            {/*<p className="rule">首次使用请直接填写密码，作为后续登录使用</p>*/}
+                            {/*<div className="form-control button-control">*/}
+                            {/*<Button disabled={this.IsCanLogin()} className="button" onClick={this.login}>登 录</Button>*/}
+                            {/*</div>*/}
+                            {/*<div className="forgot-control">*/}
+                            {/*<span className="forgot"><Link to="/platform/forgot">忘记密码</Link></span>*/}
+                            {/*</div>*/}
+
+                        </div>
+                    </Spin>
                 </Col>
             </Row>
 

@@ -158,6 +158,8 @@ class ContractShop extends React.Component {
 
     saveSelectContractIteminfo = (data) => {
         this.props.saveSelectContractIteminfo(data);
+        localStorage.setItem("orderInfo", JSON.stringify(data.data));
+
     }
 
     render() {

@@ -19,7 +19,7 @@ export function login(payload) {
 			}).then(function(response) {
 				console.log(response);
 				if(response.data.ec == "000000") {
-                    message.success('登录成功');
+                    // message.success('登录成功');
                     setTimeout(() => {
                         location.replace("/#/platform")
 					},1500)

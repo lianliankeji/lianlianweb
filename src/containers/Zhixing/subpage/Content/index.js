@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-import {Anchor,Row,Col,Breadcrumb,Button,Input } from 'antd';
+import {Anchor,Row,Col,Breadcrumb,Button,Input,Form } from 'antd';
 const { TextArea } = Input;
+const FormItem = Form.Item;
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 
 import './style.scss';
@@ -18,33 +19,24 @@ class Content extends Component {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
-            headerNav: [{
-                name: "首页"
-            }, {
-                name: "申请入驻"
-            }, {
-                name: "联系我们"
-            }],
 
         }
     }
 
-    toggleLogin = () => {
-        this.props.logFn();
+    perform = () => {
+        this.props.perform(this.state.req)
     }
 
-    getChainsList = () => {
-        const data = this.props.chainsList;
-
-        if(data && data.length) {
-            return data
-        }
-
+    query = () => {
+        this.props.query(this.state.req)
     }
 
-    tableView(data, id){
-        console.log(id)
-        this.props.showChainsTable(data, id);
+    getInData = (e) => {
+        let data = JSON.parse(e.target.value);
+
+        this.setState({
+            req: data
+        })
     }
 
     render() {
@@ -63,10 +55,10 @@ class Content extends Component {
                             <h3 className="label">输入数据</h3>
                         </Col>
                         <Col span={21} className="chains-intent-item">
-                            <TextArea autosize={{minRows: 8.6}} />
+                            <TextArea autosize={{minRows: 8.6}} onChange={this.getInData} />
                         </Col>
                     </Row>
-                    <div className="transfer"><img src={Transfer}/></div>
+                    <div className="transfer"><img src={Transfer} onClick={this.perform} /><img src={Transfer} onClick={this.query}/></div>
                     <Row type="flex" justify="space-between" className="item">
                         <Col span={3} className="chains-intent-item">
                             <h3 className="label">输出数据</h3>

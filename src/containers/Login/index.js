@@ -3,15 +3,17 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
-import { getQRCode } from 'actions/login.js'
+import {getQRCode} from 'actions/login.js'
 import {IWebSocket} from "utils/socket.js"
+import {cookieUtil} from "utils/cookie.js"
 
 import {
     BackTop,
     Popover,
     Row,
     Col,
-    Progress
+    Progress,
+    message
 } from 'antd';
 import './style.scss'
 
@@ -27,14 +29,15 @@ import SafeLogo from 'images/safe.png';
 import EcologyLogo from 'images/ecology.png';
 import Assetslogo from 'images/assetslogo.png';
 import Block from 'images/block.png';
-import Nodes from 'images/nodes.png';
+import Test from 'images/test.png';
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-            qrcode: ""
+            qrcode: Test,
+            loading: false
         };
     }
 
@@ -53,9 +56,12 @@ class Login extends React.Component {
     _getQRCode() {
         this.props.getQRCode().then((response) => {
             console.log(response);
-            this.setState({
-                qrcode: response.data
-            })
+            if (response.data.ec == "000000") {
+
+                this.setState({
+                    qrcode: "https://loulan.lianlianchains.com/loulan/getTwoBarCodes?uuid=" + response.data.data + "&width=260",
+                })
+            }
 
         })
             .catch((error) => {
@@ -68,21 +74,39 @@ class Login extends React.Component {
     }
 
     componentDidMount() {
-        this._getQRCode();
         var system = IWebSocket({
-            uri:"store.lianlianchains.com/websocket"
+            uri: "store.lianlianchains.com/websocket"
             // 可以自定义四大事件
-            ,onOpen: function(event) {
-                console.log("阅读时长统计WebSocket开启！");
+            , onOpen: (event) => {
+                console.log("WebSocket开启！");
                 // websockets.countReadTimes.timeout=setTimeout("plusReadTimes()", 60000);
             }
-            ,onClose: function(event){
-                console.log("阅读时长统计WebSocket关闭！");
+            , onClose: (event) => {
+                console.log("WebSocket关闭！");
                 // if ("undefined"!=typeof websockets.countReadTimes.timeout) clearTimeout(websockets.countReadTimes.timeout);
-            },onMessage: function(event) {
-                console.log(event.toString())
+            }, onMessage: (event) => {
+                var data = JSON.parse(event.data);
+                if (data.types == "0") {
+                    system.onSend(JSON.stringify({types: "1", data: "pre"}))
+                    this.setState({
+                        loading: true
+                    });
+                } else if (data.types == "2") {
+                    cookieUtil.setItem("user", data.data, 1);
+                    let timer = setTimeout(() => {
+                        this.setState({
+                            loading: false
+                        });
+                        // message.success('登录成功');
+                        location.replace("/#/platform")
+                        clearTimeout(timer)
+                    }, 1500)
+                }
+
             }
         });
+
+        // console.log(system)
     }
 
     render() {
@@ -98,6 +122,7 @@ class Login extends React.Component {
                 <Header />
                 <Content
                     qrcode={this.state.qrcode}
+                    loading={this.state.loading}
                 />
                 <Footer />
                 <BackTop>
