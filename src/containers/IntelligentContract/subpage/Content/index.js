@@ -104,7 +104,7 @@ class Content extends Component {
                         {
                             this.getTestChainsList().map((item, index) => {
                                 return(
-                                    <Col key={index} span={10} className="chains-intent-item" style={{height: !item.showAll ? "190px": ""}}>
+                                    <Col key={index} span={11} className="chains-intent-item" style={{height: !item.showAll ? "190px": ""}}>
                                         <img className="img" src={Tongzhi} />
                                         <div className="right">
                                             <h3 className="name">{item.name}</h3>

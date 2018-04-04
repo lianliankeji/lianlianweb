@@ -58,9 +58,9 @@ class Login extends React.Component {
             console.log(response);
             if (response.data.ec == "000000") {
 
-                this.setState({
-                    qrcode: "https://loulan.lianlianchains.com/loulan/getTwoBarCodes?uuid=" + response.data.data + "&width=260",
-                })
+                // this.setState({
+                //     qrcode: "https://loulan.lianlianchains.com/loulan/getTwoBarCodes?uuid=" + response.data.data + "&width=200",
+                // })
             }
 
         })
@@ -74,6 +74,7 @@ class Login extends React.Component {
     }
 
     componentDidMount() {
+        this._getQRCode()
         var system = IWebSocket({
             uri: "store.lianlianchains.com/websocket"
             // 可以自定义四大事件
@@ -87,7 +88,7 @@ class Login extends React.Component {
             }, onMessage: (event) => {
                 var data = JSON.parse(event.data);
                 if (data.types == "0") {
-                    system.onSend(JSON.stringify({types: "1", data: "pre"}))
+                    system.onSend(JSON.stringify({types: "1", data: data.data }))
                     this.setState({
                         loading: true
                     });

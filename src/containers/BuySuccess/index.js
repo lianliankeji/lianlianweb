@@ -157,11 +157,11 @@ class BuySuccess extends React.Component {
 
     render() {
 
-
+        let orderInfo = JSON.parse(localStorage.getItem("orderInfo"));
         return (
             <div>
                 <Header />
-                <Content contractItem = {this.props.contractItem} />
+                <Content orderInfo = {orderInfo} />
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>

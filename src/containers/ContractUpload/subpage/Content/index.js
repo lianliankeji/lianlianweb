@@ -251,7 +251,7 @@ class Content extends Component {
                                         <Input className="item" placeholder="请输入合约价格" />
                                     )}
                                 </FormItem>
-                                <FormItem {...formItemLayout} label="链ID">
+                                <FormItem {...formItemLayout} label="链">
                                     {getFieldDecorator('chainid', {
                                         rules: [
                                             { required: true, message: '链ID不能为空' },

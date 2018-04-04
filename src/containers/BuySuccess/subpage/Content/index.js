@@ -1,18 +1,11 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-import {Anchor,Row,Col,Breadcrumb,Button, Input} from 'antd';
-const Search = Input.Search;
-import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
+import {Row, Col, Breadcrumb, Button} from 'antd';
+import {createHashHistory} from "history"
 
 
 import './style.scss';
-
-
-import Zhineng from 'images/zhineng.png';
-import Tongzhi from 'images/tongzhi.png';
-import Qrcode from 'images/qrcode.png'
-
 
 
 class Content extends Component {
@@ -39,19 +32,19 @@ class Content extends Component {
     getChainsList = () => {
         const data = this.props.chainsList;
 
-        if(data && data.length) {
+        if (data && data.length) {
             return data
         }
 
     }
 
-    tableView(data, id){
+    tableView(data, id) {
         console.log(id)
         this.props.showChainsTable(data, id);
     }
 
-    goZhixng() {
-        location.replace("/" + location.hash + "/perform")
+    goBack() {
+        createHashHistory().replace("/platform/contract");
     }
 
     hideShowButton = (index, types) => {
@@ -70,8 +63,9 @@ class Content extends Component {
                 <Col className="top" span={16}>
                     <Breadcrumb separator=">">
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/develop">合约商店</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/upload">合约购买</Breadcrumb.Item>
+                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract">合约商店</Breadcrumb.Item>
+                        <Breadcrumb.Item className="BreadcrumbItem"
+                                         href="/#/platform/contract/buysuccess">购买成功</Breadcrumb.Item>
                     </Breadcrumb>
 
                     <h2 className="title">购买成功.</h2>
@@ -81,20 +75,19 @@ class Content extends Component {
                             <div className="section">
                                 <div>
                                     <span className="label">合约ID:</span>
-                                    <span>5456456456465465456465456</span>
+                                    <span>{this.props.orderInfo.id}</span>
                                 </div>
                                 <div className="pulisher">
                                     <span className="label">发布人:</span>
-                                    <span>18610270284</span>
+                                    <span>{this.props.orderInfo.publisher}</span>
                                 </div>
                             </div>
 
                         </Col>
                     </Row>
                     <div className="button-content">
-                        <Button className="Back"><Link to="/platform">返回</Link></Button>
+                        <Button className="Back" onClick={this.goBack}>返回</Button>
                     </div>
-
 
 
                 </Col>

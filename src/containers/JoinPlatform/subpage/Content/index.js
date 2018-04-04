@@ -130,7 +130,7 @@ class Content extends Component {
                                                 <div>
                                                     <div className="name">{item.name}</div>
                                                     <div className="desc">{item.description}</div>
-                                                    <div className="view" onClick={this.tableView.bind(this, this.getChainsList(), index)}>查看详情</div>
+                                                    <div className="view" onClick={this.tableView.bind(this, this.getChainsList(), item.chainid)}>查看详情</div>
                                                 </div>
                                             </div>
                                             <div>

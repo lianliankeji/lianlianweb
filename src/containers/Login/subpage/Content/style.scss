@@ -1,9 +1,10 @@
 .login-content{
-  //background-image: url("../../../../images/openbg.png");
+  background-image: url("../../../../images/loginbg.png");
   height: auto;
-  background-color: #4458B3;
+  //background-image: #50567A;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   top:55px;
   bottom:80px;
   position: absolute;
@@ -36,6 +37,16 @@
       font-size: 24px;
       color: #333333;
       text-align: center;
+    }
+
+    .qrcode_title{
+      display: block;
+      height: 50px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: "hiragino sans gb",simsun,stfangsong;
+      color: grey;
     }
 
     .form-control{
@@ -112,5 +123,15 @@
         user-select: none;
       }
     }
+  }
+
+  .warn{
+    margin: 0 auto;
+    margin-top: 20px;
+    display: inline-block;
+    background-color: #F1F1F1;
+    padding: 2px 40px;
+    border-radius: 40px;
+    font-size: 12px;
   }
 }

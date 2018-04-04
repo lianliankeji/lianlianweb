@@ -66,7 +66,7 @@ class Content extends Component {
     }
 
     goBack = () => {
-        location.replace("/" + location.hash + "/perform")
+        location.replace("/#/platform")
     }
 
     render() {

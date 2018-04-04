@@ -15,3 +15,14 @@ export const perform = (payload) => {
         })
     }
 }
+
+export const query = (payload) => {
+    return (dispatch) => {
+        return axios({
+            method: 'get',
+            url: BASE_URL + payload.url,
+        }, {
+            ...payload.data
+        })
+    }
+}

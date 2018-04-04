@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
-import {perform} from 'actions/Platform/perform.js'
+import {perform, query} from 'actions/Platform/perform.js'
 
 import {Button, BackTop, Popover, Row, Col, Progress} from 'antd';
 import './style.scss'
@@ -22,7 +22,7 @@ class Chains extends React.Component {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-
+            resultData: ""
         };
     }
 
@@ -36,7 +36,13 @@ class Chains extends React.Component {
         this.props.perform({
             // url: chainsItem[0].testexcuteurl,
             url: chainsItem[0].testexcuteurl,
-            data: Object.assign({},data, {chaincodename: name})
+            data: Object.assign({}, data, {chaincodename: name})
+        }).then((res) => {
+            this.setState({
+                resultData: JSON.stringify(res.data)
+            })
+        }).catch(err => {
+
         })
     }
 
@@ -45,9 +51,15 @@ class Chains extends React.Component {
         let chainsItem = this.props.chainsList.filter((item, index) => {
             return item.chainid == this.props.match.params.id
         });
-        this.props.perform({
-            url: this.state.chainsItem[0].testqueryurl,
-            data: Object.assign({},data, {chaincodename: name})
+        this.props.query({
+            url: chainsItem[0].testqueryurl,
+            data: Object.assign({}, data, {chaincodename: name})
+        }).then((res) => {
+            this.setState({
+                resultData: JSON.stringify(res.data)
+            })
+        }).catch(err => {
+
         })
     }
 
@@ -68,7 +80,9 @@ class Chains extends React.Component {
                 <Content
                     perform={this.perform}
                     query={this.query}
-                    />
+                    resultData={this.state.resultData}
+                    chainid={this.props.match.params.id}
+                />
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
@@ -89,7 +103,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        perform: bindActionCreators(perform, dispatch)
+        perform: bindActionCreators(perform, dispatch),
+        query: bindActionCreators(query, dispatch)
     }
 }
 

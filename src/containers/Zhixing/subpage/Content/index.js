@@ -19,7 +19,7 @@ class Content extends Component {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
-
+            req: ""
         }
     }
 
@@ -55,16 +55,25 @@ class Content extends Component {
                             <h3 className="label">输入数据</h3>
                         </Col>
                         <Col span={21} className="chains-intent-item">
-                            <TextArea autosize={{minRows: 8.6}} onChange={this.getInData} />
+                            <TextArea
+                                autosize={{minRows: 8.6}}
+                                onChange={this.getInData}
+                                placeholder='输入项必须遵循严格的json格式，key值必须用双引，例：{"key": "value"}'
+                            />
                         </Col>
                     </Row>
-                    <div className="transfer"><img src={Transfer} onClick={this.perform} /><img src={Transfer} onClick={this.query}/></div>
+                    <div className="transfer">
+                        {/*<img src={Transfer} onClick={this.perform} />*/}
+                        <Button className="button" size={'large'} onClick={this.perform}>执行</Button>
+                        <Button style={{marginLeft: "10px"}} className="button" size={'large'} onClick={this.query}>查询</Button>
+                        {/*<img src={Transfer} onClick={this.query}/></div>*/}
+                    </div>
                     <Row type="flex" justify="space-between" className="item">
                         <Col span={3} className="chains-intent-item">
                             <h3 className="label">输出数据</h3>
                         </Col>
                         <Col span={21} className="chains-intent-item">
-                            <TextArea autosize={{minRows: 8.6}} />
+                            <TextArea autosize={{minRows: 8.6}} value={this.props.resultData} />
                         </Col>
                     </Row>
 

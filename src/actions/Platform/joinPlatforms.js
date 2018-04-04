@@ -13,8 +13,7 @@ export const getChainsData = (payload) => {
             method: 'get',
             url: BASE_URL + 'loulan/chain/queryall',
         }, {
-            /*firstName: 'Fred',
-             lastName: 'Flintstone'*/
+
         }).then((response) => {
             let data = response.data.data;
             if(response.data.ec == "000000") {

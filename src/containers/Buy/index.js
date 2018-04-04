@@ -5,41 +5,65 @@ import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {crateOrder} from 'actions/Platform/createOrder.js'
 import {cookieUtil} from "utils/cookie.js"
+import {IWebSocket} from "utils/socket.js"
+import {createHashHistory} from "history"
 
-import {
-    Button,
-    BackTop,
-    Popover,
-    Row,
-    Col,
-    Progress
-} from 'antd';
+import {Button, BackTop, Popover, Row, Col} from 'antd';
 import './style.scss'
 
 import Header from './subpage/Header/index.js'
 import Content from './subpage/Content/';
-import Loading from "components/Loading/index.js"
-import Tables from 'components/Home/Tables/index.js'
 import Footer from 'components/Platform/Footer/index.js'
 
-import OpenLogo from 'images/open.png';
-import SafeLogo from 'images/safe.png';
-import EcologyLogo from 'images/ecology.png';
-import Assetslogo from 'images/assetslogo.png';
-import Block from 'images/block.png';
-import Nodes from 'images/nodes.png';
+import Qrcode from 'images/jiaoyi.png';
+
 
 class Buy extends React.Component {
     constructor(props) {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-            orderInfo: ""
+            orderInfo: "",
+            qrcode: Qrcode,
+            loading: false
         };
+    }
+
+    startSocket = () => {
+        var system = IWebSocket({
+            uri: "store.lianlianchains.com/websocket"
+            // 可以自定义四大事件
+            , onOpen: (event) => {
+                console.log("WebSocket开启！");
+                // websockets.countReadTimes.timeout=setTimeout("plusReadTimes()", 60000);
+            }
+            , onClose: (event) => {
+                console.log("WebSocket关闭！");
+                // if ("undefined"!=typeof websockets.countReadTimes.timeout) clearTimeout(websockets.countReadTimes.timeout);
+            }, onMessage: (event) => {
+                var data = JSON.parse(event.data);
+                if (data.types == "0") {
+                    system.onSend(JSON.stringify({types: "1", data: data.data + ""}))
+                    this.setState({
+                        loading: true
+                    });
+                } else if (data.types == "2") {
+                    let timer = setTimeout(() => {
+                        this.setState({
+                            loading: false
+                        });
+                        createHashHistory().push("/platform/contract/buysuccess")
+                        clearTimeout(timer)
+                    }, 1500)
+                }
+
+            }
+        });
     }
 
     componentDidMount() {
         let orderInfo = JSON.parse(localStorage.getItem("orderInfo"));
+        this.startSocket();
         this.props.crateOrder({
             fee:orderInfo.price,
             description:orderInfo.description,
@@ -48,9 +72,9 @@ class Buy extends React.Component {
         }).then((response) => {
 
             console.log(response.data.data.orderNo);
-            this.setState({
-                qrcode: "https://loulan.lianlianchains.com/loulan/OrderTwoBar?orderNo="+response.data.data.orderNo + "&width=200"
-            })
+            // this.setState({
+            //     qrcode: "https://loulan.lianlianchains.com/loulan/OrderTwoBar?orderNo="+response.data.data.orderNo + "&width=200"
+            // })
 
         })
             .catch((error) => {
@@ -68,6 +92,7 @@ class Buy extends React.Component {
                 <Content
                     orderInfo={orderInfo}
                     qrcode={this.state.qrcode}
+                    loading={this.state.loading}
                 />
                 <Footer />
                 <BackTop>

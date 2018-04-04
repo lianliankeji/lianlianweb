@@ -33,7 +33,12 @@ module.exports = merge(baseWebpackConfig, {
                 changeOrigin: true,
                 secure: false
             },
-            "/retail": {
+            "/retailtest": {
+                target: "https://192.168.10.107/",
+                changeOrigin: true,
+                secure: false
+            },
+            "/mogaotest": {
                 target: "https://192.168.10.107/",
                 changeOrigin: true,
                 secure: false

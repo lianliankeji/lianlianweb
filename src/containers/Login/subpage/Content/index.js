@@ -131,8 +131,12 @@ class Content extends Component {
                     <Spin spinning={this.props.loading} tip="正在登陆...">
                         <div className="content">
                             <h3 className="title">登录</h3>
-
-                            <img src={this.props.qrcode}/>
+                            <label className="qrcode_title">安全登录，防止被盗</label>
+                            <img width={200} src={this.props.qrcode}/>
+                            <div className="warn">
+                                <div>请使用微信扫描二维码登录</div>
+                                <div>“楼兰开放平台微信登录”</div>
+                            </div>
 
                             {/*<div className="form-control">*/}
                             {/*<label className="label">手机号</label>*/}
