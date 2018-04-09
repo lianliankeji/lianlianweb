@@ -4,6 +4,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {Anchor,Row,Col,Breadcrumb,Button, Input} from 'antd';
 const Search = Input.Search;
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
+let BASE_URL = process.env.NODE_ENV == "production" ? "https://loulan.lianlianchains.com/" : ""
 
 
 import './style.scss';
@@ -83,8 +84,8 @@ class Content extends Component {
                             <div>智能合约采用GOLANG语言开发，开发前请确认具备相关知识。</div>
 
                             <div className="bottom">
-                                <div>开发者根据模板定制智能合约：<span className="button">合约模板</span></div>
-                                <div>开发者根据模板书写接口说明：<span className="button">文档模板</span></div>
+                                <div>开发者根据模板定制智能合约：<span className="button"><a href={`https://192.168.10.107/smartcontract/lltemplet.go`}>合约模板</a></span></div>
+                                <div>开发者根据模板书写接口说明：<span className="button"><a href={`https://192.168.10.107/smartcontract/lltemplet.docx`}>文档模板</a></span></div>
                             </div>
                         </Col>
                     </Row>

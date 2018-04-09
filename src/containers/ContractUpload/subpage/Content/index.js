@@ -146,6 +146,12 @@ class Content extends Component {
         })
     }
 
+    checkName = (e) => {
+        console.log(e.target.value)
+
+
+    }
+
     render() {
         const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
         const props = {
@@ -218,7 +224,7 @@ class Content extends Component {
                                             message: '合约名称不能为空',
                                         }],
                                     })(
-                                        <Input className="item" placeholder="请输入合约名称" />
+                                        <Input className="item" placeholder="请输入合约名称" onChange={this.checkName} />
                                     )}
                                 </FormItem>
                                 <FormItem {...formItemLayout} label="合约版本">

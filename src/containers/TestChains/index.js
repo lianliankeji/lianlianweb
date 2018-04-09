@@ -172,6 +172,7 @@ class Chains extends React.Component {
                 <Header />
                 <Content
                     testChainsList={this.getTestChainsList()}
+                    contractState={this.props.contractState}
                     showAndHide={this.showAndHide}
                     seachTestChains={this.seachTestChains}
                     chainid={this.props.match.params.id}/>
@@ -189,7 +190,8 @@ class Chains extends React.Component {
 function mapStateToProps(state) {
 
     return {
-        testChainsData: state.testChainsList
+        testChainsData: state.testChainsList.testChainsList,
+        contractState: state.testChainsList.contractState,
     }
 }
 

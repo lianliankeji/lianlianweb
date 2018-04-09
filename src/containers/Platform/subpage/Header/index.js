@@ -40,9 +40,6 @@ class Header extends Component {
         }
     }
 
-    toggleLogin = () => {
-        this.props.logFn();
-    }
 
     Gohome = () => {
         location.replace("/")

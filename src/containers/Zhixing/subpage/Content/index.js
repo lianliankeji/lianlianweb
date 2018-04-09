@@ -1,18 +1,11 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-import {Anchor,Row,Col,Breadcrumb,Button,Input,Form } from 'antd';
+import {Anchor,Row,Col,Breadcrumb,Button,Input,Form, message } from 'antd';
 const { TextArea } = Input;
 const FormItem = Form.Item;
-import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 
 import './style.scss';
-
-
-import Transfer from 'images/transfer.png';
-import Tongzhi from 'images/tongzhi.png';
-
-
 
 class Content extends Component {
     constructor(props) {
@@ -24,11 +17,20 @@ class Content extends Component {
     }
 
     perform = () => {
-        this.props.perform(this.state.req)
+        if(!!this.state.req) {
+            this.props.perform(this.state.req)
+        }else{
+            message.error("输入数据不能为空")
+        }
+
     }
 
     query = () => {
-        this.props.query(this.state.req)
+        if(!!this.state.req) {
+            this.props.query(this.state.req)
+        }else{
+            message.error("输入数据不能为空")
+        }
     }
 
     getInData = (e) => {

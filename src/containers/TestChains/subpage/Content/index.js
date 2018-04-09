@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-import {Anchor,Row,Col,Breadcrumb,Button, Input} from 'antd';
+import {Anchor,Row,Col,Breadcrumb,Button, Input, message} from 'antd';
 const Search = Input.Search;
-import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 import {createHashHistory} from "history"
 
 import './style.scss';
 
 
-import Zhineng from 'images/zhineng.png';
 import Tongzhi from 'images/tongzhi.png';
 
 
@@ -49,10 +47,15 @@ class Content extends Component {
         this.props.showChainsTable(data, id);
     }
 
-    goZhixng(name) {
-        localStorage.setItem("name",name);
+    goZhixng(name, state) {
+        if(state == "6" || state == "9") {
+            localStorage.setItem("name",name);
 
-        createHashHistory().push(`/platform/join/test/${this.state.id}/perform`)
+            createHashHistory().push(`/platform/join/test/${this.state.id}/perform`)
+        }else{
+            message.info(this.props.contractState[state])
+        }
+
     }
 
     hideShowButton = (index, types) => {
@@ -107,7 +110,10 @@ class Content extends Component {
                                     <Col key={index} span={11} className="chains-intent-item" style={{height: !item.showAll ? "190px": ""}}>
                                         <img className="img" src={Tongzhi} />
                                         <div className="right">
-                                            <h3 className="name">{item.name}</h3>
+                                            <h3 className="name">
+                                                {item.name}
+                                                <span className="status">{`${item.state != "6" && item.state != "9" ? "(" + this.props.contractState[item.state] + ")" : ""}`}</span>
+                                            </h3>
                                             <p className="intro">
                                                 <span className={item.showAll ? "overflowZhankai" : "overflow"} ref={(overflow) => this.overflow = overflow}>{item.description}</span>
                                                 <span
@@ -119,7 +125,7 @@ class Content extends Component {
                                                 style={{display: !item.showAll ? "none" : "block"}}
                                                 onClick={this.hideShowButton.bind(this, index, false)}><span className="close">收起</span></p>
                                             {/*<Button className="button" size={"default"} ><Link to={`/platform/join/test/${this.props.chainid}/perform`}>执行</Link></Button>*/}
-                                            <Button className="button" size={"default"} onClick={this.goZhixng.bind(this, item.name)}>执行</Button>
+                                            <Button className="button" size={"default"} onClick={this.goZhixng.bind(this, item.name,item.state)}>执行</Button>
                                         </div>
                                     </Col>
                                 )

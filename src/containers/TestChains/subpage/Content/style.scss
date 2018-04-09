@@ -132,6 +132,12 @@
 
     .right{
       width: 85%;
+
+      .status{
+        color: red;
+        font-size: 20px;
+        margin-left: 5px;
+      }
     }
 
     .intro{

@@ -23,6 +23,16 @@ module.exports = merge(baseWebpackConfig, {
         inline: true,
         progress: true,
         proxy: {
+            '/loulan/chain/savecontract': {
+                target: 'http://192.168.50.238:9666',
+                changeOrigin: true,
+                secure: false
+            },
+            '/loulan/chain/updatecontract': {
+                target: 'http://192.168.50.238:9666',
+                changeOrigin: true,
+                secure: false
+            },
             '/loulan': {
                 target: 'https://loulan.lianlianchains.com/',
                 changeOrigin: true,
@@ -39,6 +49,11 @@ module.exports = merge(baseWebpackConfig, {
                 secure: false
             },
             "/mogaotest": {
+                target: "https://192.168.10.107/",
+                changeOrigin: true,
+                secure: false
+            },
+            "/usr": {
                 target: "https://192.168.10.107/",
                 changeOrigin: true,
                 secure: false

@@ -38,6 +38,12 @@ const IntelligentContract = Loadable({
     loading: Loading,
 });
 
+//升级
+const ContractPromote = Loadable({
+    loader: () => import('containers/ContractPromote/'),
+    loading: Loading,
+});
+
 //测试链
 const TestChains = Loadable({
     loader: () => import('containers/TestChains/'),
@@ -112,6 +118,7 @@ const RouterMap = () => (
                 <Route exact path='/platform/join' component={JoinPlatform} />
                 <Route exact path='/platform/join/release/:id' component={Chains} />
                 <Route exact path='/platform/join/release/:id/contract' component={IntelligentContract} />
+                <Route exact path='/platform/join/release/:id/contract/promote' component={ContractPromote} />
                 <Route exact path='/platform/join/test/:id' component={TestChains} />
                 <Route exact path='/platform/join/test/:id/perform' component={Zhixing} />
 

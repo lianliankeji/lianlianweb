@@ -14,13 +14,15 @@ export const contractSave = (payload) => {
             ...payload
         }).then((response) => {
             if(response.data.ec == "000000") {
+
+                sessionStorage.setItem("uploadContractInfo",JSON.stringify(response.data.data));
+
                 dispatch({
                     type: actionTypes.UPLOAD_CONTRACT_INFO,
                     result: response.data.data
                 });
-
-                deploy();
-                // createHashHistory().push("/platform/contract/verify")
+                
+                createHashHistory().push("/platform/contract/verify")
             }
             console.log(response)
         })
@@ -29,23 +31,6 @@ export const contractSave = (payload) => {
             });
     }
 
-}
-
-function deploy() {
-    axios({
-        method: 'post',
-        url: BASE_URL + '/mogaotest/chaincode/installAndDeploy' ,
-    }, {
-        usr:"mogaotestAdmin",
-        ccpath:"templet",
-        ccname:"templet_testcc",
-        ccvers:"v1.0"
-    }).then((response) => {
-        createHashHistory().push("/platform/contract/verify")
-    })
-        .catch((error) => {
-            console.log(error);
-        });
 }
 
 

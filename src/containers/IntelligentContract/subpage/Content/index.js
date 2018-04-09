@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-
+import {createHashHistory} from "history"
 import {Anchor,Row,Col,Breadcrumb,Button, Input} from 'antd';
 const Search = Input.Search;
-import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
+
 
 
 import './style.scss';
@@ -49,10 +49,6 @@ class Content extends Component {
         this.props.showChainsTable(data, id);
     }
 
-    goZhixng() {
-        location.replace("/" + location.hash + "/perform")
-    }
-
     hideShowButton = (index, types) => {
         this.props.showAndHide(index, types);
     }
@@ -67,8 +63,9 @@ class Content extends Component {
         this.props.seachReleaseChains(value)
     }
 
-    update = () => {
-        alert("敬请期待")
+    update(item) {
+        sessionStorage.setItem("promote", JSON.stringify(item));
+        createHashHistory().push(`/platform/join/release/${this.props.chainid}/contract/promote`);
     }
 
     stop = () => {
@@ -118,7 +115,7 @@ class Content extends Component {
                                             <p
                                                 style={{display: !item.showAll ? "none" : "block"}}
                                                 onClick={this.hideShowButton.bind(this, index, false)}><span className="close">收起</span></p>
-                                            <Button className="button" size={"default"} onClick={this.update}>升级</Button>
+                                            <Button className="button" size={"default"} onClick={this.update.bind(this,item)}>升级</Button>
                                             <Button className="button" size={"default"} onClick={this.stop}>停用</Button>
                                         </div>
                                     </Col>

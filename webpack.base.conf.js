@@ -21,7 +21,8 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'static/js/[name].[hash].js',
-		publicPath: process.env.NODE_ENV === 'production' ? "/" : ""
+        chunkFilename: "static/js/[name].chunk.js",
+        publicPath: process.env.NODE_ENV === 'production' ? "/" : ""
 	},
 	resolve: {
 		alias: {
