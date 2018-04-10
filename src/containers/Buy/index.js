@@ -24,7 +24,7 @@ class Buy extends React.Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
             orderInfo: "",
-            qrcode: Qrcode,
+            qrcode: "",
             loading: false
         };
     }
@@ -72,9 +72,9 @@ class Buy extends React.Component {
         }).then((response) => {
 
             console.log(response.data.data.orderNo);
-            // this.setState({
-            //     qrcode: "https://loulan.lianlianchains.com/loulan/OrderTwoBar?orderNo="+response.data.data.orderNo + "&width=200"
-            // })
+            this.setState({
+                qrcode: "https://loulan.lianlianchains.com/loulan/OrderTwoBar?orderNo="+response.data.data.orderNo + "&width=200"
+            })
 
         })
             .catch((error) => {

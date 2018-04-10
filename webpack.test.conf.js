@@ -23,7 +23,7 @@ module.exports = merge(baseWebpackConfig, {
            $: "jquery"
         }),
         new webpack.DefinePlugin({ //设置环境变量
-            'process.env.NODE_ENV': JSON.stringify('production')
+            'process.env.NODE_ENV': JSON.stringify('test')
         }),
         new ExtractTextPlugin('static/css/style.css'),
         new webpack.optimize.CommonsChunkPlugin({

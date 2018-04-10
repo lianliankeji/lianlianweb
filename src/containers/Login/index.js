@@ -7,28 +7,15 @@ import {getQRCode} from 'actions/login.js'
 import {IWebSocket} from "utils/socket.js"
 import {cookieUtil} from "utils/cookie.js"
 
-import {
-    BackTop,
-    Popover,
-    Row,
-    Col,
-    Progress,
-    message
-} from 'antd';
+import {BackTop} from 'antd';
 import './style.scss'
 
 
 import Header from './subpage/Header/index.js'
 import Content from './subpage/Content/';
-import Loading from "components/Loading/index.js"
-import Tables from 'components/Home/Tables/index.js'
+
 import Footer from 'components/Platform/Footer/index.js'
 
-import OpenLogo from 'images/open.png';
-import SafeLogo from 'images/safe.png';
-import EcologyLogo from 'images/ecology.png';
-import Assetslogo from 'images/assetslogo.png';
-import Block from 'images/block.png';
 import Test from 'images/test.png';
 
 class Login extends React.Component {
@@ -36,31 +23,20 @@ class Login extends React.Component {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-            qrcode: Test,
+            qrcode: "",
             loading: false
         };
     }
 
-    // login = (data) => {
-    //     this.props.login(data)
-    // }
-    //
-    // sendMsg = (data) => {
-    //     this.props.sendMsg(data).then((res) => {
-    //         console.log(res.data.code)
-    //     }).catch((err) => {
-    //         console.log(err)
-    //     })
-    // }
 
     _getQRCode() {
         this.props.getQRCode().then((response) => {
             console.log(response);
             if (response.data.ec == "000000") {
 
-                // this.setState({
-                //     qrcode: "https://loulan.lianlianchains.com/loulan/getTwoBarCodes?uuid=" + response.data.data + "&width=200",
-                // })
+                this.setState({
+                    qrcode: "https://loulan.lianlianchains.com/loulan/getTwoBarCodes?uuid=" + response.data.data + "&width=200",
+                })
             }
 
         })

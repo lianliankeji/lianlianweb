@@ -63,7 +63,7 @@ class Content extends Component {
                             <div className="right">
                                 <Spin spinning={this.props.loading}>
                                     <div>
-                                        <img width={110} src={this.props.qrcode}/>
+                                        <img width={150} src={this.props.qrcode}/>
                                     </div>
                                     <div>URT收款码</div>
                                     <div>

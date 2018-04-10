@@ -61,8 +61,7 @@ export const seachTestChains = (payload) => {
 
 export const showAndHide = (payload) => {
     return(dispatch, getState) => {
-        let data = getState().testChainsList;
-        console.log(getState().testChainsList)
+        let data = getState().testChainsList.testChainsList;
 
         data = data.map((item, i) => {
             if(i == payload.index) {

@@ -10,13 +10,7 @@ import {
     Breadcrumb,
     Button
 } from 'antd';
-import {
-    HashRouter as Router,
-    Route,
-    Link,
-    Redirect,
-    Switch
-} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
 import './style.scss';
 
@@ -44,8 +38,8 @@ class Content extends Component {
         }
     }
 
-    toggleLogin = () => {
-        this.props.logFn();
+    skipdevelop = () => {
+        this.props.history.push({pathname : "/platform/contract/develop",states:{aa: 1}})
     }
 
     render() {
@@ -70,7 +64,7 @@ class Content extends Component {
                             <img className="img" src={Hezuo} title="合约开发" />
                             <p>有技术能力的用户可签约开发者</p>
                             <p>在商店中出售智能合约</p>
-                            <Button className="button"><Link to="/platform/contract/develop">合约开发</Link></Button>
+                            <Button className="button" onClick={this.skipdevelop}>合约开发</Button>
                         </Col>
                     </Row>
                 </Col>
@@ -81,4 +75,4 @@ class Content extends Component {
     }
 }
 
-export default Content;
+export default withRouter(Content);

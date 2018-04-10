@@ -11,7 +11,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 //优雅控制台
 var DashboardPlugin = require('webpack-dashboard/plugin');
 
-const BrowerlicPath = 'http://dev.fengfeng.com:8081';
+var Config = require("./config/index.js");
+
+var NODE_ENV = process.env.NODE_ENV;
+
+const BrowerlicPath = 'http://dev.fengfeng.com';
+
+
 
 
 module.exports = merge(baseWebpackConfig, {
@@ -19,46 +25,10 @@ module.exports = merge(baseWebpackConfig, {
     devServer: {
         // contentBase: "./dist",
         // open: true,  //自动打开默认浏览器
-        port: 8081, //端口号
-        inline: true,
-        progress: true,
-        proxy: {
-            '/loulan/chain/savecontract': {
-                target: 'http://192.168.50.238:9666',
-                changeOrigin: true,
-                secure: false
-            },
-            '/loulan/chain/updatecontract': {
-                target: 'http://192.168.50.238:9666',
-                changeOrigin: true,
-                secure: false
-            },
-            '/loulan': {
-                target: 'https://loulan.lianlianchains.com/',
-                changeOrigin: true,
-                secure: false
-            },
-            "/llchain": {
-                target: 'https://192.168.10.108/',
-                changeOrigin: true,
-                secure: false
-            },
-            "/retailtest": {
-                target: "https://192.168.10.107/",
-                changeOrigin: true,
-                secure: false
-            },
-            "/mogaotest": {
-                target: "https://192.168.10.107/",
-                changeOrigin: true,
-                secure: false
-            },
-            "/usr": {
-                target: "https://192.168.10.107/",
-                changeOrigin: true,
-                secure: false
-            }
-        },
+        port: Config[NODE_ENV].port, //端口号
+        inline: Config[NODE_ENV].inline,
+        progress: Config[NODE_ENV].progress,
+        proxy: Config[NODE_ENV].proxyTable,
         disableHostCheck: true //新版的webpack-dev-server出于安全考虑，默认检查hostname，如果hostname不是配置内的，将中断访问
     },
 
@@ -67,7 +37,7 @@ module.exports = merge(baseWebpackConfig, {
             $: "jquery"
         }),
         new OpenBrowserPlugin({ //自动打开默认浏览器
-            url: BrowerlicPath
+            url: BrowerlicPath + ":" +Config[NODE_ENV].port
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development')
