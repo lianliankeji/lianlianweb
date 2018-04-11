@@ -20,48 +20,8 @@ class Content extends Component {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
-            showAll: "block",
-            headerNav: [{
-                name: "首页"
-            }, {
-                name: "申请入驻"
-            }, {
-                name: "联系我们"
-            }],
 
         }
-    }
-
-    toggleLogin = () => {
-        this.props.logFn();
-    }
-
-    getChainsList = () => {
-        const data = this.props.chainsList;
-
-        if(data && data.length) {
-            return data
-        }
-
-    }
-
-    tableView(data, id){
-        console.log(id)
-        this.props.showChainsTable(data, id);
-    }
-
-    goZhixng() {
-        location.replace("/" + location.hash + "/perform")
-    }
-
-    hideShowButton = (index, types) => {
-        this.props.showAndHide(index, types);
-    }
-
-    getContractShopList = () => {
-        let data = this.props.contractShopList;
-
-        return data;
     }
 
     render() {

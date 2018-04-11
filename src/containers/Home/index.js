@@ -176,7 +176,7 @@ class Home extends React.Component {
                         </Col>
                     </Row>
                 </section>
-                <section id="assets" className="section2">
+                <section id="union" className="section2">
                     <Row type="flex" justify="center" className="ecology-content">
                         <Col span={16}>
                             <h3 className="title">联盟链</h3>

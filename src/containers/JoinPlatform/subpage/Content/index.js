@@ -126,7 +126,7 @@ class Content extends Component {
                                     <Col key={index} className="" span={24}>
                                         <div className="item">
                                             <div className="left">
-                                                <img className="img" src={Chains} />
+                                                <img className="img" src={item.icon} />
                                                 <div>
                                                     <div className="name">{item.name}</div>
                                                     <div className="desc">{item.description}</div>

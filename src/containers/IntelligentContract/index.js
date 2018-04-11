@@ -5,28 +5,11 @@ import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {getReleaseChainsList, showAndHide, seachReleaseChains} from 'actions/Platform/getReleaseChainsList.js'
 
-import {
-    Button,
-    BackTop,
-    Popover,
-    Row,
-    Col,
-    Progress
-} from 'antd';
+import {BackTop} from 'antd';
 import './style.scss'
 
 import Header from './subpage/Header/index.js'
 import Content from './subpage/Content/';
-import Loading from "components/Loading/index.js"
-import Tables from 'components/Home/Tables/index.js'
-import Footer from 'components/Platform/Footer/index.js'
-
-import OpenLogo from 'images/open.png';
-import SafeLogo from 'images/safe.png';
-import EcologyLogo from 'images/ecology.png';
-import Assetslogo from 'images/assetslogo.png';
-import Block from 'images/block.png';
-import Nodes from 'images/nodes.png';
 
 class IntelligentContract extends React.Component {
     constructor(props) {
@@ -92,7 +75,6 @@ class IntelligentContract extends React.Component {
                     seachReleaseChains = {this.seachReleaseChains}
                     chainid={this.props.match.params.id}
                 />
-                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

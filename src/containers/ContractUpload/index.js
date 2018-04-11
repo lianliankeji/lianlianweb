@@ -11,7 +11,6 @@ import './style.scss'
 
 import Header from './subpage/Header/index.js'
 import Content from './subpage/Content/';
-import Footer from 'components/Platform/Footer/index.js'
 
 class ContractUpload extends React.Component {
     constructor(props) {
@@ -49,7 +48,6 @@ class ContractUpload extends React.Component {
                     contractSave = {this.props.contractSave}
                     getChainsData = {this.props.ChainsData}
                 />
-                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

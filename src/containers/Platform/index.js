@@ -12,7 +12,6 @@ import './style.scss'
 
 import Header from './subpage/Header/index.js'
 import Content from './subpage/Content/';
-import Footer from 'components/Platform/Footer/index.js'
 
 
 class Platform extends React.Component {
@@ -65,7 +64,6 @@ class Platform extends React.Component {
             <div>
                 <Header />
                 <Content />
-                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

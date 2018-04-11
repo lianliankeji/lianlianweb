@@ -10,7 +10,6 @@ import './style.scss'
 
 import Header from './subpage/Header/index.js'
 import Content from './subpage/Content/';
-import Footer from 'components/Platform/Footer/index.js'
 
 class ContractVerify extends React.Component {
     constructor(props) {
@@ -62,7 +61,6 @@ class ContractVerify extends React.Component {
             <div>
                 <Header />
                 <Content uploadContractInfo={this.getUploadContractinfo()}/>
-                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

@@ -33,7 +33,8 @@ module.exports = {
 			'images': resolve('src/images/'),
 			'api': resolve('src/api/'),
 			'constants': resolve('src/constants/'),
-			'utils': resolve('src/utils/')
+			'utils': resolve('src/utils/'),
+            'config': resolve('config/')
 		},
 		extensions: ['.js', '.jsx', '.less', '.scss', '.css'],
 	},

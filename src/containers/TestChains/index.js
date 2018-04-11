@@ -5,47 +5,19 @@ import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {getTestChainsList, showAndHide, seachTestChains} from 'actions/Platform/getTestChainsList.js'
 
-import {
-    Button,
-    BackTop,
-    Popover,
-    Row,
-    Col,
-    Progress
-} from 'antd';
+import {BackTop, Popover} from 'antd';
 import './style.scss'
 
 import Header from './subpage/Header/index.js'
 import Content from './subpage/Content/';
-import Loading from "components/Loading/index.js"
-import Tables from 'components/Home/Tables/index.js'
-import Footer from 'components/Platform/Footer/index.js'
 
-import OpenLogo from 'images/open.png';
-import SafeLogo from 'images/safe.png';
-import EcologyLogo from 'images/ecology.png';
-import Assetslogo from 'images/assetslogo.png';
-import Block from 'images/block.png';
-import Nodes from 'images/nodes.png';
 
 class Chains extends React.Component {
     constructor(props) {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-            allianceList: [{
-                img: OpenLogo,
-                charac: "开放",
-                descList: ["智能合约定制化", "联盟链共识节点可灵活扩展接入", "成熟的BAAS平台快速区块链赋能"]
-            }, {
-                img: SafeLogo,
-                charac: "安全",
-                descList: ["手机二次验证", "ECDSA数字证书", "决策委员会多重签名"]
-            }, {
-                img: EcologyLogo,
-                charac: "生态",
-                descList: ["零售行业互链互通", "零售供应链金融数字贸易"]
-            }]
+
         };
     }
 
@@ -176,7 +148,6 @@ class Chains extends React.Component {
                     showAndHide={this.showAndHide}
                     seachTestChains={this.seachTestChains}
                     chainid={this.props.match.params.id}/>
-                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

@@ -2,8 +2,9 @@ import * as actionTypes from 'constants/index.js'
 import axios from 'api/axios.js'
 import {timeFormat} from 'utils/date.js'
 import { createHashHistory } from 'history'
+import Config from "config/index.js"
 
-let BASE_URL = process.env.NODE_ENV == "production" ? "https://loulan.lianlianchains.com/" : ""
+let BASE_URL = Config[process.env.NODE_ENV].baseUrl;
 
 //选择的合约信息
 export const saveSelectContractIteminfo = (payload) => {

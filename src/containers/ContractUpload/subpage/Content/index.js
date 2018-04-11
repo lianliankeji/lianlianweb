@@ -115,7 +115,7 @@ class Content extends Component {
             }else{
                 message.error("请完善信息");
 
-                reuturn;
+                return;
             }
         });
         if(this.state.uploaded1 && this.state.uploaded2) {

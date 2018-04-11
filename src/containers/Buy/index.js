@@ -8,14 +8,11 @@ import {cookieUtil} from "utils/cookie.js"
 import {IWebSocket} from "utils/socket.js"
 import {createHashHistory} from "history"
 
-import {Button, BackTop, Popover, Row, Col} from 'antd';
+import {BackTop} from 'antd';
 import './style.scss'
 
 import Header from './subpage/Header/index.js'
 import Content from './subpage/Content/';
-import Footer from 'components/Platform/Footer/index.js'
-
-import Qrcode from 'images/jiaoyi.png';
 
 
 class Buy extends React.Component {
@@ -73,7 +70,7 @@ class Buy extends React.Component {
 
             console.log(response.data.data.orderNo);
             this.setState({
-                qrcode: "https://loulan.lianlianchains.com/loulan/OrderTwoBar?orderNo="+response.data.data.orderNo + "&width=200"
+                qrcode: "/loulan/OrderTwoBar?orderNo="+response.data.data.orderNo + "&width=200"
             })
 
         })
@@ -94,7 +91,7 @@ class Buy extends React.Component {
                     qrcode={this.state.qrcode}
                     loading={this.state.loading}
                 />
-                <Footer />
+
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

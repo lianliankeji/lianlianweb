@@ -35,7 +35,7 @@ class Login extends React.Component {
             if (response.data.ec == "000000") {
 
                 this.setState({
-                    qrcode: "https://loulan.lianlianchains.com/loulan/getTwoBarCodes?uuid=" + response.data.data + "&width=200",
+                    qrcode: "/loulan/getTwoBarCodes?uuid=" + response.data.data + "&width=200",
                 })
             }
 

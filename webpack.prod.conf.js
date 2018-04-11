@@ -39,7 +39,7 @@ module.exports = merge(baseWebpackConfig, {
         }),
         new htmlWebpackPlugin({
             title: "链链",
-            filename: config.build.index,
+            filename: config.production.index,
             template: 'index.html',
             inject: true,
             hash: true,

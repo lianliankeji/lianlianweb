@@ -117,9 +117,12 @@ class Header extends Component {
                                 :
                                 <ul className="header-nav">
                                     <li className="header-nav-item">
-                                        <div className="link" onClick={this.checkCookie}>联盟链</div>
+                                        <div className="link" onClick={this.checkCookie}>开放平台</div>
                                         {/*<LinkUrl className="link" to="/platform/login">联盟链</LinkUrl>*/}
                                         {/*<LinkUrl className="link" to="/">公司产品</LinkUrl>*/}
+                                    </li>
+                                    <li className="header-nav-item" title="Digital Assets">
+                                        <Anchor affix={false}><Link className="link" href="#union" title="联盟链"/></Anchor>
                                     </li>
                                     <li className="header-nav-item" title="Digital Assets">
                                         <Anchor affix={false}><Link className="link" href="#assets" title="核心优势"/></Anchor>

@@ -11,7 +11,6 @@ import './style.scss'
 
 import Header from './subpage/Header/index.js'
 import Content from './subpage/Content/';
-import Footer from 'components/Platform/Footer/index.js'
 
 
 class ContractShop extends React.Component {
@@ -74,7 +73,6 @@ class ContractShop extends React.Component {
                     showAndHide={this.showAndHide}
                     saveSelectContractIteminfo = {this.saveSelectContractIteminfo}
                 />
-                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

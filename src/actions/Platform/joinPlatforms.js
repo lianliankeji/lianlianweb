@@ -1,9 +1,9 @@
 import * as actionTypes from 'constants/index.js'
 import axios from 'api/axios.js'
 import {timeFormat} from 'utils/date.js'
-// import axios from 'axios'
+import Config from "config/index.js"
 
-let BASE_URL = process.env.NODE_ENV == "production" ? "https://loulan.lianlianchains.com/" : ""
+let BASE_URL = Config[process.env.NODE_ENV].baseUrl;
 
 //获取链列表
 export const getChainsData = (payload) => {
@@ -47,10 +47,10 @@ export const showChainsTable = (payload) => {
         let chainsListData = payload.data;
 
         chainsListData.map((item, index) =>{
-            if(index == payload.id) {
+            if(item.chainid == payload.id) {
                 axios({
                     method: 'get',
-                    url: BASE_URL + '/llchain/getsometransonce',
+                    url: BASE_URL + 'llchain/getsometransonce',
                 }, {
                     /*firstName: 'Fred',
                      lastName: 'Flintstone'*/

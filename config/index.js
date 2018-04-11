@@ -2,9 +2,10 @@
 var path = require('path')
 
 module.exports = {
-	build: {
+    production: {
 		env: require('./prod.env'),
 		index: path.resolve(__dirname, '../dist/index.html'),
+        baseUrl: "/",
 		assetsRoot: path.resolve(__dirname, '../dist'),
 		assetsSubDirectory: 'static',
 		assetsPublicPath: '/',
@@ -15,9 +16,11 @@ module.exports = {
 	},
 	test: {
         env: require('./test.env'),
+        baseUrl: "https://test.loulan.lianlianchains.com/",
 	},
 	development: {
 		env: require('./dev.env'),
+        baseUrl: "/",
 		port: 8080,
 		inline: true,
 		progress: true,
@@ -26,17 +29,17 @@ module.exports = {
 		assetsPublicPath: '/',
 		proxyTable: {
             '/loulan/chain/savecontract': {
-                target: 'http://192.168.50.238:9666',
+                target: 'https://www.lianlianchains.com/',
                 changeOrigin: true,
                 secure: false
             },
             '/loulan/chain/updatecontract': {
-                target: 'http://192.168.50.238:9666',
+                target: 'https://www.lianlianchains.com/',
                 changeOrigin: true,
                 secure: false
             },
             '/loulan': {
-                target: 'https://loulan.lianlianchains.com/',
+                target: 'https://www.lianlianchains.com/',
                 changeOrigin: true,
                 secure: false
             },

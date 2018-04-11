@@ -65,9 +65,9 @@ class Header extends Component {
                         }
                     </Col>
                 </Row>
-                <div className="bg">
-                    <p className="slogen">一站式联盟链解决方案</p>
-                </div>
+                {/*<div className="bg">*/}
+                    {/*<p className="slogen">一站式联盟链解决方案</p>*/}
+                {/*</div>*/}
 
             </header>
 

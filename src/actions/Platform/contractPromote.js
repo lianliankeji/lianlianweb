@@ -1,15 +1,16 @@
 import * as actionTypes from 'constants/index.js'
 import axios from 'api/axios.js'
 import {createHashHistory} from 'history'
+import Config from "config/index.js"
 
-let BASE_URL = process.env.NODE_ENV == "production" ? "https://loulan.lianlianchains.com/" : ""
+let BASE_URL = Config[process.env.NODE_ENV].baseUrl;
 
 //获取链列表
 export const contractPromote = (payload) => {
     return (dispatch) => {
         axios({
             method: 'post',
-            url: BASE_URL + '/loulan/chain/updatecontract' ,
+            url: BASE_URL + 'loulan/chain/updatecontract' ,
         }, {
             ...payload
         }).then((response) => {

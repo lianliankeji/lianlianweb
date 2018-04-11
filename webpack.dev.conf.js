@@ -17,7 +17,7 @@ var NODE_ENV = process.env.NODE_ENV;
 
 const BrowerlicPath = 'http://dev.fengfeng.com';
 
-
+console.log(Config[NODE_ENV].proxyTable)
 
 
 module.exports = merge(baseWebpackConfig, {

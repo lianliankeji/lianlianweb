@@ -1,15 +1,15 @@
 import * as actionTypes from 'constants/index.js'
 import axios from 'api/axios.js'
-// import axios from 'axios'
+import Config from "config/index.js"
 
-let BASE_URL = process.env.NODE_ENV == "production" ? "https://loulan.lianlianchains.com/" : ""
+let BASE_URL = Config[process.env.NODE_ENV].baseUrl;
 
 //获取链列表
 export const getContractShopList = (payload) => {
     return (dispatch) => {
         axios({
             method: 'get',
-            url: BASE_URL + '/loulan/chain/queryallcontract',
+            url: BASE_URL + 'loulan/chain/queryallcontract',
         }, {
 
         }).then((response) => {
@@ -17,6 +17,8 @@ export const getContractShopList = (payload) => {
             let array = response.data.data;
             let result = array.map((item, index) => {
                 return Object.assign({}, item, {showAll: false})
+            }).filter((elem, i) =>{
+                return elem.testflag == 1;
             });
 
             dispatch({

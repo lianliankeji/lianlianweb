@@ -3,7 +3,9 @@ import { message } from 'antd';
 import {cookieUtil} from "utils/cookie.js"
 import axios from '../api/axios.js'
 import apiRoot from "../api/apiJson.js"
-let BASE_URL = process.env.NODE_ENV == "production" ? apiRoot["release"].baseUrl : ""
+import Config from "config/index.js"
+
+let BASE_URL = Config[process.env.NODE_ENV].baseUrl;
 let Path = process.env.NODE_ENV == "production" ? apiRoot.release.Route : apiRoot["dev"].Route
 // import axios from 'axios'
 
