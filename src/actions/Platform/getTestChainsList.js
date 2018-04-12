@@ -35,7 +35,7 @@ export const seachTestChains = (payload) => {
     return (dispatch) => {
         axios({
             method: 'get',
-            url: BASE_URL + '/loulan/chain/querycontractbynameflag',
+            url: BASE_URL + 'loulan/chain/querycontractbynameflag',
         }, {
             name: payload.name,
             chainid: payload.chainid,

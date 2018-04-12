@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {getContractShopList, showAndHide} from 'actions/Platform/getContractShopList.js'
+import {cookieUtil} from "utils/cookie.js"
+import {createHashHistory} from "history"
 
 import {
     Button,
@@ -33,36 +35,10 @@ class Examine extends React.Component {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-            allianceList: [{
-                img: OpenLogo,
-                charac: "开放",
-                descList: ["智能合约定制化", "联盟链共识节点可灵活扩展接入", "成熟的BAAS平台快速区块链赋能"]
-            }, {
-                img: SafeLogo,
-                charac: "安全",
-                descList: ["手机二次验证", "ECDSA数字证书", "决策委员会多重签名"]
-            }, {
-                img: EcologyLogo,
-                charac: "生态",
-                descList: ["零售行业互链互通", "零售供应链金融数字贸易"]
-            }]
+
         };
     }
 
-    login = () => {
-        let loginState = this.props.userinfo.login;
-
-
-        if (loginState) {
-            this.props.userinfoActions.logout({
-                login: false
-            })
-        } else {
-            this.props.userinfoActions.login({
-                login: true
-            })
-        }
-    }
 
     getTableColumns = () => {
         const columns = [{
@@ -103,26 +79,16 @@ class Examine extends React.Component {
     }
 
     getTableData = () => {
-        // const data = this.props.homesData.txRecords;
-        //
-        // data.map((item, index) => {
-        //     return item.key = JSON.stringify(index);
-        // })
-        //
-        //
-        // return data;
+
 
     }
 
     componentWillMount() {
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
         this.props.getContractShopList();
-        // var oRoot = document.getElementById('root');
-        // var socket = io.connect("https://store.lianlianchains.com");
-        // socket.on("chainDataUpdt", function(data) {
-        //     console.log(data);
-        //     // oRoot.innerText = data.hello;
-        //     // socket.emit("client", {my: "data"})
-        // });
+
     }
 
     componentDidMount() {

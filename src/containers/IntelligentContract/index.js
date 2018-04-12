@@ -3,12 +3,15 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
+import {cookieUtil} from "utils/cookie.js"
 import {getReleaseChainsList, showAndHide, seachReleaseChains} from 'actions/Platform/getReleaseChainsList.js'
+import {createHashHistory} from "history"
 
 import {BackTop} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
+import Header from 'components/Platform/Header/index.js'
+import Footer from 'components/Platform/Footer/index.js'
 import Content from './subpage/Content/';
 
 class IntelligentContract extends React.Component {
@@ -21,6 +24,9 @@ class IntelligentContract extends React.Component {
     }
 
     componentWillMount() {
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
         this.props.getReleaseChainsList({
             chainid: this.props.match.params.id
         });
@@ -75,6 +81,7 @@ class IntelligentContract extends React.Component {
                     seachReleaseChains = {this.seachReleaseChains}
                     chainid={this.props.match.params.id}
                 />
+                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

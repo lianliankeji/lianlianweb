@@ -226,15 +226,15 @@ class Content extends Component {
             },
         };
         return (
-            <Row type="flex" justify="center" className="upload-content">
+            <Row type="flex" justify="center" className="promote-content">
                 <Col className="top" span={16}>
                     <Breadcrumb separator=">">
+                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/">首页</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/develop">合约开发</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/upload">合约上传</Breadcrumb.Item>
+                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/join">加入平台</Breadcrumb.Item>
                     </Breadcrumb>
 
-                    <h2 className="title">合约上传</h2>
+                    <h2 className="title">合约升级</h2>
 
                     <Row type="flex" justify="center" className="chains-intent">
                         <Col span={18} className="content">
@@ -311,10 +311,10 @@ class Content extends Component {
                         </Col>
                     </Row>
 
-                    <div className="rule">
-                        <p>1.发布后可立即在测试链中执行合约测试</p>
-                        <p>2.审核成功后系统自动将合约上架应用商店</p>
-                    </div>
+                    {/*<div className="rule">*/}
+                        {/*<p>1.发布后可立即在测试链中执行合约测试</p>*/}
+                        {/*<p>2.审核成功后系统自动将合约上架应用商店</p>*/}
+                    {/*</div>*/}
 
                 </Col>
             </Row>

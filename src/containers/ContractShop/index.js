@@ -4,12 +4,14 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {getContractShopList, showAndHide} from 'actions/Platform/getContractShopList.js'
+import {createHashHistory} from "history"
 import {saveSelectContractIteminfo} from "actions/Platform/selectContractItem.js"
+import {cookieUtil} from "utils/cookie.js"
 
 import { BackTop,} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
+import Header from 'components/Platform/Header/index.js'
 import Content from './subpage/Content/';
 
 
@@ -23,6 +25,9 @@ class ContractShop extends React.Component {
     }
 
     componentWillMount() {
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
         this.props.getContractShopList();
     }
 

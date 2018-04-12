@@ -4,11 +4,13 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {getTestChainsList, showAndHide, seachTestChains} from 'actions/Platform/getTestChainsList.js'
-
+import {createHashHistory} from "history"
+import {cookieUtil} from "utils/cookie.js"
 import {BackTop, Popover} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
+import Header from 'components/Platform/Header/index.js'
+import Footer from 'components/Platform/Footer/index.js'
 import Content from './subpage/Content/';
 
 
@@ -19,21 +21,6 @@ class Chains extends React.Component {
         this.state = {
 
         };
-    }
-
-    login = () => {
-        let loginState = this.props.userinfo.login;
-
-
-        if (loginState) {
-            this.props.userinfoActions.logout({
-                login: false
-            })
-        } else {
-            this.props.userinfoActions.login({
-                login: true
-            })
-        }
     }
 
     getTableColumns = () => {
@@ -74,33 +61,18 @@ class Chains extends React.Component {
 
     }
 
-    getTableData = () => {
-        // const data = this.props.homesData.txRecords;
-        //
-        // data.map((item, index) => {
-        //     return item.key = JSON.stringify(index);
-        // })
-        //
-        //
-        // return data;
-
-    }
 
     componentWillMount() {
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
         this.props.getTestChainsList({
             chainid: this.props.match.params.id
         });
-        // var oRoot = document.getElementById('root');
-        // var socket = io.connect("https://store.lianlianchains.com");
-        // socket.on("chainDataUpdt", function(data) {
-        //     console.log(data);
-        //     // oRoot.innerText = data.hello;
-        //     // socket.emit("client", {my: "data"})
-        // });
     }
 
     componentDidMount() {
-        console.log()
+
     }
 
     getTestChainsList = () => {
@@ -148,10 +120,10 @@ class Chains extends React.Component {
                     showAndHide={this.showAndHide}
                     seachTestChains={this.seachTestChains}
                     chainid={this.props.match.params.id}/>
+                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>
-                {/* <Loading /> */}
             </div>
 
         )

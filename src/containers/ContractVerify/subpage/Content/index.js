@@ -3,16 +3,10 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 import {Anchor,Row,Col,Breadcrumb,Button, Input} from 'antd';
 const Search = Input.Search;
-import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
-import {createHashHistory} from "history"
+import {withRouter} from 'react-router-dom'
 
 
 import './style.scss';
-
-
-import Zhineng from 'images/zhineng.png';
-import Tongzhi from 'images/tongzhi.png';
-import Qrcode from 'images/qrcode.png'
 
 
 
@@ -51,9 +45,6 @@ class Content extends Component {
         this.props.showChainsTable(data, id);
     }
 
-    goZhixng() {
-        location.replace("/" + location.hash + "/perform")
-    }
 
     hideShowButton = (index, types) => {
         this.props.showAndHide(index, types);
@@ -69,15 +60,19 @@ class Content extends Component {
         location.replace("/#/platform")
     }
 
+    goTestChains = () => {
+        this.props.history.push("/platform/join");
+    }
+
     render() {
         return (
             <Row type="flex" justify="center" className="verify-content">
                 <Col className="top" span={16}>
                     <Breadcrumb separator=">">
+                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/">首页</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/develop">合约开发</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/upload">合约上传</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/verify">审核中</Breadcrumb.Item>
                     </Breadcrumb>
 
                     <h2 className="title">合约已发布  正在审核中...</h2>
@@ -97,6 +92,11 @@ class Content extends Component {
 
                         </Col>
                     </Row>
+                    <Row type="flex" justify="center">
+                        <Col span={18} className="prompt">
+                            提示：请在测试链中查询合约状态<span className="skip" onClick={this.goTestChains}>点此前往</span>
+                        </Col>
+                    </Row>
                     <div className="button-content">
                         <Button className="Back" onClick={this.goBack}>返回</Button>
                     </div>
@@ -111,4 +111,4 @@ class Content extends Component {
     }
 }
 
-export default Content;
+export default withRouter(Content);

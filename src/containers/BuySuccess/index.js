@@ -4,11 +4,14 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {getContractShopList, showAndHide} from 'actions/Platform/getContractShopList.js'
+import {cookieUtil} from "utils/cookie.js"
+import {createHashHistory} from "history"
 
 import {BackTop} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
+import Header from 'components/Platform/Header/index.js'
+import Footer from 'components/Platform/Footer/index.js'
 import Content from './subpage/Content/';
 
 class BuySuccess extends React.Component {
@@ -21,6 +24,9 @@ class BuySuccess extends React.Component {
     }
 
     componentWillMount() {
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
         this.props.getContractShopList();
     }
 
@@ -61,6 +67,7 @@ class BuySuccess extends React.Component {
             <div>
                 <Header />
                 <Content orderInfo = {orderInfo} />
+                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

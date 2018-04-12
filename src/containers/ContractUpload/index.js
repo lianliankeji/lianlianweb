@@ -3,13 +3,16 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
-import {contractSave} from 'actions/Platform/contractSave.js'
+import {contractSave, checkDuplicate} from 'actions/Platform/contractSave.js'
 import {getChainsData} from 'actions/Platform/joinPlatforms.js'
+import {cookieUtil} from "utils/cookie.js"
+import {createHashHistory} from "history"
 
 import {BackTop} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
+import Header from 'components/Platform/Header/index.js'
+import Footer from 'components/Platform/Footer/index.js'
 import Content from './subpage/Content/';
 
 class ContractUpload extends React.Component {
@@ -29,6 +32,9 @@ class ContractUpload extends React.Component {
     }
 
     componentWillMount() {
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
         this.props.getChainsData();
     }
 
@@ -39,15 +45,15 @@ class ContractUpload extends React.Component {
 
 
     render() {
-
-
         return (
             <div>
                 <Header />
                 <Content
                     contractSave = {this.props.contractSave}
                     getChainsData = {this.props.ChainsData}
+                    checkDuplicate={this.props.checkDuplicate}
                 />
+                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>
@@ -67,6 +73,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         contractSave: bindActionCreators(contractSave, dispatch),
+        checkDuplicate: bindActionCreators(checkDuplicate, dispatch),
         getChainsData: bindActionCreators(getChainsData, dispatch)
     }
 }

@@ -77,9 +77,9 @@ class Content extends Component {
             <Row type="flex" justify="center" className="test-chains-content">
                 <Col className="top" span={16}>
                     <Breadcrumb separator=">">
+                        <Breadcrumb.Item className="BreadcrumbItem" href={"/#/"}>首页</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/join">加入平台</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href={`/#/platform/join/release/${this.props.chainid}/contract`}>正式链</Breadcrumb.Item>
                     </Breadcrumb>
 
                     <h2 className="title">智能合约</h2>
@@ -116,7 +116,7 @@ class Content extends Component {
                                                 style={{display: !item.showAll ? "none" : "block"}}
                                                 onClick={this.hideShowButton.bind(this, index, false)}><span className="close">收起</span></p>
                                             <Button className="button" size={"default"} onClick={this.update.bind(this,item)}>升级</Button>
-                                            <Button className="button" size={"default"} onClick={this.stop}>停用</Button>
+                                            {/*<Button className="button" size={"default"} onClick={this.stop}>停用</Button>*/}
                                         </div>
                                     </Col>
                                 )

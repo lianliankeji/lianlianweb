@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux'
 import {withRouter} from "react-router-dom"
 import {timeFormat} from 'utils/date.js'
 import {getContractShopList, showAndHide} from 'actions/Platform/getContractShopList.js'
+import {cookieUtil} from "utils/cookie.js"
 
 import {BackTop} from 'antd';
 import './style.scss'
@@ -23,7 +24,9 @@ class ContractDev extends React.Component {
     }
 
     componentWillMount() {
-
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
     }
 
     componentDidMount() {

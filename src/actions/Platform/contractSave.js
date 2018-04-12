@@ -10,19 +10,19 @@ export const contractSave = (payload) => {
     return (dispatch) => {
         axios({
             method: 'post',
-            url: BASE_URL + 'loulan/chain/savecontract' ,
+            url: BASE_URL + 'loulan/chain/savecontract',
         }, {
             ...payload
         }).then((response) => {
-            if(response.data.ec == "000000") {
+            if (response.data.ec == "000000") {
 
-                sessionStorage.setItem("uploadContractInfo",JSON.stringify(response.data.data));
+                sessionStorage.setItem("uploadContractInfo", JSON.stringify(response.data.data));
 
                 dispatch({
                     type: actionTypes.UPLOAD_CONTRACT_INFO,
                     result: response.data.data
                 });
-                
+
                 createHashHistory().push("/platform/contract/verify")
             }
             console.log(response)
@@ -32,6 +32,17 @@ export const contractSave = (payload) => {
             });
     }
 
+}
+
+export const checkDuplicate = (payload) => {
+    return (dispatch) => {
+        return axios({
+            method: 'post',
+            url: BASE_URL + 'loulan/chain/queryName',
+        }, {
+            name: payload.name
+        })
+    }
 }
 
 

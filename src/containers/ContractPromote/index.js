@@ -5,11 +5,13 @@ import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {contractPromote} from 'actions/Platform/contractPromote.js'
 import {getChainsData} from 'actions/Platform/joinPlatforms.js'
+import {cookieUtil} from "utils/cookie.js"
+import {createHashHistory} from "history"
 
 import {BackTop} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
+import Header from 'components/Platform/Header/index.js'
 import Content from './subpage/Content/';
 import Footer from 'components/Platform/Footer/index.js'
 
@@ -36,6 +38,9 @@ class ContractPromote extends React.Component {
     }
 
     componentWillMount() {
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
         this.props.getChainsData();
     }
 

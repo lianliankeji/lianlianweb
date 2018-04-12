@@ -3,12 +3,15 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
+import {createHashHistory} from "history"
+import {cookieUtil} from "utils/cookie.js"
 
 
 import {BackTop} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
+import Header from 'components/Platform/Header/index.js'
+import Footer from 'components/Platform/Footer/index.js'
 import Content from './subpage/Content/';
 
 class ContractVerify extends React.Component {
@@ -19,7 +22,9 @@ class ContractVerify extends React.Component {
     }
 
     componentWillMount() {
-
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
     }
 
     componentDidMount() {
@@ -61,6 +66,7 @@ class ContractVerify extends React.Component {
             <div>
                 <Header />
                 <Content uploadContractInfo={this.getUploadContractinfo()}/>
+                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

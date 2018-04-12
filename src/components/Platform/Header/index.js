@@ -44,10 +44,10 @@ class PlatformHeader extends Component {
                                 "移动端"
                                 :
                                 <Router>
-                                    <ul className="header-nav">
-                                        <li className="header-nav-item"><Link className="link" to="/">首页</Link></li>
-                                        <li className="header-nav-item"><Link className="link" to="/platform">开放平台</Link></li>
-                                    </ul>
+                                    {/*<ul className="header-nav">*/}
+                                        {/*<li className="header-nav-item"><Link className="link" to="/">首页</Link></li>*/}
+                                        {/*<li className="header-nav-item"><Link className="link" to="/platform">开放平台</Link></li>*/}
+                                    {/*</ul>*/}
                                 </Router>
                         }
                     </Col>

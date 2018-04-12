@@ -4,11 +4,14 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {getChainsData, showChainsTable} from 'actions/Platform/joinPlatforms.js'
+import {cookieUtil} from "utils/cookie.js"
+import {createHashHistory} from "history"
 
 import {BackTop, Popover} from 'antd';
 import './style.scss'
 
 import Header from 'components/Platform/Header/index.js'
+import Footer from 'components/Platform/Footer/index.js'
 import Content from './subpage/Content/';
 
 class JoinPlatform extends React.Component {
@@ -60,6 +63,9 @@ class JoinPlatform extends React.Component {
 
 
     componentWillMount() {
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
         this.props.getChainsData();
     }
 
@@ -93,6 +99,7 @@ class JoinPlatform extends React.Component {
             <div>
                 <Header />
                 <Content chainsList={this.getChainsData()} showChainsTable={this.showChainsTable} />
+                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

@@ -56,9 +56,9 @@ class Content extends Component {
             <Row type="flex" justify="center" className="chains-content">
                 <Col className="top" span={16}>
                     <Breadcrumb separator=">">
+                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/">首页</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/join">加入平台</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/join/release">正式链</Breadcrumb.Item>
                     </Breadcrumb>
 
                     <h2 className="title">正式链</h2>

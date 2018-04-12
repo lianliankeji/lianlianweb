@@ -6,11 +6,12 @@ import {timeFormat} from 'utils/date.js'
 import {getHomesData} from 'actions/Home/getHomeData.js'
 import {cookieUtil} from "utils/cookie.js"
 import {createHashHistory} from "history"
+import Footer from 'components/Platform/Footer/index.js'
 
 import {BackTop} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
+import Header from 'components/Platform/Header/index.js'
 import Content from './subpage/Content/';
 
 
@@ -41,9 +42,9 @@ class Platform extends React.Component {
     }
 
     componentWillMount() {
-        // if(!cookieUtil.hasItem("user")){
-        //     createHashHistory().push("/platform/login");
-        // }
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
     }
 
     componentDidMount() {
@@ -64,6 +65,7 @@ class Platform extends React.Component {
             <div>
                 <Header />
                 <Content />
+                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

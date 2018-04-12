@@ -46,10 +46,10 @@ class Content extends Component {
             <Row type="flex" justify="center" className="chains-perform-content">
                 <Col className="top" span={16}>
                     <Breadcrumb separator=">">
+                        <Breadcrumb.Item className="BreadcrumbItem" href={"/#/"}>首页</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/join">加入平台</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href={`/#/platform/join/test/${this.props.chainid}`}>测试链</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href={`/#/platform/join/test/${this.props.chainid}/perform`}>执行</Breadcrumb.Item>
                     </Breadcrumb>
 
                     <Row type="flex" justify="space-between" className="item">
@@ -65,10 +65,9 @@ class Content extends Component {
                         </Col>
                     </Row>
                     <div className="transfer">
-                        {/*<img src={Transfer} onClick={this.perform} />*/}
                         <Button className="button" size={'large'} onClick={this.perform}>执行</Button>
-                        <Button style={{marginLeft: "10px"}} className="button" size={'large'} onClick={this.query}>查询</Button>
-                        {/*<img src={Transfer} onClick={this.query}/></div>*/}
+                        <Button style={{marginLeft: "10px",marginRight: "10px"}} className="button" size={'large'} onClick={this.query}>查询</Button>
+                        <Button className="button" size={'large'}><a href="https://www.lianlianchains.com/smartcontract/lltemplet.docx">接口文档下载</a></Button>
                     </div>
                     <Row type="flex" justify="space-between" className="item">
                         <Col span={3} className="chains-intent-item">

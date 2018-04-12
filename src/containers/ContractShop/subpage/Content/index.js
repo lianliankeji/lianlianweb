@@ -70,13 +70,10 @@ class Content extends Component {
     render() {
         return (
             <Row type="flex" justify="center" className="contrat-shop">
-                <Col className="bg-content" span={24}>
-                    <div className="bg"></div>
-                </Col>
                 <Col className="top" span={16}>
                     <Breadcrumb separator=">">
+                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/">首页</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract">合约商店</Breadcrumb.Item>
                     </Breadcrumb>
 
                     <h2 className="title">合约商店</h2>

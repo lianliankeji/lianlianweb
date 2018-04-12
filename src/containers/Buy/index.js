@@ -11,7 +11,8 @@ import {createHashHistory} from "history"
 import {BackTop} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
+import Header from 'components/Platform/Header/index.js'
+import Footer from 'components/Platform/Footer/index.js'
 import Content from './subpage/Content/';
 
 
@@ -58,6 +59,12 @@ class Buy extends React.Component {
         });
     }
 
+    componentWillMount() {
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
+    }
+
     componentDidMount() {
         let orderInfo = JSON.parse(localStorage.getItem("orderInfo"));
         this.startSocket();
@@ -91,7 +98,7 @@ class Buy extends React.Component {
                     qrcode={this.state.qrcode}
                     loading={this.state.loading}
                 />
-
+                <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>

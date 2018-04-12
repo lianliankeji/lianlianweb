@@ -9,6 +9,7 @@ import {
 import {
     timeFormat
 } from 'utils/date.js'
+import {cookieUtil} from "utils/cookie.js"
 import {
     getChainsData,
     showChainsTable
@@ -17,7 +18,8 @@ import {
 import {BackTop} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
+import Header from 'components/Platform/Header/index.js'
+import Footer from 'components/Platform/Footer/index.js'
 import Content from './subpage/Content/';
 
 
@@ -31,6 +33,9 @@ class Chains extends React.Component {
     }
 
     componentWillMount() {
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
         this.props.getChainsData();
     }
 
@@ -67,7 +72,7 @@ class Chains extends React.Component {
                     chainsList={this.getChainsData()}
                     showChainsTable={this.showChainsTable}
                     chainid={this.props.match.params.id}/>
-                <BackTop>
+                <Footer />                <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>
                 {/* <Loading /> */}

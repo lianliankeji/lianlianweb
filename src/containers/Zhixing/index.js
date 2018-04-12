@@ -4,17 +4,16 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {perform, query} from 'actions/Platform/perform.js'
+import {cookieUtil} from "utils/cookie.js"
+import {createHashHistory} from "history"
 
-import {Button, BackTop, Popover, Row, Col, Progress} from 'antd';
+import {BackTop} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
-import Content from './subpage/Content/';
+import Header from 'components/Platform/Header/index.js'
 import Footer from 'components/Platform/Footer/index.js'
+import Content from './subpage/Content/';
 
-import OpenLogo from 'images/open.png';
-import SafeLogo from 'images/safe.png';
-import EcologyLogo from 'images/ecology.png';
 
 
 class Chains extends React.Component {
@@ -64,7 +63,9 @@ class Chains extends React.Component {
     }
 
     componentWillMount() {
-
+        if(!cookieUtil.hasItem("user")){
+            createHashHistory().push("/platform/login");
+        }
     }
 
     componentDidMount() {

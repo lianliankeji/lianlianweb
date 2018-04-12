@@ -3,7 +3,7 @@ import * as actionsTypes from 'constants/index.js'
 const initialState = {
     testChainsList:[],
     contractState: {
-        "0": "正在安装",
+        "0": "上传成功",
         "1": "正在安装",
         "2": "安装失败",
         "3": "安装成功",

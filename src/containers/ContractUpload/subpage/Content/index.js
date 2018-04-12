@@ -13,10 +13,6 @@ import {cookieUtil} from "utils/cookie.js"
 import './style.scss';
 
 
-import Zhineng from 'images/zhineng.png';
-import Tongzhi from 'images/tongzhi.png';
-import Qrcode from 'images/qrcode.png'
-
 
 
 const formItemLayout = {
@@ -29,14 +25,13 @@ const formItemLayout = {
         sm: { span: 12 },
     },
 };
-// const formItemLayout = {
-//     labelCol: { span: 4 },
-//     wrapperCol: { span: 8 },
-// };
+
 const formTailLayout = {
     labelCol: { span: 4 },
     wrapperCol: { span: 8, offset: 4 },
 };
+
+const oldStr = "";
 class Content extends Component {
     constructor(props) {
         super(props);
@@ -50,9 +45,6 @@ class Content extends Component {
         }
     }
 
-    toggleLogin = () => {
-        this.props.logFn();
-    }
 
     getChainsList = () => {
         const data = this.props.chainsList;
@@ -82,15 +74,6 @@ class Content extends Component {
         return data;
     }
 
-    check = () => {
-        this.props.form.validateFields(
-            (err) => {
-                if (!err) {
-                    console.info('success');
-                }
-            },
-        );
-    }
     handleChange = (e) => {
         this.setState({
             checkNick: e.target.checked,
@@ -147,8 +130,49 @@ class Content extends Component {
     }
 
     checkName = (e) => {
-        console.log(e.target.value)
+        let str = e.target.value;
+        var reg = /[a-zA-Z][a-zA-Z0-9_]*$/;
 
+        if(reg.test(str)) {
+            $(".name").val(str);
+        }else{
+            this.props.form.setFields({
+                name: {
+                    value: str,
+                    errors: [new Error('名字重复')],
+                },
+            });
+            $(".name").val("")
+        }
+
+
+    }
+
+    checkDuplicate = (e) => {
+        let str = e.target.value;
+
+        this.props.checkDuplicate({
+            name: str
+        }).then((response) => {
+            if(response.data.data == 1) {
+                this.props.form.setFields({
+                    name: {
+                        value: str,
+                        errors: [new Error('名字重复')],
+                    },
+                });
+            }else{
+
+            }
+            console.log(response)
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+    }
+
+    componentDidMount() {
 
     }
 
@@ -206,12 +230,17 @@ class Content extends Component {
             <Row type="flex" justify="center" className="upload-content">
                 <Col className="top" span={16}>
                     <Breadcrumb separator=">">
+                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/">首页</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform">开放平台</Breadcrumb.Item>
                         <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/develop">合约开发</Breadcrumb.Item>
-                        <Breadcrumb.Item className="BreadcrumbItem" href="/#/platform/contract/upload">合约上传</Breadcrumb.Item>
                     </Breadcrumb>
 
                     <h2 className="title">合约上传</h2>
+
+                    <div className="rule">
+                        <p>1.发布后可立即在测试链中执行合约测试</p>
+                        <p>2.审核成功后系统自动将合约上架应用商店</p>
+                    </div>
 
                     <Row type="flex" justify="center" className="chains-intent">
                         <Col span={18} className="content">
@@ -221,10 +250,15 @@ class Content extends Component {
                                     {getFieldDecorator('name', {
                                         rules: [{
                                             required: true,
-                                            message: '合约名称不能为空',
+                                            message: '只能以字母开头，内容为字母数字或下划线',
                                         }],
                                     })(
-                                        <Input className="item" placeholder="请输入合约名称" onChange={this.checkName} />
+                                        <Input
+                                            className="item name"
+                                            maxLength={16}
+                                            placeholder="请输入合约名称"
+                                            onChange={this.checkName}
+                                            onBlur={this.checkDuplicate}/>
                                     )}
                                 </FormItem>
                                 <FormItem {...formItemLayout} label="合约版本">
@@ -260,7 +294,7 @@ class Content extends Component {
                                 <FormItem {...formItemLayout} label="链">
                                     {getFieldDecorator('chainid', {
                                         rules: [
-                                            { required: true, message: '链ID不能为空' },
+                                            { required: true, message: '链类别不能为空' },
                                         ],
                                     })(
                                         <Select placeholder="请选择链">
@@ -289,10 +323,7 @@ class Content extends Component {
                         </Col>
                     </Row>
 
-                    <div className="rule">
-                        <p>1.发布后可立即在测试链中执行合约测试</p>
-                        <p>2.审核成功后系统自动将合约上架应用商店</p>
-                    </div>
+
 
                 </Col>
             </Row>
