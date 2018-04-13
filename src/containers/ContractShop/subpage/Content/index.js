@@ -1,16 +1,9 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-
-import {Anchor,Row,Col,Breadcrumb,Button, Input} from 'antd';
+import {withRouter} from "react-router-dom"
+import {Row,Col,Breadcrumb,Button, Input} from 'antd';
 const Search = Input.Search;
-import {HashRouter as Router,Route,Link,Redirect,Switch, withRouter} from 'react-router-dom'
-import { createHashHistory } from 'history'
-
-
 import './style.scss';
-
-
-import Zhineng from 'images/zhineng.png';
 import Tongzhi from 'images/tongzhi.png';
 
 
@@ -21,19 +14,7 @@ class Content extends Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
             showAll: "block",
-            headerNav: [{
-                name: "首页"
-            }, {
-                name: "申请入驻"
-            }, {
-                name: "联系我们"
-            }],
-
         }
-    }
-
-    toggleLogin = () => {
-        this.props.logFn();
     }
 
     getChainsList = () => {
@@ -46,7 +27,6 @@ class Content extends Component {
     }
 
     tableView(data, id){
-        console.log(id)
         this.props.showChainsTable(data, id);
     }
 
@@ -54,7 +34,6 @@ class Content extends Component {
         this.props.saveSelectContractIteminfo({
             data: item
         });
-        // createHashHistory().push('/platform/contract/buy')
     }
 
     hideShowButton = (index, types) => {
@@ -89,7 +68,7 @@ class Content extends Component {
                                             <p className="intro">
                                                 <span className={item.showAll ? "overflowZhankai" : "overflow"} ref={(overflow) => this.overflow = overflow}>{item.description}</span>
                                                 <span
-                                                    style={{display: item.showAll ? "none" : "block"}}
+                                                    style={{display: item.showAll || item.description.length <30 ? "none" : "block"}}
                                                     onClick={this.hideShowButton.bind(this, index, true)}
                                                     className="showAll">展开</span>
                                             </p>
@@ -98,7 +77,7 @@ class Content extends Component {
                                                 onClick={this.hideShowButton.bind(this, index, false)}><span className="close">收起</span></p>
                                             <div className="bottom">
                                                 <div>
-                                                    <span className="price">￥{item.price}</span>
+                                                    <span className="price">积分 {item.price}</span>
                                                     <span className="download">(已下载{item.download}次)</span>
                                                 </div>
                                                 {/*<Button className="button" size={"default"}><Link to={"/platform/contract/buy" }>购买</Link></Button>*/}

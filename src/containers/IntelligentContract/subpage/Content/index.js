@@ -108,14 +108,14 @@ class Content extends Component {
                                             <p className="intro">
                                                 <span className={item.showAll ? "overflowZhankai" : "overflow"} ref={(overflow) => this.overflow = overflow}>{item.description}</span>
                                                 <span
-                                                    style={{display: item.showAll ? "none" : "block"}}
+                                                    style={{display: item.showAll || item.description.length <30 ? "none" : "block"}}
                                                     onClick={this.hideShowButton.bind(this, index, true)}
                                                     className="showAll">展开</span>
                                             </p>
                                             <p
                                                 style={{display: !item.showAll ? "none" : "block"}}
                                                 onClick={this.hideShowButton.bind(this, index, false)}><span className="close">收起</span></p>
-                                            <Button className="button" size={"default"} onClick={this.update.bind(this,item)}>升级</Button>
+                                            {/*<Button className="button" size={"default"} onClick={this.update.bind(this,item)}>升级</Button>*/}
                                             {/*<Button className="button" size={"default"} onClick={this.stop}>停用</Button>*/}
                                         </div>
                                     </Col>

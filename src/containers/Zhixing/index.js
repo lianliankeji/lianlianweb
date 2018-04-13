@@ -3,6 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
+import {getChainsData} from 'actions/Platform/joinPlatforms.js'
 import {perform, query} from 'actions/Platform/perform.js'
 import {cookieUtil} from "utils/cookie.js"
 import {createHashHistory} from "history"
@@ -21,12 +22,13 @@ class Chains extends React.Component {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-            resultData: ""
+            resultData: "",
+            exportUrl: "error"
         };
     }
 
     perform = (data) => {
-
+        let _this = this;
         let name = localStorage.getItem("name")
         let chainsItem = this.props.chainsList.filter((item, index) => {
             return item.chainid == this.props.match.params.id
@@ -35,28 +37,50 @@ class Chains extends React.Component {
         this.props.perform({
             // url: chainsItem[0].testexcuteurl,
             url: chainsItem[0].testexcuteurl,
-            data: Object.assign({}, data, {chaincodename: name})
+            data: Object.assign({}, data, {ccname: name,usr: _this.state.usr})
         }).then((res) => {
-            this.setState({
-                resultData: JSON.stringify(res.data)
-            })
+            let data = res.data;
+            if(res.data.code == 0) {
+                let {exportIntfUrl, ...otherData} = data;
+                this.setState({
+                    resultData: JSON.stringify(otherData, null, 2),
+                    exportUrl: exportIntfUrl
+                })
+            }else{
+                this.setState({
+                    resultData: JSON.stringify(data, null, 2),
+                    exportUrl: "error"
+                })
+            }
         }).catch(err => {
 
         })
     }
 
     query = (data) => {
+        let _this = this;
         let name = localStorage.getItem("name")
         let chainsItem = this.props.chainsList.filter((item, index) => {
             return item.chainid == this.props.match.params.id
         });
         this.props.query({
             url: chainsItem[0].testqueryurl,
-            data: Object.assign({}, data, {chaincodename: name})
+            data: Object.assign({}, data, {ccname: name,usr: _this.state.usr})
         }).then((res) => {
-            this.setState({
-                resultData: JSON.stringify(res.data)
-            })
+            let data = res.data;
+            if(res.data.code == 0) {
+                let {exportIntfUrl, ...otherData} = data;
+                this.setState({
+                    resultData: JSON.stringify(otherData, null, 2),
+                    exportUrl: exportIntfUrl
+                })
+            }else{
+                this.setState({
+                    resultData: JSON.stringify(data, null, 2),
+                    exportUrl: "error"
+                })
+            }
+
         }).catch(err => {
 
         })
@@ -66,10 +90,14 @@ class Chains extends React.Component {
         if(!cookieUtil.hasItem("user")){
             createHashHistory().push("/platform/login");
         }
+
+        this.props.getChainsData();
     }
 
     componentDidMount() {
-        console.log(window.location.search)
+        this.setState({
+            usr: cookieUtil.getItem("user")
+        })
     }
 
     render() {
@@ -82,6 +110,7 @@ class Chains extends React.Component {
                     perform={this.perform}
                     query={this.query}
                     resultData={this.state.resultData}
+                    exportUrl={this.state.exportUrl}
                     chainid={this.props.match.params.id}
                 />
                 <Footer />
@@ -105,6 +134,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         perform: bindActionCreators(perform, dispatch),
+        getChainsData: bindActionCreators(getChainsData, dispatch),
         query: bindActionCreators(query, dispatch)
     }
 }

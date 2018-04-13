@@ -44,22 +44,22 @@ module.exports = {
                 secure: false
             },
             "/llchain": {
-                target: 'https://192.168.10.108/',
+                target: 'https://www.lianlianchains.com/',
                 changeOrigin: true,
                 secure: false
             },
             "/retailtest": {
-                target: "https://192.168.10.107/",
+                target: "https://www.lianlianchains.com/",
                 changeOrigin: true,
                 secure: false
             },
             "/mogaotest": {
-                target: "https://192.168.10.107/",
+                target: "https://www.lianlianchains.com/",
                 changeOrigin: true,
                 secure: false
             },
             "/usr": {
-                target: "https://192.168.10.107/",
+                target: "https://www.lianlianchains.com/",
                 changeOrigin: true,
                 secure: false
             }

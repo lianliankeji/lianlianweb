@@ -1,19 +1,10 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import {
-    connect
-} from 'react-redux'
-import {
-    bindActionCreators
-} from 'redux'
-import {
-    timeFormat
-} from 'utils/date.js'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {timeFormat} from 'utils/date.js'
 import {cookieUtil} from "utils/cookie.js"
-import {
-    getChainsData,
-    showChainsTable
-} from 'actions/Platform/joinPlatforms.js'
+import {getChainsData, showChainsTable} from 'actions/Platform/joinPlatforms.js'
 
 import {BackTop} from 'antd';
 import './style.scss'
@@ -40,7 +31,7 @@ class Chains extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.match.params.id)
+
     }
 
     getChainsData = () => {

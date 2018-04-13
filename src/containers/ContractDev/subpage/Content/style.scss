@@ -9,9 +9,28 @@
     font-size: 16px;
     color: #333333;
 
+    .top{
+      background-color: #fff;
+      padding:30px 40px;
+      font-size: 14px;
+      color: #666666;
+      line-height: 30px;
+
+      .num{
+       display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #666666;
+        margin-right: 15px;
+      }
+    }
+
     .bottom{
       padding-top: 20px;
       line-height: 2;
+      margin-left: 64px;
+      font-size: 14px;
 
       .button{
         color: #4A6BFF;

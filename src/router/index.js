@@ -80,12 +80,6 @@ const Login = Loadable({
     loading: Loading
 })
 
-//找回密码
-const Forgot = Loadable({
-    loader: () => import('containers/Forgot/'),
-    loading: Loading
-})
-
 //合约开发
 const ContractDev = Loadable({
     loader: () => import('containers/ContractDev/'),
@@ -114,7 +108,6 @@ const RouterMap = () => (
 
             <Route exact path='/platform' component={Platform} />
                 <Route exact path="/platform/login" component={Login} />
-                <Route exact path="/platform/forgot" component={Forgot} />
                 <Route exact path='/platform/join' component={JoinPlatform} />
                 <Route exact path='/platform/join/release/:id' component={Chains} />
                 <Route exact path='/platform/join/release/:id/contract' component={IntelligentContract} />

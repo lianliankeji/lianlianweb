@@ -79,9 +79,9 @@ const httpServer = (opts, data) => {
         url: opts.url,
         timeout: 10000,
         params: Object.assign(Public, data),
-        data: qs.stringify(Object.assign(Public, data)),
-        headers: opts.method == 'POST' ? {
-            "Content-Type": "'application/x-www-form-urlencoded; charset=UTF-8"
+        data: opts.type == 'json' ? Object.assign(Public, data) : qs.stringify(Object.assign(Public, data)),
+        headers: opts.method == 'post' ? {
+            'Content-Type' : opts.type == 'json' ? 'application/json;charset=UTF-8' :  'application/x-www-form-urlencoded; charset=UTF-8'
         } : {
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
         }

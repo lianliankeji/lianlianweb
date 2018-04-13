@@ -78,7 +78,11 @@ class Content extends Component {
                         </Col>
                     </Row>
 
-                    <div className="button-content"><Button className="button" size={'large'}>导出接口</Button></div>
+                    <div className="button-content">
+                        <Button className={`button ${this.props.exportUrl == "error" ? "disableButton" : ""}`} size={'large'} disabled={this.props.exportUrl == "error" ? true : false}>
+                            <a className="export" href={this.props.exportUrl}>导出接口</a>
+                        </Button>
+                    </div>
                 </Col>
             </Row>
 

@@ -10,7 +10,7 @@ import {cookieUtil} from "utils/cookie.js"
 import {BackTop} from 'antd';
 import './style.scss'
 
-import Header from './subpage/Header/index.js'
+import Header from 'components/Platform/Header/index.js'
 import Content from './subpage/Content/';
 import Footer from 'components/Platform/Footer/index.js'
 

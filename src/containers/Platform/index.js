@@ -20,25 +20,8 @@ class Platform extends React.Component {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-            a: 1
+
         };
-    }
-
-    timeout(ms) {
-        console.log(111)
-        return new Promise((resolve) => {
-            setTimeout((()=>{
-              resolve(ms)
-            }), ms);
-        });
-    }
-
-    async test(ms) {
-        const cache = await this.timeout(ms);
-
-        console.log(222)
-
-        return cache
     }
 
     componentWillMount() {
@@ -48,9 +31,7 @@ class Platform extends React.Component {
     }
 
     componentDidMount() {
-        this.test(5000).then(res => {
-            console.log(res)
-        })
+
     }
 
     render() {
@@ -63,7 +44,7 @@ class Platform extends React.Component {
 
         return (
             <div>
-                <Header />
+                <Header page="Platform"/>
                 <Content />
                 <Footer />
                 <BackTop>

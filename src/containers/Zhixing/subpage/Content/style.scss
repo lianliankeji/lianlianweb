@@ -28,6 +28,18 @@
     .button{
       background-color: #496BFF;
       color: #fff;
+
+      .export{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 40px;
+      }
+    }
+
+    .disableButton{
+      background-color: #999999;
     }
   }
 
