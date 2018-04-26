@@ -62,6 +62,16 @@ module.exports = {
                 target: "https://www.lianlianchains.com/",
                 changeOrigin: true,
                 secure: false
+            },
+            "/retail": {
+                target: "https://www.lianlianchains.com/",
+                changeOrigin: true,
+                secure: false
+            },
+            "/mogao": {
+                target: "https://www.lianlianchains.com/",
+                changeOrigin: true,
+                secure: false
             }
 		},
 		cssSourceMap: false

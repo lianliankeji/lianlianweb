@@ -64,7 +64,7 @@ class Content extends Component {
     }
 
     tableView(data, id){
-        console.log(id)
+        // console.log(id)
         this.props.showChainsTable(data, id);
     }
 
@@ -139,6 +139,24 @@ class Content extends Component {
         }
     }
 
+    checkParams = () => {
+        let params = this.props.form.getFieldsValue();
+
+        if(!params.name || !params.version) {
+            return true;
+        }
+
+
+    }
+
+    checkValigate = () => {
+        let params = this.props.form.getFieldsValue();
+
+        if(!params.name || !params.version) {
+            message.warn("请先完善合约名称和版本号")
+        }
+    }
+
     getChainidOptions = () => {
         let data = this.props.getChainsData;
 
@@ -177,12 +195,16 @@ class Content extends Component {
     render() {
 
         const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
+        const {initial} = this.props;
+        let params = this.props.form.getFieldsValue();
         const props = {
             name: 'test',
             action: '/loulan/upload',
             method: 'post',
             data: {
-                openid: "18610270284"
+                name: initial.name,
+                version: params.version,
+                publisher: this.props.user
             },
             onChange:(info) => {
                 if (info.file.status !== 'uploading') {
@@ -206,7 +228,9 @@ class Content extends Component {
             action: '/loulan/upload',
             method: 'post',
             data: {
-                openid: "18610270284"
+                name: initial.name,
+                version: params.version,
+                publisher: this.props.user
             },
             onChange:(info) => {
                 if (info.file.status !== 'uploading') {
@@ -296,9 +320,9 @@ class Content extends Component {
                                     )}
                                 </FormItem>
                                 <FormItem {...formItemLayout} label="合约上传" required="true">
-                                    <div className="item upload">
-                                        <Upload {...props}><span className="upload-item">上传文档</span></Upload>
-                                        <Upload {...props2}><span className="upload-item">上传代码</span></Upload>
+                                    <div className="item upload" onClick={this.checkValigate}>
+                                        <Upload disabled={this.checkParams()} {...props}><span className="upload-item">上传文档</span></Upload>
+                                        <Upload disabled={this.checkParams()} {...props2}><span className="upload-item">上传代码</span></Upload>
                                     </div>
                                 </FormItem>
                                 <FormItem {...formTailLayout}>

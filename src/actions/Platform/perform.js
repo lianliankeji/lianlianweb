@@ -10,7 +10,7 @@ export const perform = (payload) => {
         return axios({
             method: 'post',
             type: "json",
-            url: BASE_URL + payload.url.substring(1),
+            url: BASE_URL + payload.url,
         }, {
             ...payload.data
         })
@@ -20,8 +20,9 @@ export const perform = (payload) => {
 export const query = (payload) => {
     return (dispatch) => {
         return axios({
-            method: 'get',
-            url: BASE_URL + payload.url.substring(1),
+            method: 'post',
+            type: "json",
+            url: BASE_URL + payload.url,
         }, {
             ...payload.data
         })

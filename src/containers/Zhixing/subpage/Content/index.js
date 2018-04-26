@@ -67,7 +67,7 @@ class Content extends Component {
                     <div className="transfer">
                         <Button className="button" size={'large'} onClick={this.perform}>执行</Button>
                         <Button style={{marginLeft: "10px",marginRight: "10px"}} className="button" size={'large'} onClick={this.query}>查询</Button>
-                        <Button className="button" size={'large'}><a href="https://www.lianlianchains.com/smartcontract/lltemplet.docx">接口文档下载</a></Button>
+                        <Button className="button" size={'large'}><a href="https://www.lianlianchains.com/smartcontract/lltemplet.docx">文档下载</a></Button>
                     </div>
                     <Row type="flex" justify="space-between" className="item">
                         <Col span={3} className="chains-intent-item">

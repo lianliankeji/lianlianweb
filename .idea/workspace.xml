@@ -2,74 +2,84 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0aa05ec-fe0b-4c7b-9499-3025ff709673" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Buy/subpage/Header/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Buy/subpage/Header/style.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/ContractDev/subpage/Header/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/ContractDev/subpage/Header/style.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/ContractShop/subpage/Header/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/ContractShop/subpage/Header/style.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Examine/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Examine/style.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Examine/subpage/Content/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Examine/subpage/Content/style.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Examine/subpage/Header/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Examine/subpage/Header/style.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Forgot/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Forgot/style.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Forgot/subpage/Content/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Forgot/subpage/Content/style.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Forgot/subpage/Header/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Forgot/subpage/Header/style.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Platform/subpage/Header/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/containers/Platform/subpage/Header/style.scss" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/index.js" afterPath="$PROJECT_DIR$/config/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/0.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/0.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/0.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/0.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/1.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/1.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/1.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/1.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/10.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/10.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/10.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/10.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/11.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/11.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/11.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/11.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/12.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/12.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/12.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/12.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/13.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/13.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/13.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/13.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/14.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/14.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/14.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/14.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/2.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/2.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/2.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/2.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/3.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/3.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/3.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/3.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/4.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/4.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/4.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/4.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/5.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/5.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/5.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/5.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/6.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/6.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/6.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/6.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/7.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/7.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/7.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/7.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/8.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/8.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/8.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/8.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/9.chunk.js" afterPath="$PROJECT_DIR$/dist/static/js/9.chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/static/js/9.chunk.js.map" afterPath="$PROJECT_DIR$/dist/static/js/9.chunk.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/Platform/perform.js" afterPath="$PROJECT_DIR$/src/actions/Platform/perform.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/axios.js" afterPath="$PROJECT_DIR$/src/api/axios.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Platform/Header/index.js" afterPath="$PROJECT_DIR$/src/components/Platform/Header/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Chains/index.js" afterPath="$PROJECT_DIR$/src/containers/Chains/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/ContractDev/index.js" afterPath="$PROJECT_DIR$/src/containers/ContractDev/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/ContractDev/subpage/Content/index.js" afterPath="$PROJECT_DIR$/src/containers/ContractDev/subpage/Content/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/ContractDev/subpage/Content/style.scss" afterPath="$PROJECT_DIR$/src/containers/ContractDev/subpage/Content/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/index.js" afterPath="$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/style.scss" afterPath="$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/index.js" afterPath="$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Platform/index.js" afterPath="$PROJECT_DIR$/src/containers/Platform/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Zhixing/index.js" afterPath="$PROJECT_DIR$/src/containers/Zhixing/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/index.js" afterPath="$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/style.scss" afterPath="$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/router/index.js" afterPath="$PROJECT_DIR$/src/router/index.js" />
+      <change afterPath="$PROJECT_DIR$/sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/Platform/getRoletype.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/0.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/0.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/0.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/0.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/1.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/1.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/1.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/1.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/10.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/10.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/10.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/10.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/11.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/11.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/11.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/11.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/12.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/12.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/12.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/12.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/13.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/13.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/13.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/13.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/14.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/14.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/14.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/14.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/2.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/2.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/2.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/2.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/3.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/3.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/3.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/3.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/4.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/4.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/4.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/4.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/5.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/5.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/5.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/5.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/6.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/6.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/6.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/6.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/7.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/7.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/7.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/7.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/8.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/8.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/8.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/8.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/9.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/9.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/9.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/static/js/9.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/Platform/getContractShopList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/Platform/getContractShopList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/Platform/getReleaseChainsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/Platform/getReleaseChainsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/Platform/getTestChainsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/Platform/getTestChainsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/Platform/joinPlatforms.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/Platform/joinPlatforms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/Platform/perform.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/Platform/perform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Buy/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Buy/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Buy/subpage/Content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Buy/subpage/Content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Buy/subpage/Content/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Buy/subpage/Content/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/BuySuccess/subpage/Content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/BuySuccess/subpage/Content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/BuySuccess/subpage/Content/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/BuySuccess/subpage/Content/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Chains/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Chains/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Chains/subpage/Content/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Chains/subpage/Content/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContractPromote/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ContractPromote/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContractPromote/subpage/Content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ContractPromote/subpage/Content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContractShop/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ContractShop/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContractUpload/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ContractUpload/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContractUpload/subpage/Content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ContractUpload/subpage/Content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/IntelligentContract/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/IntelligentContract/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/JoinPlatform/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/JoinPlatform/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/JoinPlatform/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/JoinPlatform/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/JoinPlatform/subpage/Content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/JoinPlatform/subpage/Content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/JoinPlatform/subpage/Content/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/JoinPlatform/subpage/Content/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Login/subpage/Content/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Login/subpage/Content/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Platform/subpage/Content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Platform/subpage/Content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Platform/subpage/Content/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Platform/subpage/Content/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/TestChains/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/TestChains/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/TestChains/subpage/Content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/TestChains/subpage/Content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/TestChains/subpage/Content/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/TestChains/subpage/Content/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/jiaoyi.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/jiaoyi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/test.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/Platform/chainsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/Platform/chainsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/Platform/contractShopList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/Platform/contractShopList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/Platform/releaseChainsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/Platform/releaseChainsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/Platform/testChainsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/Platform/testChainsList.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -81,37 +91,34 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="lianlianweb" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/router/index.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/TestChains/subpage/Content/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="105" column="21" lean-forward="false" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="3725">
+              <caret line="157" column="104" selection-start-line="157" selection-start-column="104" selection-end-line="157" selection-end-column="104" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/Platform/index.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-740">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1725">
+              <caret line="72" column="69" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/Chains/index.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-450">
-              <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="2850">
+              <caret line="121" column="68" selection-start-line="121" selection-start-column="60" selection-end-line="121" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -119,41 +126,65 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/ContractShop/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-              <folding />
+            <state relative-caret-position="1725">
+              <caret line="83" column="56" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/index.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/ContractPromote/subpage/Content/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-              <folding>
-                <element signature="e#229#251#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/Buy/subpage/Content/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="8225">
+              <caret line="341" selection-start-line="341" selection-end-line="341" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/Buy/index.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-650">
-              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="167">
+              <caret line="76" column="72" selection-start-line="76" selection-start-column="72" selection-end-line="76" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/ContractPromote/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="33" column="14" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contractPromote.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/Platform/contractPromote.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="1" selection-start-line="1" selection-end-line="5" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/TestChains/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4675">
+              <caret line="202" column="24" selection-start-line="202" selection-start-column="20" selection-end-line="202" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,19 +193,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.ant-i</find>
-      <find>json</find>
-      <find>登录</find>
-      <find>登录成功</find>
-      <find>getQRCode</find>
-      <find>createHashHistory()</find>
-      <find>goBuy</find>
-      <find>saveSelectContractIteminfo</find>
-      <find>_getQRCode</find>
-      <find>showChainsTable</find>
-      <find>contractSave</find>
-      <find>rule</find>
-      <find>BrowerlicPath</find>
       <find>goZhixng</find>
       <find>axios</find>
       <find>url</find>
@@ -192,6 +210,19 @@
       <find>getChainsData</find>
       <find>method</find>
       <find>errorState</find>
+      <find>selectContract</find>
+      <find>visible</find>
+      <find>modalshow</find>
+      <find>checkDuplicate</find>
+      <find>overflow</find>
+      <find>crateOrder</find>
+      <find>checkParams</find>
+      <find>checkValigate</find>
+      <find>con</find>
+      <find>console</find>
+      <find>cookieUtil</find>
+      <find>contractPromote</find>
+      <find>initial</find>
     </findStrings>
     <dirStrings>
       <dir>E:\MyProject\lianlianweb\src\containers\ContractDev</dir>
@@ -204,56 +235,56 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/containers/Platform/subpage/Header/index.js" />
-        <option value="$PROJECT_DIR$/src/actions/Platform/contractPromote.js" />
-        <option value="$PROJECT_DIR$/src/actions/Platform/createOrder.js" />
-        <option value="$PROJECT_DIR$/src/actions/Platform/joinPlatforms.js" />
-        <option value="$PROJECT_DIR$/src/actions/Platform/getReleaseChainsList.js" />
-        <option value="$PROJECT_DIR$/src/actions/Platform/getContractShopList.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/actions/Platform/contractSave.js" />
-        <option value="$PROJECT_DIR$/src/containers/Forgot/index.js" />
-        <option value="$PROJECT_DIR$/src/actions/Platform/getTestChainsList.js" />
-        <option value="$PROJECT_DIR$/src/containers/Examine/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractShop/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Platform/Footer/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Platform/Footer/style.scss" />
-        <option value="$PROJECT_DIR$/src/containers/Platform/subpage/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/JoinPlatform/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/TestChains/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/JoinPlatform/subpage/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractUpload/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractUpload/subpage/Content/style.scss" />
-        <option value="$PROJECT_DIR$/src/containers/ContractUpload/subpage/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractVerify/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/Chains/subpage/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/style.scss" />
-        <option value="$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/Buy/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/BuySuccess/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/IntelligentContract/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/Chains/subpage/Content/style.scss" />
-        <option value="$PROJECT_DIR$/src/reducers/Platform/testChainsList.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractPromote/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractPromote/subpage/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractPromote/subpage/Content/style.scss" />
-        <option value="$PROJECT_DIR$/src/containers/TestChains/subpage/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractDev/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractDev/subpage/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractDev/subpage/Content/style.scss" />
-        <option value="$PROJECT_DIR$/src/components/Platform/Header/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/Examine/subpage/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/style.scss" />
-        <option value="$PROJECT_DIR$/config/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/style.scss" />
         <option value="$PROJECT_DIR$/src/containers/Zhixing/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/actions/Platform/perform.js" />
         <option value="$PROJECT_DIR$/src/api/axios.js" />
         <option value="$PROJECT_DIR$/src/router/index.js" />
         <option value="$PROJECT_DIR$/src/containers/Platform/index.js" />
+        <option value="$PROJECT_DIR$/src/actions/Platform/joinPlatforms.js" />
+        <option value="$PROJECT_DIR$/src/containers/Login/subpage/Content/style.scss" />
+        <option value="$PROJECT_DIR$/config/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/JoinPlatform/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/JoinPlatform/style.scss" />
+        <option value="$PROJECT_DIR$/src/containers/JoinPlatform/subpage/Content/style.scss" />
+        <option value="$PROJECT_DIR$/src/reducers/Platform/testChainsList.js" />
+        <option value="$PROJECT_DIR$/src/containers/ContractUpload/subpage/Content/style.scss" />
+        <option value="$PROJECT_DIR$/src/reducers/Platform/contractShopList.js" />
+        <option value="$PROJECT_DIR$/src/containers/ContractShop/index.js" />
+        <option value="$PROJECT_DIR$/src/constants/index.js" />
+        <option value="$PROJECT_DIR$/src/actions/Platform/getReleaseChainsList.js" />
+        <option value="$PROJECT_DIR$/src/containers/IntelligentContract/index.js" />
+        <option value="$PROJECT_DIR$/src/reducers/Platform/releaseChainsList.js" />
+        <option value="$PROJECT_DIR$/src/actions/Platform/getRoletype.js" />
+        <option value="$PROJECT_DIR$/src/containers/TestChains/subpage/Modal/Modal.js" />
+        <option value="$PROJECT_DIR$/src/containers/TestChains/subpage/Modal/index.js" />
+        <option value="$PROJECT_DIR$/src/actions/Platform/getContractShopList.js" />
         <option value="$PROJECT_DIR$/src/containers/Chains/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/Chains/subpage/Content/style.scss" />
+        <option value="$PROJECT_DIR$/sql" />
+        <option value="$PROJECT_DIR$/src/containers/Platform/subpage/Content/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/Platform/subpage/Content/style.scss" />
+        <option value="$PROJECT_DIR$/src/reducers/Platform/chainsList.js" />
+        <option value="$PROJECT_DIR$/src/containers/JoinPlatform/subpage/Content/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/Buy/subpage/Content/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/Buy/subpage/Content/style.scss" />
+        <option value="$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/style.scss" />
+        <option value="$PROJECT_DIR$/src/containers/TestChains/subpage/Content/style.scss" />
+        <option value="$PROJECT_DIR$/src/actions/Platform/perform.js" />
+        <option value="$PROJECT_DIR$/src/actions/Platform/getTestChainsList.js" />
+        <option value="$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/style.scss" />
+        <option value="$PROJECT_DIR$/src/containers/ContractUpload/subpage/Content/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/ContractUpload/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/ContractPromote/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/BuySuccess/subpage/Content/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/BuySuccess/subpage/Content/style.scss" />
+        <option value="$PROJECT_DIR$/src/containers/Buy/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/Login/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/TestChains/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/TestChains/subpage/Content/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/ContractPromote/subpage/Content/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/style.scss" />
         <option value="$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/index.js" />
       </list>
     </option>
@@ -269,6 +300,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -276,270 +312,22 @@
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="router" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="containers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="containers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Platform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="containers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ContractShop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="containers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ContractShop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="subpage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="containers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Buy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="containers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Buy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="subpage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lianlianweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web_kuaidian" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="nodejs_interpreter_path" value="E:/node/node" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/MyProject/lianlianweb/src/containers/Chains/subpage/Content/index.js" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="F:/node/实战详解/node/node与数据库/Mysql" />
+    <property name="nodejs_interpreter_path" value="E:/node/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -565,27 +353,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration default="false" name="dev" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="npm.dev">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -623,15 +391,6 @@
       <option name="filePath" />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
       <scripts />
@@ -652,19 +411,42 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="npm.dev" />
-      <item index="1" class="java.lang.String" itemvalue="npm.build" />
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <list>
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.build" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="npm.build" />
-        <item index="1" class="java.lang.String" itemvalue="npm.dev" />
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -699,37 +481,55 @@
       <workItem from="1523412699125" duration="15485000" />
       <workItem from="1523499566522" duration="20746000" />
       <workItem from="1523585662630" duration="21734000" />
+      <workItem from="1523845163079" duration="1784000" />
+      <workItem from="1523954414092" duration="7833000" />
+      <workItem from="1524018120920" duration="22507000" />
+      <workItem from="1524104548999" duration="19032000" />
+      <workItem from="1524190794539" duration="20630000" />
+      <workItem from="1524450288728" duration="1225000" />
+      <workItem from="1524462010207" duration="1817000" />
+      <workItem from="1524624183084" duration="1382000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="366693000" />
+    <option name="totallyTimeSpent" value="442903000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15806112" sideWeight="0.59675235" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15806112" sideWeight="0.40324762" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19848156" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7215601" visible="true" weight="0.15753424" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26681128" />
+      <window_info id="npm" order="2" sideWeight="0.27843988" side_tool="true" visible="true" weight="0.15753424" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.13557483" />
+      <window_info id="Favorites" order="3" sideWeight="0.27786753" side_tool="true" weight="0.15753424" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -754,436 +554,337 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/Chains/index.js</url>
-          <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="5" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Platform/Footer/index.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/TestChains/subpage/Modal/style.scss" />
+    <entry file="file://$PROJECT_DIR$/src/containers/TestChains/subpage/Modal/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/containers/Chains/subpage/Content/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="24" column="67" lean-forward="false" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
+        <state relative-caret-position="-1125" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Chains/subpage/Content/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Platform/Footer/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/containers/Chains/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="225">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="104" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Platform/subpage/Content/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/JoinPlatform/subpage/Content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="77" column="109" lean-forward="false" selection-start-line="77" selection-start-column="109" selection-end-line="77" selection-end-column="109" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/Platform/contractSave.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="67" lean-forward="false" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractUpload/subpage/Content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7325">
-          <caret line="296" column="75" lean-forward="false" selection-start-line="296" selection-start-column="75" selection-end-line="296" selection-end-column="75" />
-          <folding>
-            <element signature="e#318#398#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractUpload/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1375">
-          <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="54" column="32" lean-forward="false" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Chains/subpage/Content/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1676">
-          <caret line="109" column="19" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Chains/subpage/Content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="60" column="90" lean-forward="false" selection-start-line="60" selection-start-column="90" selection-end-line="60" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/Platform/chainsList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/Platform/contractItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/Platform/contractShopList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/Platform/releaseChainsList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="150">
+          <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/Platform/testChainsList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="597">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractUpload/subpage/Content/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3400">
-          <caret line="136" column="16" lean-forward="false" selection-start-line="136" selection-start-column="2" selection-end-line="136" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/reducers/Platform/contractItem.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractPromote/subpage/Content/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/reducers/Platform/chainsList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractPromote/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractPromote/subpage/Content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7350">
-          <caret line="306" column="45" lean-forward="false" selection-start-line="306" selection-start-column="45" selection-end-line="306" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractDev/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/BuySuccess/subpage/Content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/BuySuccess/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-950">
-          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/IntelligentContract/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
-          <caret line="83" column="26" lean-forward="false" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractDev/subpage/Content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="84" column="59" lean-forward="false" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractDev/subpage/Content/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractVerify/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="68" column="26" lean-forward="false" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="95" column="58" lean-forward="true" selection-start-line="95" selection-start-column="58" selection-end-line="95" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Examine/subpage/Content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="168" column="24" lean-forward="false" selection-start-line="168" selection-start-column="8" selection-end-line="168" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-853">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/TestChains/subpage/Content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="110" column="87" lean-forward="false" selection-start-line="110" selection-start-column="87" selection-end-line="110" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/TestChains/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/Platform/getTestChainsList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="50">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/JoinPlatform/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="75" column="17" lean-forward="false" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="275">
+          <caret line="100" column="35" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/index.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/JoinPlatform/subpage/Content/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="372">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/containers/Buy/subpage/Content/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="225">
+          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="84" column="85" lean-forward="true" selection-start-line="84" selection-start-column="85" selection-end-line="84" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/ContractVerify/subpage/Content/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Home/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Home/subpage/Header/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2075">
+          <caret line="102" column="53" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/IntelligentContract/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1775">
+          <caret line="85" column="56" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/Platform/selectContractItem.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/Platform/joinPlatforms.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/Platform/getRoletype.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="13" column="10" selection-start-line="8" selection-start-column="15" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/Platform/getReleaseChainsList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="59" column="5" selection-start-line="35" selection-start-column="4" selection-end-line="59" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/Platform/getContractShopList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-428">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/Platform/createOrder.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/axios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1578" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/Platform/perform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Zhixing/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state>
           <folding>
-            <element signature="e#0#25#0" expanded="false" />
+            <element signature="e#0#25#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/index.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/Platform/getTestChainsList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="81" column="166" lean-forward="false" selection-start-line="81" selection-start-column="166" selection-end-line="81" selection-end-column="166" />
-          <folding />
+        <state relative-caret-position="225">
+          <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/Platform/perform.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/TestChains/subpage/Content/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-587">
+          <caret line="110" column="16" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Platform/Header/index.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="163">
+          <caret line="106" column="24" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/axios.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/BuySuccess/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2219">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="9" selection-end-column="2" />
-          <folding />
+        <state relative-caret-position="-1350" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/BuySuccess/subpage/Content/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="76" column="64" selection-start-line="76" selection-start-column="64" selection-end-line="76" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Examine/index.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/BuySuccess/subpage/Content/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="550">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/router/index.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/Buy/subpage/Content/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="105" column="21" lean-forward="false" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="175">
+          <caret line="48" column="76" selection-start-line="48" selection-start-column="76" selection-end-line="48" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Platform/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-740">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="200">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Platform/subpage/Content/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Buy/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="22" />
+          <folding>
+            <element signature="e#535#564#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Login/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/ContractUpload/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/ContractUpload/subpage/Content/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5250">
+          <caret line="217" column="42" selection-start-line="217" selection-start-column="27" selection-end-line="217" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/Platform/contractPromote.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" selection-start-line="1" selection-end-line="5" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/TestChains/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4675">
+          <caret line="202" column="24" selection-start-line="202" selection-start-column="20" selection-end-line="202" selection-end-column="24" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Chains/index.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/ContractPromote/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="450">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/ContractPromote/subpage/Content/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8225">
+          <caret line="341" selection-start-line="341" selection-end-line="341" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/TestChains/subpage/Content/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3725">
+          <caret line="157" column="104" selection-start-line="157" selection-start-column="104" selection-end-line="157" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Zhixing/subpage/Content/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="72" column="69" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/ContractShop/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="1725">
+          <caret line="83" column="56" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="121" column="68" selection-start-line="121" selection-start-column="60" selection-end-line="121" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/IntelligentContract/subpage/Content/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/ContractShop/subpage/Content/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding>
-            <element signature="e#229#251#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Buy/subpage/Content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Buy/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-650">
-          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="167">
+          <caret line="76" column="72" selection-start-line="76" selection-start-column="72" selection-end-line="76" selection-end-column="74" />
         </state>
       </provider>
     </entry>

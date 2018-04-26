@@ -16,35 +16,44 @@ export const getContractShopList = (payload) => {
             console.log(response);
             let array = response.data.data;
             let result = array.map((item, index) => {
-                return Object.assign({}, item, {showAll: false})
+                return Object.assign({}, item, {showAll: false, active: false})
             }).filter((elem, i) =>{
-                return elem.testflag == 1;
+                return elem.testflag == 3;
             });
 
             dispatch({
                 type: actionTypes.GET_CONTRACT_SHOP_LIST,
                 result: result
             });
-            // let data = response.data.result;
-            // if(response.data.code == "0") {
-            //     item.data = data;
-            //     item.data.map((v,i) => {
-            //         v.seconds = timeFormat(v.seconds);
-            //         v.key = i;
-            //     })
-            //     dispatch({
-            //         type: actionTypes.SHOW_CHAINS_TABLE,
-            //         result: chainsListData
-            //     })
-            //
-            // }
         })
             .catch((error) => {
                 console.log(error);
             });
     }
 
-}
+};
+
+export const selectContract = (payload) => {
+    return(dispatch, getState) => {
+        let data = getState().contractShopList;
+
+        data = data.map((item, i) => {
+            if(item.active == true) {
+                item.active = false
+            }
+            if(i == payload.index) {
+                item.active = true
+            }
+
+            return item;
+        })
+
+        dispatch({
+            type: actionTypes.SHOP_LIST_SELECT,
+            result: data
+        })
+    }
+};
 
 export const showAndHide = (payload) => {
     return(dispatch, getState) => {

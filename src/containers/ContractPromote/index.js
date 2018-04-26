@@ -45,7 +45,7 @@ class ContractPromote extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.match.params.id)
+        // console.log(this.props.match.params.id)
     }
 
 
@@ -60,6 +60,7 @@ class ContractPromote extends React.Component {
                     contractPromote = {this.props.contractPromote}
                     getChainsData = {this.props.ChainsData}
                     initial = {this.getInitial()}
+                    user={cookieUtil.getItem("user")}
                 />
                 <Footer />
                 <BackTop>

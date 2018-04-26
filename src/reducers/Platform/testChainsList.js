@@ -28,6 +28,9 @@ export default function testChainsList(state = initialState, action) {
         case actionsTypes.SEARCH_TEST_CHAINS_LIST:
             return Object.assign({},state, {testChainsList: [...action.result]});
             break;
+        case actionsTypes.TEST_LIST_SELECT:
+            return Object.assign({},state, {testChainsList: [...action.result]});
+            break;
         default:
             return state
     }

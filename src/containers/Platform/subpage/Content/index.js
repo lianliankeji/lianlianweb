@@ -52,7 +52,7 @@ class Content extends Component {
                             <img className="img" src={Jiarupingtai} title="加入平台" />
                             <p>平台已开放零售、影视、医疗等联盟链</p>
                             <p>无需编码配置即可上链</p>
-                            <Button className="button join" type="primary"><Link to="/platform/join">加入平台</Link></Button>
+                            <Button className="button join"><Link to="/platform/join">加入平台</Link></Button>
                         </Col>
                         <Col className="item" span={7}>
                             <img className="img" src={Heyue} title="合约商店" />

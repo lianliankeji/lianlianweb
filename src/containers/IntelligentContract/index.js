@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
 import {cookieUtil} from "utils/cookie.js"
-import {getReleaseChainsList, showAndHide, seachReleaseChains} from 'actions/Platform/getReleaseChainsList.js'
+import {getReleaseChainsList, showAndHide, selectContract, seachReleaseChains} from 'actions/Platform/getReleaseChainsList.js'
 import {createHashHistory} from "history"
 
 import {BackTop} from 'antd';
@@ -34,6 +34,13 @@ class IntelligentContract extends React.Component {
 
     componentDidMount() {
 
+    }
+
+    selectContract = (item,index) => {
+
+        this.props.selectContract(
+            Object.assign({},item,{index:index})
+        )
     }
 
     getReleaseChainsList = () => {
@@ -76,6 +83,7 @@ class IntelligentContract extends React.Component {
             <div>
                 <Header />
                 <Content
+                    selectContract={this.selectContract}
                     testChainsList={this.getReleaseChainsList()}
                     showAndHide={this.showAndHide}
                     seachReleaseChains = {this.seachReleaseChains}
@@ -103,6 +111,7 @@ function mapDispatchToProps(dispatch) {
     return {
         getReleaseChainsList: bindActionCreators(getReleaseChainsList, dispatch),
         seachReleaseChains: bindActionCreators(seachReleaseChains, dispatch),
+        selectContract: bindActionCreators(selectContract, dispatch),
         showAndHide: bindActionCreators(showAndHide, dispatch)
     }
 }

@@ -53,7 +53,7 @@ class JoinPlatform extends React.Component {
             dataIndex: 'seconds',
             key: 'seconds',
             render: (text, row, index) => {
-                return timeFormat(text);
+                return text;
             }
         }];
 
@@ -77,7 +77,7 @@ class JoinPlatform extends React.Component {
         return this.props.ChainsData
     }
 
-    showChainsTable = (data, id) => {
+    showChainsTable = (data, id, detailUrl) => {
         let payload = data.map((item, index) => {
             if(item.chainid == id) {
                 if(item.display == "none") {
@@ -89,7 +89,7 @@ class JoinPlatform extends React.Component {
 
             return item
         })
-        this.props.showChainsTable({data: payload, id: id})
+        this.props.showChainsTable({data: payload, id: id, detailUrl:detailUrl})
     }
 
     render() {
@@ -98,7 +98,7 @@ class JoinPlatform extends React.Component {
         return (
             <div>
                 <Header />
-                <Content chainsList={this.getChainsData()} showChainsTable={this.showChainsTable} />
+                <Content chainsList={this.getChainsData()} showChainsTable={this.showChainsTable} getTableColumns={this.getTableColumns()} />
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>

@@ -46,6 +46,10 @@ class Content extends Component {
 
                                 <div>
                                     <div>
+                                        <span className="label">合约名称：</span>
+                                        <span className="value">{this.props.orderInfo.name}</span>
+                                    </div>
+                                    <div>
                                         <span className="label">合约ID：</span>
                                         <span className="value">{this.props.orderInfo.id}</span>
                                     </div>
@@ -55,7 +59,7 @@ class Content extends Component {
                                     </div>
                                     <div>
                                         <span className="label">合约价格：</span>
-                                        <span className="value">￥{this.props.orderInfo.price}</span>
+                                        <span className="value">{this.props.orderInfo.price}</span>
                                     </div>
                                 </div>
                             </div>

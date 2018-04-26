@@ -3,7 +3,9 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
-import {getTestChainsList, showAndHide, seachTestChains} from 'actions/Platform/getTestChainsList.js'
+import {Modal, Button} from "antd"
+import {getTestChainsList, showAndHide, seachTestChains, selectContract,updateFlag} from 'actions/Platform/getTestChainsList.js'
+import {getRoletype} from 'actions/Platform/getRoletype.js'
 import {createHashHistory} from "history"
 import {cookieUtil} from "utils/cookie.js"
 import {BackTop, Popover} from 'antd';
@@ -19,7 +21,8 @@ class Chains extends React.Component {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-
+            visible: false,
+            loading: false
         };
     }
 
@@ -72,7 +75,18 @@ class Chains extends React.Component {
     }
 
     componentDidMount() {
+        this.props.getRoletype({
+            openid: cookieUtil.getItem("user")
+        }).then(res => {
+            // console.log(res)
+            if(res.data.ec == "000000") {
+                this.setState({
+                    roleType: res.data.data.role
+                })
+            }
+        }).catch(err => {
 
+        })
     }
 
     getTestChainsList = () => {
@@ -108,6 +122,69 @@ class Chains extends React.Component {
         })
     }
 
+    selectContract = (item,index) => {
+
+        this.props.selectContract(
+            Object.assign({},item,{index:index})
+        )
+    }
+
+    modalshow = (id) => {
+        this.setState({
+            visible: true,
+            id: id
+        })
+    }
+
+    handleOk = () => {
+        this.setState({
+            loading: true
+        },() => {
+            this.props.updateFlag({
+                id: this.state.id,
+                testflag: 3
+            }).then(res => {
+                this.setState({
+                    visible: false,
+                    loading:false
+                },() => {
+                    this.reload();
+                })
+            })
+
+        })
+
+    }
+
+    hiddenModal = () => {
+        this.setState({
+            visible: false
+        })
+    }
+
+    handleCancel = () => {
+        this.setState({
+            loading: true
+        },() => {
+            this.props.updateFlag({
+                id: this.state.id,
+                testflag: 1
+            }).then(res => {
+                this.setState({
+                    visible: false,
+                    loading:false
+                },() => {
+                    this.reload();
+                })
+            })
+
+        })
+    }
+
+    reload = () => {
+        location.reload()
+    }
+
     render() {
 
 
@@ -115,12 +192,31 @@ class Chains extends React.Component {
             <div>
                 <Header />
                 <Content
+                    selectContract={this.selectContract}
                     testChainsList={this.getTestChainsList()}
                     contractState={this.props.contractState}
                     showAndHide={this.showAndHide}
                     seachTestChains={this.seachTestChains}
-                    chainid={this.props.match.params.id}/>
+                    chainid={this.props.match.params.id}
+                    roleType={this.state.roleType}
+                    modalshow={this.modalshow}
+                    user={cookieUtil.getItem("user")}/>
+
                 <Footer />
+                <Modal
+                    visible={this.state.visible}
+                    title="审核"
+                    onOk={this.handleOk}
+                    onCancel={this.hiddenModal}
+                    footer={[
+                        <Button key="back" onClick={this.handleCancel}>拒绝</Button>,
+                        <Button key="submit" type="primary" loading={this.state.loading} onClick={this.handleOk}>
+                            通过
+                        </Button>,
+                    ]}
+                >
+                    <p>是否审核通过？</p>
+                </Modal>
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>
@@ -142,7 +238,10 @@ function mapDispatchToProps(dispatch) {
     return {
         getTestChainsList: bindActionCreators(getTestChainsList, dispatch),
         showAndHide: bindActionCreators(showAndHide, dispatch),
-        seachTestChains: bindActionCreators(seachTestChains, dispatch)
+        seachTestChains: bindActionCreators(seachTestChains, dispatch),
+        selectContract: bindActionCreators(selectContract, dispatch),
+        getRoletype: bindActionCreators(getRoletype, dispatch),
+        updateFlag: bindActionCreators(updateFlag, dispatch)
     }
 }
 

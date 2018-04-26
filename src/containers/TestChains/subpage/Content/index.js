@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-import {Anchor,Row,Col,Breadcrumb,Button, Input, message} from 'antd';
+import {Row,Col,Breadcrumb,Button, Input, message} from 'antd';
 const Search = Input.Search;
 import {createHashHistory} from "history"
 
@@ -18,13 +18,10 @@ class Content extends Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
             showAll: "block",
-            headerNav: [{
-                name: "首页"
-            }, {
-                name: "申请入驻"
-            }, {
-                name: "联系我们"
-            }],
+            testflag: {
+                "1": "审核拒绝",
+                "3": "审核通过"
+            }
 
         }
     }
@@ -77,10 +74,19 @@ class Content extends Component {
         createHashHistory().push(`/platform/join/release/${this.props.chainid}/contract/promote`);
     }
 
+    selectContract = (item,index) => {
+        this.props.selectContract(item,index)
+    }
+
+    modalshow = (id) => {
+        this.props.modalshow(id)
+    }
+
     componentDidMount() {
         this.setState({
             id: this.props.chainid
-        })
+        });
+
     }
 
     render() {
@@ -101,7 +107,7 @@ class Content extends Component {
                         <Col span={12 }>
                             <Search
                                 className="search"
-                                placeholder="搜索合约"
+                                placeholder=""
                                 onSearch={this.onSearch}
                                 enterButton
                             />
@@ -112,17 +118,30 @@ class Content extends Component {
                         {
                             this.getTestChainsList().map((item, index) => {
                                 return(
-                                    <Col key={index} span={11} className="chains-intent-item" style={{height: !item.showAll ? "190px": ""}}>
+                                    <Col key={index} span={11} className={`chains-intent-item ${item.active? "active" : "noactive"}`} onClick={this.selectContract.bind(this,item, index)} style={{height: !item.showAll ? "190px": ""}}>
                                         <img className="img" src={Tongzhi} />
                                         <div className="right">
                                             <h3 className="name">
                                                 {item.name}
-                                                <span className="status">{`${item.state != "6" && item.state != "9" ? "(" + this.props.contractState[item.state] + ")" : ""}`}</span>
+                                                <span className="status">
+                                                    {`${item.state != "6" && item.state != "9" ? "(" + this.props.contractState[item.state] + ")" : item.testflag == 0 && item.state == "6" || item.testflag == 0 && item.state == "9"
+                                                        ? "(" + "审核中" + ")" : "(" + this.state.testflag[item.testflag] + ")"}`}
+                                                </span>
+                                                {
+                                                    this.props.roleType == 1 && (item.testflag == 0 && item.state == "6" || item.testflag == 0 && item.state == "9")
+                                                    ?
+                                                    <Button style={{display : item.state != "6" && item.state != "9" ? "none" : ""}}
+                                                            className="verify" onClick={this.modalshow.bind(this, item.id)}>审核</Button>
+                                                    : ""
+                                                }
+                                                {/*<span className="verifyS" >{*/}
+                                                {/*item.testflag == 0 && item.state == "6" || item.testflag == 0 && item.state == "9"*/}
+                                                {/*? "审核中" : this.state.testflag[item.testflag]}</span>*/}
                                             </h3>
                                             <p className="intro">
                                                 <span className={item.showAll ? "overflowZhankai" : "overflow"} ref={(overflow) => this.overflow = overflow}>{item.description}</span>
                                                 <span
-                                                    style={{display: item.showAll || item.description.length <30 ? "none" : "block"}}
+                                                    style={{display: item.showAll || item.description.length <20 ? "none" : "block"}}
                                                     onClick={this.hideShowButton.bind(this, index, true)}
                                                     className="showAll">展开</span>
                                             </p>
@@ -136,14 +155,12 @@ class Content extends Component {
                                                 size={"default"}
                                                 disabled={item.state != "6" && item.state != "9" ? true : false}
                                                 onClick={this.goZhixng.bind(this, item.name,item.state)}>执行</Button>
-                                            <Button style={{marginLeft: "10px"}} className="button" size={"default"} onClick={this.update.bind(this,item)}>升级</Button>
+                                            <Button style={{marginLeft: "10px", display: item.publisher == this.props.user ? "":"none"}} className="button" size={"default"} onClick={this.update.bind(this,item)}>升级</Button>
                                         </div>
                                     </Col>
                                 )
                             })
                         }
-
-
                     </Row>
                 </Col>
             </Row>

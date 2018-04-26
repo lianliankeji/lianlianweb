@@ -20,15 +20,12 @@ class Content extends Component {
     getChainsList = () => {
         const data = this.props.chainsList;
 
-        if(data && data.length) {
-            return data
-        }
+        return data
 
     }
 
-    tableView(data, id){
-        console.log(id)
-        this.props.showChainsTable(data, id);
+    tableView(data, id, detailUrl){
+        this.props.showChainsTable(data, id, detailUrl);
     }
 
     getTableColumns = () => {
@@ -48,7 +45,7 @@ class Content extends Component {
 
                 return (
                     <Popover placement="top" title={"交易信息"} content={text} trigger="hover">
-                        <span>{text}</span>
+                        <span>{text.substr(0,50)}</span>
                     </Popover>
                 );
             },
@@ -91,7 +88,7 @@ class Content extends Component {
                                                 <div>
                                                     <div className="name">{item.name}</div>
                                                     <div className="desc">{item.description}</div>
-                                                    <div className="view" onClick={this.tableView.bind(this, this.getChainsList(), item.chainid)}>查看详情</div>
+                                                    <div className="view" onClick={this.tableView.bind(this, this.getChainsList(), item.chainid,item.details)}>查看详情</div>
                                                 </div>
                                             </div>
                                             <div>
@@ -100,7 +97,7 @@ class Content extends Component {
                                             </div>
                                         </div>
                                         <div className="tables-data" style={{display: item.display || "none"}}>
-                                            <Tables columns={this.getTableColumns()} dataSourece={item.data} />
+                                            <Tables columns={this.props.getTableColumns} dataSourece={item.data} />
                                         </div>
                                     </Col>
                                 )

@@ -50,7 +50,7 @@ export const showChainsTable = (payload) => {
             if(item.chainid == payload.id) {
                 axios({
                     method: 'get',
-                    url: BASE_URL + 'llchain/getsometransonce',
+                    url: BASE_URL + payload.detailUrl,
                 }, {
                     /*firstName: 'Fred',
                      lastName: 'Flintstone'*/

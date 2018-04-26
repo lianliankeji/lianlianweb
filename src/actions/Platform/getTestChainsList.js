@@ -9,14 +9,14 @@ export const getTestChainsList = (payload) => {
     return (dispatch) => {
         axios({
             method: 'get',
-            url: BASE_URL + 'loulan/chain/querycontract',
+            url: BASE_URL + 'loulan/chain/querycontractnopass',
         }, {
             chainid: payload.chainid
         }).then((response) => {
             let data = response.data.data;
             if(response.data.ec == "000000") {
                 let array = data.map((item, index) => {
-                    return Object.assign({}, item, { showAll : false})
+                    return Object.assign({}, item, { showAll : false, active: false})
                 })
                 dispatch({
                     type: actionTypes.GET_TEST_CHAINS_LIST,
@@ -59,6 +59,28 @@ export const seachTestChains = (payload) => {
     }
 }
 
+export const selectContract = (payload) => {
+    return(dispatch, getState) => {
+        let data = getState().testChainsList.testChainsList;
+
+        data = data.map((item, i) => {
+            if(item.active == true) {
+                item.active = false
+            }
+            if(i == payload.index) {
+                item.active = true
+            }
+
+            return item;
+        })
+
+        dispatch({
+            type: actionTypes.TEST_LIST_SELECT,
+            result: data
+        })
+    }
+};
+
 
 export const showAndHide = (payload) => {
     return(dispatch, getState) => {
@@ -76,6 +98,22 @@ export const showAndHide = (payload) => {
             type: actionTypes.TEST_LIST_SHOW_AND_HIDE,
             result: data
         })
+    }
+}
+
+export const updateFlag = (payload) => {
+    return(dispatch) => {
+        return axios({
+            method: 'post',
+            url: BASE_URL + 'loulan/chain/updateFlag',
+        }, {
+            ...payload
+        }).then((response) => {
+
+        })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 }
 

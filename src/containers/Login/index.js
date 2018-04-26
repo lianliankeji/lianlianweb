@@ -36,6 +36,7 @@ class Login extends React.Component {
 
                 this.setState({
                     qrcode: "/loulan/getTwoBarCodes?uuid=" + response.data.data + "&width=200",
+                    uuid: response.data.data
                 })
             }
 
@@ -64,12 +65,12 @@ class Login extends React.Component {
             }, onMessage: (event) => {
                 var data = JSON.parse(event.data);
                 if (data.types == "0") {
-                    system.onSend(JSON.stringify({types: "1", data: data.data }))
+                    system.onSend(JSON.stringify({types: "1", data: data.data, uuid: this.state.uuid }))
                     this.setState({
                         loading: true
                     });
-                } else if (data.types == "2") {
-                    cookieUtil.setItem("user", data.data, 1);
+                } else if (data.types == "2" && data.data.uuid == this.state.uuid) {
+                    cookieUtil.setItem("user", data.data.openid, 1);
                     let timer = setTimeout(() => {
                         this.setState({
                             loading: false

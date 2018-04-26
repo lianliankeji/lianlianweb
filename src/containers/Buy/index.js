@@ -6,7 +6,12 @@ import {timeFormat} from 'utils/date.js'
 import {crateOrder} from 'actions/Platform/createOrder.js'
 import {cookieUtil} from "utils/cookie.js"
 import {IWebSocket} from "utils/socket.js"
-import {createHashHistory} from "history"
+import axios from 'api/axios.js'
+import {createHashHistory} from 'history'
+import Config from "config/index.js"
+
+let BASE_URL = Config[process.env.NODE_ENV].baseUrl;
+let onoff = true;
 
 import {BackTop} from 'antd';
 import './style.scss'
@@ -14,6 +19,8 @@ import './style.scss'
 import Header from 'components/Platform/Header/index.js'
 import Footer from 'components/Platform/Footer/index.js'
 import Content from './subpage/Content/';
+
+import Jiaoyi from 'images/jiaoyi.png';
 
 
 class Buy extends React.Component {
@@ -50,13 +57,33 @@ class Buy extends React.Component {
                         this.setState({
                             loading: false
                         });
-                        createHashHistory().push("/platform/contract/buysuccess")
+                        if(onoff) {
+                            this.updateDownload();
+                            onoff = false;
+                        }
+
                         clearTimeout(timer)
                     }, 1500)
                 }
 
             }
         });
+    }
+
+    updateDownload = () => {
+        let orderInfo = JSON.parse(localStorage.getItem("orderInfo"));
+
+        axios({
+            method: 'post',
+            url: BASE_URL + 'loulan/chain/updateDownload',
+        }, {
+            id: orderInfo.id
+        }).then((response) => {
+            createHashHistory().push("/platform/contract/buysuccess")
+        })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     componentWillMount() {
@@ -70,9 +97,9 @@ class Buy extends React.Component {
         this.startSocket();
         this.props.crateOrder({
             fee:orderInfo.price,
-            description:orderInfo.description,
+            description:orderInfo.name,
             openid: cookieUtil.getItem("user"),
-            publisher:cookieUtil.publisher
+            publisher:orderInfo.publisher
         }).then((response) => {
 
             console.log(response.data.data.orderNo);

@@ -16,7 +16,7 @@ export const getReleaseChainsList = (payload) => {
             let data = response.data.data;
             if(response.data.ec == "000000") {
                 let array = data.map((item, index) => {
-                    return Object.assign({}, item, { showAll : false})
+                    return Object.assign({}, item, { showAll : false, active: false})
                 })
                 dispatch({
                     type: actionTypes.GET_RELEASE_CHAINS_LIST,
@@ -45,7 +45,7 @@ export const seachReleaseChains = (payload) => {
             let data = response.data.data;
             if(response.data.ec == "000000") {
                 let array = data.map((item, index) => {
-                    return Object.assign({}, item, { showAll : false})
+                    return Object.assign({}, item, { showAll : false, active: false})
                 })
                 dispatch({
                     type: actionTypes.SEARCH_RELEASE_CHAINS_LIST,
@@ -60,10 +60,31 @@ export const seachReleaseChains = (payload) => {
     }
 }
 
+export const selectContract = (payload) => {
+    return(dispatch, getState) => {
+        let data = getState().releaseChainsList;
+
+        data = data.map((item, i) => {
+            if(item.active == true) {
+                item.active = false
+            }
+            if(i == payload.index) {
+                item.active = true
+            }
+
+            return item;
+        })
+
+        dispatch({
+            type: actionTypes.RELEASE_LIST_SELECT,
+            result: data
+        })
+    }
+};
+
 export const showAndHide = (payload) => {
     return(dispatch, getState) => {
         let data = getState().releaseChainsList;
-        console.log(getState().testChainsList)
 
         data = data.map((item, i) => {
             if(i == payload.index) {

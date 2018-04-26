@@ -1,5 +1,6 @@
 import * as actionsTypes from 'constants/index.js'
 
+
 const initialState = [];
 export default function releaseChainsList(state = initialState, action) {
     switch (action.type) {
@@ -10,6 +11,9 @@ export default function releaseChainsList(state = initialState, action) {
             return [...action.result]
             break;
         case actionsTypes.SEARCH_RELEASE_CHAINS_LIST:
+            return [...action.result]
+            break;
+        case actionsTypes.RELEASE_LIST_SELECT:
             return [...action.result]
             break;
         default:

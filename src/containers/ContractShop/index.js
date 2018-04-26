@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {timeFormat} from 'utils/date.js'
-import {getContractShopList, showAndHide} from 'actions/Platform/getContractShopList.js'
+import {getContractShopList, selectContract, showAndHide} from 'actions/Platform/getContractShopList.js'
 import {createHashHistory} from "history"
 import {saveSelectContractIteminfo} from "actions/Platform/selectContractItem.js"
 import {cookieUtil} from "utils/cookie.js"
@@ -67,6 +67,13 @@ class ContractShop extends React.Component {
 
     }
 
+    selectContract = (item,index) => {
+
+        this.props.selectContract(
+            Object.assign({},item,{index:index})
+        )
+    }
+
     render() {
 
 
@@ -74,6 +81,7 @@ class ContractShop extends React.Component {
             <div>
                 <Header />
                 <Content
+                    selectContract={this.selectContract}
                     contractShopList={this.getContractShopList()}
                     showAndHide={this.showAndHide}
                     saveSelectContractIteminfo = {this.saveSelectContractIteminfo}
@@ -99,6 +107,7 @@ function mapDispatchToProps(dispatch) {
     return {
         getContractShopList: bindActionCreators(getContractShopList, dispatch),
         showAndHide: bindActionCreators(showAndHide, dispatch),
+        selectContract: bindActionCreators(selectContract, dispatch),
         saveSelectContractIteminfo: bindActionCreators(saveSelectContractIteminfo, dispatch)
     }
 }

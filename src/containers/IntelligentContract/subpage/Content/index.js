@@ -72,9 +72,13 @@ class Content extends Component {
         alert("敬请期待")
     }
 
+    selectContract = (item,index) => {
+        this.props.selectContract(item,index)
+    }
+
     render() {
         return (
-            <Row type="flex" justify="center" className="test-chains-content">
+            <Row type="flex" justify="center" className="intelligent-chains-content">
                 <Col className="top" span={16}>
                     <Breadcrumb separator=">">
                         <Breadcrumb.Item className="BreadcrumbItem" href={"/#/"}>首页</Breadcrumb.Item>
@@ -90,7 +94,7 @@ class Content extends Component {
                         <Col span={12 }>
                             <Search
                                 className="search"
-                                placeholder="搜索合约"
+                                placeholder=""
                                 onSearch={this.onSearch}
                                 enterButton
                             />
@@ -101,22 +105,25 @@ class Content extends Component {
                         {
                             this.getTestChainsList().map((item, index) => {
                                 return(
-                                    <Col key={index} span={11} className="chains-intent-item" style={{height: !item.showAll ? "190px": ""}}>
+                                    <Col key={index} span={11} className={`chains-intent-item ${item.active? "active" : "noactive"}`} onClick={this.selectContract.bind(this,item, index)} style={{height: !item.showAll ? "190px": ""}}>
                                         <img className="img" src={Tongzhi} />
                                         <div className="right">
                                             <h3 className="name">{item.name}</h3>
                                             <p className="intro">
                                                 <span className={item.showAll ? "overflowZhankai" : "overflow"} ref={(overflow) => this.overflow = overflow}>{item.description}</span>
                                                 <span
-                                                    style={{display: item.showAll || item.description.length <30 ? "none" : "block"}}
+                                                    style={{display: item.showAll || item.description.length <20 ? "none" : "block"}}
                                                     onClick={this.hideShowButton.bind(this, index, true)}
                                                     className="showAll">展开</span>
                                             </p>
                                             <p
                                                 style={{display: !item.showAll ? "none" : "block"}}
                                                 onClick={this.hideShowButton.bind(this, index, false)}><span className="close">收起</span></p>
-                                            {/*<Button className="button" size={"default"} onClick={this.update.bind(this,item)}>升级</Button>*/}
-                                            {/*<Button className="button" size={"default"} onClick={this.stop}>停用</Button>*/}
+                                            <div className="download">
+                                                <Button size={"default"}>
+                                                    <a href="https://www.lianlianchains.com/smartcontract/lltemplet.docx">文档下载</a>
+                                                </Button>
+                                            </div>
                                         </div>
                                     </Col>
                                 )

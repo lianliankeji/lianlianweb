@@ -40,6 +40,7 @@ class Content extends Component {
             checkNick: false,
             uploaded1: false,
             uploaded2: false,
+            uploadButton: true,
             document: "",
             code: ""
         }
@@ -56,7 +57,6 @@ class Content extends Component {
     }
 
     tableView(data, id){
-        console.log(id)
         this.props.showChainsTable(data, id);
     }
 
@@ -80,6 +80,23 @@ class Content extends Component {
         }, () => {
             this.props.form.validateFields(['nickname'], { force: true });
         });
+    }
+
+    checkParams = () => {
+        let params = this.props.form.getFieldsValue();
+        if(!params.name || !params.version) {
+            return true;
+        }
+
+
+    }
+
+    checkValigate = () => {
+        let params = this.props.form.getFieldsValue();
+
+        if(!params.name || !params.version) {
+            message.warn("请先完善合约名称和版本号")
+        }
     }
 
     onSubmit = (e) => {
@@ -108,7 +125,8 @@ class Content extends Component {
                         document: this.state.document,
                         code: this.state.code,
                         testflag: 0,
-                        publisher: user
+                        publisher: user,
+                        state: 0
                     })
             )
         }else{
@@ -129,46 +147,56 @@ class Content extends Component {
         })
     }
 
-    checkName = (e) => {
-        let str = e.target.value;
-        var reg = /[a-zA-Z][a-zA-Z0-9_]*$/;
+    checkName = (str) => {
 
-        if(reg.test(str)) {
-            $(".name").val(str);
-        }else{
-            this.props.form.setFields({
-                name: {
-                    value: str,
-                    errors: [new Error('名字重复')],
-                },
-            });
-            $(".name").val("")
-        }
+        var reg = /^[a-zA-Z][a-zA-Z0-9_]*?[a-zA-Z0-9_]*$/;
+
+        return new Promise((resolve, reject) => {
+
+            if(reg.test(str)) {
+                $(".name").val(str);
+                resolve(str)
+            }else{
+                this.props.form.setFields({
+                    name: {
+                        value: str,
+                        errors: [new Error('只能以字母开头，内容为字母数字或下划线')],
+                    },
+                });
+                reject("error")
+            }
+        })
 
 
     }
 
-    checkDuplicate = (e) => {
+    checkDuplicate(e) {
         let str = e.target.value;
 
-        this.props.checkDuplicate({
-            name: str
-        }).then((response) => {
-            if(response.data.data == 1) {
-                this.props.form.setFields({
-                    name: {
-                        value: str,
-                        errors: [new Error('名字重复')],
-                    },
-                });
-            }else{
+        this.checkName(str).then(res => {
+            this.props.checkDuplicate({
+                name: res
+            }).then((response) => {
+                if(response.data.data == 1) {
+                    this.props.form.setFields({
+                        name: {
+                            value: res,
+                            errors: [new Error('名字重复')],
+                        },
+                    });
+                }else{
 
-            }
-            console.log(response)
-        })
-        .catch((error) => {
-            console.log(error);
+                }
+                console.log(response)
+            })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }).catch(err => {
+
         });
+
+
 
     }
 
@@ -178,12 +206,24 @@ class Content extends Component {
 
     render() {
         const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
+        let params = this.props.form.getFieldsValue();
+
         const props = {
             name: 'test',
             action: '/loulan/upload',
             method: 'post',
             data: {
-                openid: "18610270284"
+                name: params.name,
+                version: params.version,
+                publisher: this.props.user
+            },
+            beforeUpload:() => {
+                let params = this.props.form.getFieldsValue();
+
+                if(!params.name || !params.version) {
+                    message.warn("请先完善上面信息")
+                    return false;
+                }
             },
             onChange:(info) => {
                 if (info.file.status !== 'uploading') {
@@ -207,7 +247,9 @@ class Content extends Component {
             action: '/loulan/upload',
             method: 'post',
             data: {
-                openid: "18610270284"
+                name: params.name,
+                version: params.version,
+                publisher: this.props.user
             },
             onChange:(info) => {
                 if (info.file.status !== 'uploading') {
@@ -257,8 +299,7 @@ class Content extends Component {
                                             className="item name"
                                             maxLength={16}
                                             placeholder="请输入合约名称"
-                                            onChange={this.checkName}
-                                            onBlur={this.checkDuplicate}/>
+                                            onBlur={this.checkDuplicate.bind(this)}/>
                                     )}
                                 </FormItem>
                                 <FormItem {...formItemLayout} label="合约版本">
@@ -278,7 +319,7 @@ class Content extends Component {
                                             message: '合约概述不能为空',
                                         }],
                                     })(
-                                        <TextArea maxLength={400}  rows={4} className="item textarea" placeholder="400字以内" />
+                                        <TextArea maxLength={400} minLength={30}  rows={4} className="item textarea" placeholder="描述内容至少30字，400字以内" />
                                     )}
                                 </FormItem>
                                 <FormItem {...formItemLayout} label="合约价格">
@@ -307,9 +348,9 @@ class Content extends Component {
                                     )}
                                 </FormItem>
                                 <FormItem {...formItemLayout} label="合约上传" required="true">
-                                    <div className="item upload">
-                                        <Upload {...props}><span className="upload-item">上传文档</span></Upload>
-                                        <Upload {...props2}><span className="upload-item">上传代码</span></Upload>
+                                    <div className="item upload" onClick={this.checkValigate}>
+                                        <Upload disabled={this.checkParams()} {...props}><span className="upload-item">上传文档</span></Upload>
+                                        <Upload disabled={this.checkParams()} {...props2}><span className="upload-item">上传代码</span></Upload>
                                     </div>
                                 </FormItem>
                                 <FormItem {...formTailLayout}>

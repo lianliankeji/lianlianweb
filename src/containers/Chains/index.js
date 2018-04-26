@@ -63,10 +63,10 @@ class Chains extends React.Component {
                     chainsList={this.getChainsData()}
                     showChainsTable={this.showChainsTable}
                     chainid={this.props.match.params.id}/>
-                <Footer />                <BackTop>
+                <Footer />
+                <BackTop>
                     <div className="ant-back-top-inner">UP</div>
                 </BackTop>
-                {/* <Loading /> */}
             </div>
 
         )

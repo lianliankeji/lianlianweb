@@ -74,6 +74,10 @@ class Content extends Component {
                         <Col span={18} className="content">
                             <div className="section">
                                 <div>
+                                    <span className="label">合约名称:</span>
+                                    <span>{this.props.orderInfo.name}</span>
+                                </div>
+                                <div>
                                     <span className="label">合约ID:</span>
                                     <span>{this.props.orderInfo.id}</span>
                                 </div>

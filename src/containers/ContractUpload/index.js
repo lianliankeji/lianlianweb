@@ -39,7 +39,7 @@ class ContractUpload extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.match.params.id)
+        // console.log(this.props.match.params.id)
     }
 
 
@@ -52,6 +52,7 @@ class ContractUpload extends React.Component {
                     contractSave = {this.props.contractSave}
                     getChainsData = {this.props.ChainsData}
                     checkDuplicate={this.props.checkDuplicate}
+                    user={cookieUtil.getItem("user")}
                 />
                 <Footer />
                 <BackTop>

@@ -9,9 +9,15 @@
     border-radius: 6px;
     border: 1px #c9d2fb solid;
 
-    &:nth-of-type(1){
+    &:hover{
       background-color: #EBEFFF;
       border: 1px #EBEFFF solid;
+
+      .button{
+        color: #fff;
+        background-color: #4A6BFF;
+        border-color: #4A6BFF;
+      }
     }
 
     .img{
@@ -20,40 +26,6 @@
 
     .button{
       margin-top: 41px;
-
-      &.join{
-        background-color: #4A6BFF;
-        border-color: #4A6BFF;
-
-        &:hover{
-          opacity: 0.7;
-        }
-
-        &:active{
-          color: #4A6BFF;
-          background-color: #fff;
-          border-color: #4A6BFF;
-        }
-
-      }
-
-      &:not(.join):hover{
-        color: #4A6BFF;
-        background-color: #fff;
-        border-color: #4A6BFF;
-      }
-
-      &:not(.join):active{
-        background-color: #4A6BFF;
-        border-color: #4A6BFF;
-        color: #fff;
-      }
-
-      &:not(.join):visited,&:not(.join):focus{
-        color: #4A6BFF !important;
-        background-color: #fff;
-        border-color: #4A6BFF !important;
-      }
     }
 
   }
